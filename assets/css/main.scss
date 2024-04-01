@@ -1,0 +1,354 @@
+---
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* Colors */
+// $dark-gray: #0e2431 !default;
+// $background-color: #e8d5b7 !default;
+// $text-color: #000 !default;
+// $muted-text-color: $dark-gray !default;
+// $primary-color: #fc3a52 !default;
+// $border-color: mix(#000, $background-color, 20%) !default;
+// $code-background-color: mix(#fff, $background-color, 20%) !default;
+// $code-background-color-dark: mix(#000, $background-color, 10%) !default;
+// $form-background-color: mix(#fff, $background-color, 15%) !default;
+// $footer-background-color: #f9b248 !default;
+// $link-color: mix(#000, $primary-color, 10%) !default;
+// $link-color-hover: mix(#fff, $link-color, 25%) !default;
+// $link-color-visited: mix(#000, $link-color, 25%) !default;
+// $masthead-link-color: $text-color !default;
+// $masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
+// $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
+
+$my-dark-red: #5F1616;
+$my-dark-blue: #23395B;
+$my-gray: #74776B;
+$dark-border-color: mix(#000, $border-color, 25%);
+
+.search__toggle {
+  color: $masthead-link-color
+}
+.navicon, .navicon::before, .navicon::after {
+  color: $masthead-link-color;
+  background-color: $masthead-link-color;
+}
+
+.page__title {
+  border-radius: 5px;
+  background-color: $my-dark-blue;
+  color: white;
+  padding: .4em;
+  padding-top: .3em;
+  // font-size: 2em;
+  font-variant: small-caps;
+}
+
+.page__content {
+  p, dl {
+    margin: 0 0 .25em 0;
+  }
+  h2 {
+    clear: both;
+    padding-bottom: .25em;
+    border-radius: 5px;
+    background-color: $my-dark-blue;
+    color: white;
+    padding: .3em;
+    padding-top: .2em;
+    font-size: 1.4em;
+    font-variant: small-caps;
+  }
+  h3 {
+    clear: both;
+    margin: 1em 0 0 0;
+    font-size: 1.25em;
+    border-bottom: 1px solid $border-color;
+    // border-bottom: 2px solid $my-dark-red;
+    line-height: 24px;
+  }
+  h4 {
+    margin: .75em 0 .25em 0;
+    font-size: 1em;
+    font-style: italic;
+  }
+  dd {
+    font-size: 1em;
+  }
+  dt, dd {
+    display: inline;
+  }
+  dd:after {
+    content: "";
+    display: block;
+  }
+}
+
+th {
+  border-bottom: 1px solid $dark-border-color
+}
+td {
+  border-bottom: none
+}
+tr, td, th {
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+
+tr:nth-child(even) {
+  background-color: #ebdeca
+}
+tr:nth-child(odd) {
+  background-color: #e2cba4
+}
+
+
+ul li, ol li {
+  margin-bottom: 0
+}
+ul {
+  margin-block-start: 0;
+  margin-block-end: .5em;
+}
+
+body, table {
+  font-size: .8em;
+}
+
+// Layout
+
+table {
+  width: auto;
+  display: table;
+  border: 1px solid $dark-border-color;
+  margin-top: 1em;
+}
+
+aside {
+  float: right;
+  width: 45%;
+  font-size: 90%;
+  border: 1px solid $dark-border-color;
+  border-radius: 0.25em;
+  background-color: #dbc29b;
+  margin: .5em 0 1em 1em;
+
+  padding: 1em;
+  h3 {
+    margin-top: 0 !important;
+  }
+  div:first-child {
+    margin-top: 0;
+  }
+  div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+summary {
+  overflow: hidden;
+  list-style: none;
+  ::marker, ::-webkit-details-marker {
+    display: none;
+  }
+  // background-color: #e4cca5;
+  // box-shadow: 0 0 0 1px $border-color inset;
+  h4 {
+    margin-top: .25em !important;
+  }
+}
+summary:hover {
+  background-color: #ffffff33;
+  box-shadow: 0 0 0 1px $my-dark-red inset;
+}
+
+// Special classes
+
+.power, .item {
+  overflow: hidden;
+  margin: .5em 0 0 0;
+
+  summary {
+    padding: 0 .25em;
+  }
+
+  h3 {
+    margin-top: .5em;
+  }
+  .traits {
+    margin: 0;
+    padding-left: 0;
+  }
+  .tags {
+    margin-bottom: 0;
+    // border-bottom: 1px solid $border-color;
+    dt {
+      text-transform: capitalize;
+    }
+  }
+  hr {
+    margin: 0;
+    // border-top: 2px solid $my-dark-red;
+  }
+}
+
+.power-body {
+  // display: flex;
+  // flex-direction: column;
+  // margin-top: .25em;
+  // border: 1px solid $my-dark-red;
+  border-left: .25em solid $my-dark-red;
+  padding-left: .75em;
+  margin: .25em .4em;
+}
+
+.fluff {
+  font-style: italic;
+}
+
+.trait {
+  display: inline;
+  // background: $my-dark-red;
+  // border: #ceb566 2px solid;
+  padding: 0px 6px;
+  font-size: 0.8em !important;
+  text-transform: uppercase;
+
+  background: #e7c48b;
+  border:  $my-dark-red 1px solid;
+  font-weight: bold;
+}
+.trait > a {
+  text-decoration: none;
+  // color: #fff;
+
+  color: #000;
+}
+
+.specialize {
+  border-collapse: separate;
+  border-spacing: .5em 0;
+  border: none;
+  margin-left: -.5em;
+  margin-right: -.5em;
+
+  td, th {
+    border: 1px solid $dark-border-color;
+  }
+  td {
+    border-top: none;
+  }
+}
+
+.inline-icon {
+  height: 1.3em;
+  margin-top: -0.2em;
+}
+
+.alignright {
+	float: right;
+}
+
+.roll-me-one blockquote {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+button {
+  $background: #ebdeca;
+
+  background: $background;
+  border: 2px solid darken($color: $background, $amount: 15%);
+
+  &:hover {
+    background: lighten($color: $background, $amount: 5%);
+  }
+}
+
+
+.tabset {
+  margin: 1em 0 .25em 0;
+}
+
+.tabset > input {
+  display: block; /* "enable" hidden elements in IE/edge */
+  position: absolute; /* then hide them off-screen */
+  left: -100%;
+}
+
+.tabset > ul {
+  padding: 0;
+  position: relative;
+  z-index: 999;
+  list-style: none;
+  display: flex;
+  margin-bottom: -1px;
+}
+
+.tabset > ul label,
+.tabset > div {
+  border: 1px solid $dark-border-color;
+}
+
+.tabset > ul label {
+  display: inline-block;
+  padding: 0 1em;
+  background: mix($background-color, #dbc29b, 70%);
+  border-right-width: 0;
+  margin: 0;
+  font-weight: bold;
+  .subpower-title {
+    font-size: 1.1em;
+    padding: 0.25em 1em;
+  }
+}
+
+.tabset > ul li:first-child label {
+  border-radius: 0.25em 0 0 0;
+}
+
+.tabset > ul li:last-child label {
+  border-right-width: 1px;
+  border-radius: 0 0.25em 0 0;
+}
+
+.tabset > div {
+  position: relative;
+  background: #dbc29b;
+  border-radius: 0 0.25em 0.25em 0.25em;
+}
+
+@for $i from 1 through 10 {
+  .tabset > input:nth-child(#{$i}):checked ~ ul li:nth-child(#{$i}) label {
+    background: #dbc29b;
+    border-bottom-color: #dbc29b;
+  }
+}
+
+.tabset > div > section,
+.tabset > div > section h2 {
+  position: absolute;
+  top: -999em;
+  left: -999em;
+}
+.tabset > div > section {
+  padding: 0 1em;
+}
+
+@for $i from 1 through 10 {
+  .tabset > input:nth-child(#{$i}):checked ~ div > section:nth-child(#{$i}) {
+    position: static;
+  }
+}
+
+.tabset > ul label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

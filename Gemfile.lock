@@ -34,6 +34,7 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
+    jekyll-datapage-generator (1.4.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
@@ -100,6 +101,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.0.1)
+  jekyll-datapage-generator
   minimal-mistakes-jekyll
   tzinfo (~> 1.2)
   tzinfo-data

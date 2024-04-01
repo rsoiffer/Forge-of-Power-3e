@@ -1,0 +1,95 @@
+- name: Acrobat
+  category: Warrior
+  brief: Fast – Movement, Evasion, Multi-hits
+
+- name: Duelist
+  category: Warrior
+  brief: Skilled – Reflexes, Accuracy, Dueling
+
+- name: Guardian
+  category: Warrior
+  brief: Tank – Defense, Covering, Controlling
+
+- name: Hunter
+  category: Warrior
+  brief: Ranged – Shooting, Traps, Tracking
+
+- name: Marauder
+  category: Warrior
+  brief: Aggressive – Strength, Reckless, Tough
+
+- name: Warblade
+  category: Warrior
+  brief: Technical – Debuffs, Combos, Versatile
+
+- name: Alchemist
+  category: Expert
+  brief: Alchemy – Potions, Mutations, Bombs
+
+- name: Bard
+  category: Expert
+  brief: Presence – Inspiration, Intimidation, Support
+
+- name: Inventor
+  category: Expert
+  brief: Machines – Weapons, Armor, Gadgets
+
+- name: Monk
+  category: Expert
+  brief: Cultivation – Ki Power, Purity, Souls
+
+- name: Rogue
+  category: Expert
+  brief: Trickery – Stealth, Deception, Luck
+
+- name: Strategist
+  category: Expert
+  brief: Tactics – Commands, Planning, Insight
+
+- name: Arcanist
+  category: Mage
+  brief: Magic – Metamagic, Glyphs, Force Constructs
+
+- name: Conjurer
+  category: Mage
+  brief: Conjuration – Summoning, Planes, Creation
+
+- name: Diviner
+  category: Mage
+  brief: Fate – Divination, Curses, Knowledge
+
+- name: Druid
+  category: Mage
+  brief: Nature – Plants, Animals, Weather
+
+- name: Elementalist
+  category: Mage
+  brief: Elements – Air, Earth, Fire, Water
+
+- name: Enchanter
+  category: Mage
+  brief: Mind – Communication, Control, Charms
+
+- name: Evoker
+  category: Mage
+  brief: Power – Energy, Destruction, Self-Buffs
+
+- name: Healer
+  category: Mage
+  brief: Life – Healing, Blessing, Smiting
+
+- name: Illusionist
+  category: Mage
+  brief: Illusion – Images, Hallucinations, Senses
+
+- name: Necromancer
+  category: Mage
+  brief: Death – Harm, Undead, Disease
+
+- name: Sorcerer
+  category: Mage
+  brief: Reality – Telekinesis, Teleportation, Time
+
+- name: Transmuter
+  category: Mage
+  brief: Transformation – Body, Environment, Items

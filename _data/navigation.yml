@@ -1,0 +1,55 @@
+classes:
+  - title: Warrior
+    children:
+    - title: Acrobat
+      url: /Acrobat/
+    - title: Duelist
+      url: /Duelist/
+    - title: Guardian
+      url: /Guardian/
+    - title: Hunter
+      url: /Hunter/
+    - title: Marauder
+      url: /Marauder/
+    - title: Warblade
+      url: /Warblade/
+  - title: Expert
+    children:
+    - title: Alchemist
+      url: /Alchemist/
+    - title: Bard
+      url: /Bard/
+    - title: Inventor
+      url: /Inventor/
+    - title: Monk
+      url: /Monk/
+    - title: Rogue
+      url: /Rogue/
+    - title: Strategist
+      url: /Strategist/
+  - title: Mage
+    children:
+    - title: Arcanist
+      url: /Arcanist/
+    - title: Conjurer
+      url: /Conjurer/
+    - title: Diviner
+      url: /Diviner/
+    - title: Druid
+      url: /Druid/
+    - title: Elementalist
+      url: /Elementalist/
+    - title: Enchanter
+      url: /Enchanter/
+    - title: Evoker
+      url: /Evoker/
+    - title: Healer
+      url: /Healer/
+    - title: Illusionist
+      url: /Illusionist/
+    - title: Necromancer
+      url: /Necromancer/
+    - title: Sorcerer
+      url: /Sorcerer/
+    - title: Transmuter
+      url: /Transmuter/
