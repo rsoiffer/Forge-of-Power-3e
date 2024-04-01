@@ -3,7 +3,7 @@ layout: single
 classes: wide
 title: Classes
 sidebar:
-nav: "classes"
+  nav: "classes"
 ---
 
 {% assign class = site.data.classes | where: "name", page.title | first %}
@@ -16,15 +16,15 @@ nav: "classes"
 <p>{{ class.brief }}</p>
 
 {% for tier2 in tiers %}
-{% if tier2 == "Ribbon" %}
-<h2>Ribbons</h2>
-{% else %}
-<h2>{{tier2}} Talents</h2>
-{% endif %}
+  {% if tier2 == "Ribbon" %}
+    <h2>Ribbons</h2>
+  {% else %}
+    <h2>{{ tier2 }} Talents</h2>
+  {% endif %}
 
-{% for power2 in talents %}
-{% if power2[1].tier == tier2 %}
-{% include power.html power=power2 %}
-{% endif %}
-{% endfor %}
+  {% for power2 in talents %}
+    {% if power2[1].tier == tier2 %}
+      {% include power.html power=power2 %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}

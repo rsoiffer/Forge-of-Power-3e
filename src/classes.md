@@ -16,14 +16,14 @@ sidebar:
       <th>Name</th>
       <th>Description</th>
     </tr>
-  {% assign classes = site.data.classes | where: "category", category %}
-  {% for class in classes %}
-    <tr>
-      <td>
-        <a href="{% link {{ class.name | slugify }}.html %}">{{ class.name }}</a>
-      </td>
-    <td>{{ class.brief }}</td>
-    </tr>
-  {% endfor %}
+    {% assign classes = site.data.classes | where: "category", category %}
+    {% for class in classes %}
+      <tr>
+        <td>
+          <a href="{% link {{ class.name | slugify }}.html %}">{{ class.name }}</a>
+        </td>
+        <td>{{ class.brief }}</td>
+      </tr>
+    {% endfor %}
   </table>
 {% endfor %}
