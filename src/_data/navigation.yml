@@ -1,3 +1,11 @@
+main:
+  - title: Rules
+    url: /rules/
+  - title: Character
+    url: /character/
+  - title: Classes
+    url: /classes/
+
 classes:
   - title: Warrior
     children:
