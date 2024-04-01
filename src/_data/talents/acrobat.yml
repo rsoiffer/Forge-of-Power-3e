@@ -1,0 +1,321 @@
+Aerial Artistry:
+  tier: Novice
+  type: Passive
+  brief: You easily leap and jump over obstacles and into the air
+  effect: |
+    When you {Stride}, you can choose to make two short leaps instead of moving normally. For each leap, fly a distance through the air equal to half your Speed. You must end each leap on a creature, a solid object, or the ground. If you do not, you fall and your Stride ends.
+
+Crane Stance:
+  tier: Novice
+  type: Free
+  brief: You enter a stance of flowing, defensive motions as you punch opponents
+  traits: [Stance]
+  tags:
+    requirements: Your Defense is calculated with Agility
+  effect: |
+    You have +1 Defense and +10 feet Speed, but the only attacks you can make are unarmed Strikes. Your unarmed Strikes deal 1d6 [[Bludgeoning]] base damage and have the [[Finesse]] trait.
+
+Deflect Missile:
+  tier: Novice
+  type: Reaction
+  brief: You snatch arrows out of the air and throw them at other enemies
+  tags:
+    trigger: You are targeted by a ranged Strike
+  effect: |
+    You have +5 Defense against the triggering Strike. If the triggering Strike fails against you, you can use the **Return Missile** effect.
+  aside: |
+    Return Missile:
+      traits: [Attack]
+      tags:
+        range: The range of the triggering Strike
+      effect: |
+        Make an Agility attack roll against your target's Defense. This attack has the same (critical) success/failure effects as the triggering Strike.
+
+Evasive Dash:
+  tier: Novice
+  type: 1-Action
+  brief: You dash like the wind, becoming impossible to hit
+  tags:
+    duration: Until the start of your next turn
+  effect: |
+    Use the {Stride} power. You gain +1 Defense and Agility DC for each 10 feet you move, both during and after this Stride.
+
+    *For example, if you use this power and Stride 30 feet, then Stride 30 more feet, then fall 20 feet, you have a total of +8 Defense and Agility DC.*
+
+Leap Attack:
+  tier: Novice
+  type: Free
+  brief: You can leap through the air while attacking
+  traits: [Encounter, Move]
+  effect: |
+    You jump up to your Speed in a straight line. You can use other powers in the middle of this jump. You have advantage on your next melee {Strike} this turn.
+
+Mighty Throw:
+  tier: Novice
+  type: 1-Action
+  brief: You throw an enemy, sending them tumbling to the ground
+  traits: [Attack, Bludgeoning, Encounter, Wrestling]
+  tags:
+    target: One creature you can reach
+  effect: |
+    Make a Strength or Agility attack roll against the higher of your target's Strength DC or Agility DC.
+
+    Critical Success
+    : As success, except you throw your target up to 20 feet
+
+    Success
+    : You throw your target up to 10 feet in any direction, they take 2d6 damage, and they fall {prone}
+
+    Failure
+    : Your target falls {prone}
+
+Stunning Strike:
+  tier: Novice
+  type: 1-Action
+  brief: You strike at a creature's pressure points, possibly stunning them
+  traits: [Encounter]
+  tags:
+    duration: Until the end of your next turn
+  effect: |
+    Make a melee {Strike}. On a success, your target is {flat-footed}. On a critical success, your target is {stunned} instead.
+
+Tumble:
+  tier: Novice
+  type: Free
+  brief: You can tumble through enemies' spaces, disorienting them
+  traits: [Attack, Move]
+  tags:
+    target: One creature adjacent to you
+    duration: Until the start of your next turn
+  effect: |
+    Make an Agility+Athletics attack roll against your target's Agility DC.
+
+    Critical Success
+    : As success, except your target is {flat-footed} against everyone
+
+    Success
+    : You move through your target's space to any empty space adjacent to them, and your target is {flat-footed} against you
+
+    Failure
+    : No effect
+
+    Critical Failure
+    : You are {flat-footed} against everyone
+
+    Using this power doesn't trigger any reactions.
+
+Evasion:
+  tier: Veteran
+  type: Passive
+  brief: You are unnaturally skilled at dodging area attacks
+  effect: |
+    You have +10 Agility DC against effects that target everything in an area.
+
+Incredible Movement:
+  tier: Veteran
+  type: Passive
+  brief: You can move at incredible speeds, running along water and up walls
+  tags:
+    requirements: Your Defense is calculated with Agility
+  effect: |
+    You gain a +20 feet bonus to Speed. On your turn, you can run along water, up walls, or along other surfaces that wouldn't support your weight. At the end of your turn, you fall as normal if not supported by a solid object.
+
+Repeated Stun:
+  tier: Veteran
+  type: Passive
+  brief: You can use Stunning Strike multiple times in the same fight
+  tags:
+    prerequisites: Stunning Strike
+  effect: |
+    When you use your {Stunning Strike} power, roll a d6. On anything but a 1, that power refreshes, letting you use it again without taking a 5-minute rest.
+
+Skirmish:
+  tier: Veteran
+  type: Reaction
+  brief: You can evade enemies that try to approach close to you
+  tags:
+    trigger: After a hostile creature uses a [[Move]] power to move to a space adjacent to you
+  effect: |
+    {Stride} at half Speed.
+  fluff: |
+    Note that this power lets you easily escape melee combat by moving out of your attacker's reach.
+
+Uncanny Dodge:
+  tier: Veteran
+  type: Reaction
+  brief: You can evade the worst hurt from potentially deadly attacks
+  tags:
+    trigger: You take damage from an attack
+  effect: |
+    You take half damage from the triggering attack.
+
+Flash Step:
+  tier: Master
+  type: Free
+  brief: You move so quickly that you seem to disappear and reappear
+  traits: [Move]
+  tags:
+    range: 30 feet
+    target: An enemy you can see within range
+  effect: |
+    You move to an empty space adjacent to your target. This movement doesn't trigger {% icon Reaction %} powers.
+
+Tornado Throw:
+  tier: Master
+  type: 1-Action
+  brief: You move like a tornado, throwing everyone nearby
+  traits: [Encounter]
+  tags:
+    prerequisites: Mighty Throw
+  effect: |
+    Use the {Stride} power. Then, use your {Mighty Throw} power, targeting any number of creatures you were adjacent to at any point during your Stride.
+
+    *This power doesn't expend your Mighty Throw power. You can use this power even if you have already used Mighty Throw this encounter.*
+
+Untouchable:
+  tier: Master
+  type: Reaction
+  brief: You completely evade a power, as if it never happened
+  traits: [Encounter]
+  tags:
+    trigger: A power targets you
+  effect: |
+    The triggering power has no effect on you. If the triggering power involves a die roll, you can use this power after you know the result of the die roll.
+
+Backflip:
+  tier: Ribbon
+  type: Passive
+  brief: You can perform impressive feats of acrobatics and agility
+  effect: |
+    You have advantage on Agility+Perform rolls to impress others through acrobatic performances.
+
+Contortionist:
+  tier: Ribbon
+  type: Passive
+  brief: You can contort your body to squeeze into tiny spaces
+  effect: |
+    You count as a creature half your size when trying to fit into small areas.
+
+Slow Fall:
+  tier: Ribbon
+  type: Reaction
+  brief: You maneuver yourself in midair to reduce the damage of a fall
+  tags:
+    trigger: You fall and hit the ground
+  effect: |
+    You reduce the fall damage you would take by 10 + 5 * your Acrobat level.
+
+Step of the Wind:
+  tier: Ribbon
+  type: Free
+  brief: You can move at a rapid pace along uneven ground
+  traits: [Encounter]
+  tags:
+    duration: Until the end of your turn
+  effect: |
+    You move at full Speed through difficult terrain.
+
+Quick Climb:
+  tier: Ribbon
+  type: Passive
+  brief: You can climb up vertical surfaces as fast as you can run
+  effect: |
+    You can climb at your full Speed instead of at half Speed.
+
+# Crane Stance:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Stance]
+#   tags:
+#     requirements: You are unarmored
+#   effect: |
+#     You enter the stance of a crane, using flowing defensive motions. You gain a +1 bonus to AC, but the only {Strike} you can make is crane wing attacks. These deal 1d6 bludgeoning damage, and have the agile, finesse, and unarmed traits.
+    
+#     While in Crane Stance, you gain a +5 bonus to die rolls made to jump.
+
+# Fantastic Leap:
+#   tier: Novice
+#   type: 1-Action
+#   effect:
+#     You launch yourself through the air at a foe. Make a {Stride} by jumping. At the end of your jump, you can make a melee {Strike}, even if you're in mid-air. You fall to the ground after the Strike. If the distance of your fall is no more than the height of your jump, you take no damage and land upright.
+
+# Flurry of Blows:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Flourish]
+#   effect:
+#     Make two melee Strikes. If both hit the same creature, combine their damage for the purpose of resistances and weaknesses. Apply your MAP to the Strikes normally.
+
+# Incredible Movement:
+#   tier: Novice
+#   type: Passive
+#   effect:
+#     You move like the wind. Whenever you're not wearing armor, you gain a bonus to your Speed equal to 5 feet * your Acrobat level.
+
+# Reactive Pursuit:
+#   tier: Novice
+#   type: Reaction
+#   tags:
+#     trigger: An adjacent foe moves away from you, and you can reach at least one space adjacent to the foe with a Stride action
+#   effect:
+#     You keep pace with a retreating foe. You {Stride}, but you must end your movement adjacent to the triggering enemy. Your move does not trigger reactions from the triggering enemy.
+
+# Stunning Fist:
+#   tier: Novice
+#   type: Free
+#   traits: [Incapacitation]
+#   tags:
+#     prerequisites: Flurry of Blows
+#     trigger: You target the same creature with two Strikes from your Flurry of Blows, and at least one of the Strikes hits and deals damage.
+#   effect:
+#     The focused power of your flurry threatens to overwhelm your opponent. Your target must succeed at a Fortitude save against a DC of 10 + Strength + Prof of be stunned 1 (or stunned 3 on a critical failure).
+
+# Agile Grace:
+#   tier: Veteran
+#   type: Passive
+#   effect:
+#     Your graceful moves with agile weapons are beyond compare. Your multiple attack penalty with agile weapons becomes -3 for each [[Attack]] power you've used so far this turn (rather than -4).
+
+# Sleeper Hold:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Attack, Incapacitation]
+#   tags:
+#     requirements: You have a creature {grabbed} or {restrained}
+#   effect:
+#     You pinch crucial points of your target's nervous system, impeding its ability to function. Attempt to {Grapple} the creature, with the following success and critical success effects instead of the usual effects.
+#   critical-success: The target falls {unconscious} for 1 minute, though it remains standing and doesn't drop what it holds
+#   success: The target takes a -1 penalty to Agility until the end of its next turn
+
+# Wall Run:
+#   tier: Veteran
+#   type: 1-Action
+#   effect:
+#     You defy gravity, traversing vertical planes as easily as the ground. {Stride} up to your Speed. You must start your movement on a horizontal surface. During this movement, you can run up vertical surfaces, like walls, at your full Speed. If you end the Stride off the ground, you fall after taking your next action or when your turn ends, whichever comes first. If you have Water Step or a similar ability, Wall Run lets you run along flimsy vertical surfaces, as well as vertical liquids, such as a waterfall.
+
+# Water Step:
+#   tier: Veteran
+#   type: Passive
+#   effect:
+#     You can {Stride} across liquid and surfaces that don't support your weight. This benefit only lasts during your movement. If you end your movement on a surface that can't support you, you fall in or it collapses as normal.
+
+# Whirlwind Strike:
+#   tier: Master
+#   type: 1-Action
+#   traits: [Flourish, Open]
+#   effect:
+#     You attack all nearby adversaries. Make a melee {Strike} against each enemy within your melee reach. Each attack counts towards your MAP, but do not increase your penalty until you have made all your attacks.
+
+# Enduring Quickness:
+#   tier: Epic
+#   type: Passive
+#   effect:
+#     You move as fast and as high as the wind itself. You're permanently quickened. You can use your extra action only to {Stride}.
+
+# Swift River:
+#   tier: Epic
+#   type: Free
+#   tags:
+#     trigger: Your turn ends and you have a penalty to your Speed or are {immobilized} or {slowed}
+#   effect:
+#     You flow like water, avoiding all restraints. End one penalty to your Speed, or end one {immobilized} or {slowed} condition affecting you.

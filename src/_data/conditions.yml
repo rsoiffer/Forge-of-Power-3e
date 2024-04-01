@@ -1,0 +1,29 @@
+Blinded: You can't see. All normal terrain is difficult terrain to you. You automatically critically fail {Notice} rolls that rely on sight. You are {flat-footed}, and you have disadvantage on {Notice} rolls and attack rolls.
+
+Bloodied: You are significantly injured. You have the {bloodied} condition whenever you at at half Health or below.
+
+Dazzled: Your eyes are overstimulated. You have disadvantage on {Notice} rolls and attack rolls.
+
+Downed: You are severely injured and are barely able to move. You are {incapacitated}, {prone}, and {slowed}, and you cannot stand up.
+
+Flat-footed: You're distracted or otherwise unable to focus your full attention on defense. Attack rolls against you have advantage.
+
+Grabbed: You're held in place by another creature, and you are {flat-footed} and {immobilized}.
+
+Immobilized: You can't use any power with the [[Move]] trait. If you're immobilized by something holding you in place and an external force would move you out of your space, the force must succeed at a die roll against the DC of the effect holding you.
+
+Incapacitated: You are unable to fight. You can't use any {% icon 1-Action %} or {% icon Reaction %} powers.
+
+Prone: You're lying on the ground. You are {flat-footed} and have disadvantage on attack rolls. The only [[Move]] powers you can use are {Stand} and {Stride}, and you can only move by crawling, which is normally at half Speed. You have [cover](combat-rules.html#cover) from enemies more than 20 feet from you.
+
+Restrained: You're tied up and can barely move, or a creature has you pinned. You are {flat-footed} and {immobilized}, and you can't use any powers with the [[Attack]] or [[Manipulate]] traits except the {Escape} power.
+
+Slowed: Your speed is halved.
+
+Stunned: You've become senseless. You are {flat-footed} and can't use any powers.
+
+Taunted: You are entirely focused on an enemy. Whenever you make an attack, you must target that enemy if possible. In addition, you cannot use [[Move]] powers to move away from that enemy. If you are taunted by a new enemy, you are no longer taunted by the previous enemy.
+
+Terrified: You are overcome with terror. On each of your turns, you must use the {Stride} power and the {Repeat} ({Stride}) power to move as far away as possible from the source of your terror. This effect doesn't force you to move through obviously dangerous terrain. You has disadvantage on all rolls while you can see the source of your terror.
+
+Unconscious: You're sleeping, or you've been knocked out. You have the {blinded}, {prone}, and {stunned} conditions.
