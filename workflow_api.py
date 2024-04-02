@@ -103,11 +103,11 @@ from nodes import (
 )
 
 
-def process(filename, prompt):
+def process(filepath, prompt):
     with torch.inference_mode():
         emptylatentimage = EmptyLatentImage()
         emptylatentimage_5 = emptylatentimage.generate(
-            width=768, height=768, batch_size=1
+            width=512, height=512, batch_size=1
         )
 
         checkpointloadersimple = CheckpointLoaderSimple()
@@ -117,12 +117,12 @@ def process(filename, prompt):
 
         cliptextencode = CLIPTextEncode()
         cliptextencode_6 = cliptextencode.encode(
-            text=prompt + "\n",
+            text=prompt + " medieval fantasy, digital art, world of warcraft.\n",
             clip=get_value_at_index(checkpointloadersimple_16, 1),
         )
 
         cliptextencode_7 = cliptextencode.encode(
-            text="bad hands, text, watermark\n",
+            text="nsfw, bad hands, text, watermark\n",
             clip=get_value_at_index(checkpointloadersimple_16, 1),
         )
 
@@ -133,7 +133,7 @@ def process(filename, prompt):
 
         ksampler_3 = ksampler.sample(
             seed=random.randint(1, 2**64),
-            steps=7,
+            steps=8,
             cfg=2,
             sampler_name="dpmpp_sde",
             scheduler="normal",
@@ -146,17 +146,17 @@ def process(filename, prompt):
 
         latentupscale_10 = latentupscale.upscale(
             upscale_method="nearest-exact",
-            width=1152,
-            height=1152,
+            width=768,
+            height=768,
             crop="disabled",
             samples=get_value_at_index(ksampler_3, 0),
         )
 
         ksampler_11 = ksampler.sample(
             seed=random.randint(1, 2**64),
-            steps=14,
-            cfg=8,
-            sampler_name="dpmpp_2m",
+            steps=5,
+            cfg=2,
+            sampler_name="dpmpp_sde",
             scheduler="simple",
             denoise=0.5,
             model=get_value_at_index(checkpointloadersimple_16, 0),
@@ -173,7 +173,7 @@ def process(filename, prompt):
         images = get_value_at_index(vaedecode_13, 0)
         i = 255. * images[0].cpu().numpy()
         img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-        img.save(os.path.join('src/assets/generated_images', filename))
+        img.save(filepath)
 
 
 def main():
@@ -182,10 +182,14 @@ def main():
         with open(filepath, 'r') as file:
             contents = yaml.safe_load(file)
             for name, entry in contents.items():
-                if 'image_prompt' in entry:
-                    print('Processing power:', name)
-                    prompt = entry['image_prompt']
-                    process(name + '.png', prompt)
+                filepath = 'src/assets/generated_images/' + name + '.png'
+                if os.path.exists(filepath):
+                    continue
+                if 'image_prompt' not in entry:
+                    continue
+
+                print('Processing power:', name)
+                process(filepath, entry['image_prompt'])
 
 
 if __name__ == "__main__":

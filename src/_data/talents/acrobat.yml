@@ -7,32 +7,33 @@ Corrosive Projectile:
   effect: |
     Make a **Spellcast Roll** against a creature within far range. On a success, mark a **Stress**, deal **d6** magic damage to the target, and the target's Difficulty value is temporarily reduced by **1**.
   image_prompt: |
-    (corrosive projectile), (magic spell), green acid, spellcasting, attack, fantasy, digital art
+    (corrosive projectile), (magic spell), green acid, spellcasting, attack.
 
 Aerial Artistry:
   tier: Novice
   type: Passive
   brief: You easily leap and jump over obstacles and into the air
-  image: https://cdna.artstation.com/p/marketplace/presentation_assets/002/962/186/large/file.jpg?1693072785
   effect: |
     When you {Stride}, you can choose to make two short leaps instead of moving normally. For each leap, fly a distance through the air equal to half your Speed. You must end each leap on a creature, a solid object, or the ground. If you do not, you fall and your Stride ends.
+  image_prompt: |
+    (leaping acrobat), D&D monk, flying, epic. windy, bright, landscape, temple.
 
 Crane Stance:
   tier: Novice
   type: Free
   brief: You enter a stance of flowing, defensive motions as you punch opponents
-  image: https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1c974924-6b69-45e1-9b1a-3b3e3bc66c17/dcsuxt9-76838a0f-d009-45a7-9faa-18cc9a5b430d.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFjOTc0OTI0LTZiNjktNDVlMS05YjFhLTNiM2UzYmM2NmMxN1wvZGNzdXh0OS03NjgzOGEwZi1kMDA5LTQ1YTctOWZhYS0xOGNjOWE1YjQzMGQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.9wn6Wh7i_qTWugHXJqGDgRsfBH8BxoZ5U1TEmD5dcAI
   traits: [Stance]
   tags:
     requirements: Your Defense is calculated with Agility
   effect: |
     You have +1 Defense and +10 feet Speed, but the only attacks you can make are unarmed Strikes. Your unarmed Strikes deal 1d6 [[Bludgeoning]] base damage and have the [[Finesse]] trait.
+  image_prompt: |
+    (martial artist), (crane stance), unarmed, peaceful, strong, light. outdoors, grassy, plains, sunny.
 
 Deflect Missile:
   tier: Novice
   type: Reaction
   brief: You snatch arrows out of the air and throw them at other enemies
-  image: https://cdna.artstation.com/p/assets/images/images/011/150/740/large/viktor-engholm-beau002a.jpg?1528115709
   tags:
     trigger: You are targeted by a ranged Strike
   effect: |
@@ -44,33 +45,36 @@ Deflect Missile:
         range: The range of the triggering Strike
       effect: |
         Make an Agility attack roll against your target's Defense. This attack has the same (critical) success/failure effects as the triggering Strike.
+  image_prompt: |
+    (fist), punching, deflecting, strong. arrow, fast, projectile.
 
 Evasive Dash:
   tier: Novice
   type: 1-Action
   brief: You dash like the wind, becoming impossible to hit
-  image: https://cdnb.artstation.com/p/assets/images/images/066/636/003/large/nick-burns-highresscreenshot00001.jpg?1693394425
   tags:
     duration: Until the start of your next turn
   effect: |
     Use the {Stride} power. You gain +1 Defense and Agility DC for each 10 feet you move, both during and after this Stride.
 
     *For example, if you use this power and Stride 30 feet, then Stride 30 more feet, then fall 20 feet, you have a total of +8 Defense and Agility DC.*
+  image_prompt: |
+    (running woman), evasive, fast, dodging. swamp, green blue, high contract.
 
 Leap Attack:
   tier: Novice
   type: Free
   brief: You can leap through the air while attacking
-  image: https://i.pinimg.com/474x/56/a8/15/56a815f61c1681c4f7f0246a57534595.jpg
   traits: [Encounter, Move]
   effect: |
     You jump up to your Speed in a straight line. You can use other powers in the middle of this jump. You have advantage on your next melee {Strike} this turn.
+  image_prompt: |
+    (falling warrior), angry, fast. sword, swinging, powerful. mountainside, rock, orcs.
 
 Mighty Throw:
   tier: Novice
   type: 1-Action
   brief: You throw an enemy, sending them tumbling to the ground
-  image: https://dthezntil550i.cloudfront.net/4m/latest/4m2102020557060360009782010/1280_960/aea61fd8-baf7-4d77-a2d7-1d48dcc37597.png
   traits: [Attack, Bludgeoning, Encounter, Wrestling]
   tags:
     target: One creature you can reach
@@ -85,17 +89,20 @@ Mighty Throw:
 
     Failure
     : Your target falls {prone}
+  image_prompt: |
+    (wrestling throw), martial arts, powerful, epic.
 
 Stunning Strike:
   tier: Novice
   type: 1-Action
   brief: You strike at a creature's pressure points, possibly stunning them
-  image: https://cdna.artstation.com/p/assets/images/images/012/886/838/large/marta-smaczny-stunning-strike-card.jpg?1537020483
   traits: [Encounter]
   tags:
     duration: Until the end of your next turn
   effect: |
     Make a melee {Strike}. On a success, your target is {flat-footed}. On a critical success, your target is {stunned} instead.
+  image_prompt: |
+    (punch), pressure point, ki power, energy, martial arts, powerful.
 
 Tumble:
   tier: Novice
