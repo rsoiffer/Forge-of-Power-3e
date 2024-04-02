@@ -7,6 +7,8 @@ import torch
 import glob
 import hashlib
 import numpy as np
+import ollama
+from pathlib import Path
 import yaml
 
 from PIL import Image
@@ -176,20 +178,34 @@ def process(filepath, prompt):
         img.save(filepath)
 
 
+def run_ollama(prompt):
+    ollama.pull('llama2')
+    response = ollama.generate(model='llama2', prompt=prompt)['response']
+    print("Prompt: ", prompt)
+    print("Response: ", response)
+    return response
+
+
 def main():
     for filepath in glob.iglob('src/_data/talents/*.yml'):
-        print('Processing class:', filepath)
+        class_name = Path(filepath).stem
+        print('Processing class:', class_name)
         with open(filepath, 'r') as file:
             contents = yaml.safe_load(file)
             for name, entry in contents.items():
                 filepath = 'src/assets/generated_images/' + name + '.png'
                 if os.path.exists(filepath):
                     continue
-                if 'image_prompt' not in entry:
-                    continue
+
+                prompt1 = 'The following is an ability in a medieval fantasy tabletop rpg system. Describe an image that captures the spirit of this ability. Describe any elements in the foreground, describe the background, and describe the general art style, in that order. Do not put humans in the foreground. Respond only with the description, nothing else.\n\n'
+                prompt1 += name + "\nType: " + class_name + ", " + entry['type'] + "\nDescription: " + entry['brief'] + "\nEffect: " + entry['effect']
+                description = run_ollama(prompt1)
+
+                prompt2 = 'Write a stable diffusion prompt to generate an image that matches the following description. The prompt should be written as a comma-separated list of tags. Include tags describing the foreground, background, and general art style, in that order, with a period between each group. Respond only with the prompt, nothing else.\n\n' + name + ' (' + class_name + ')' + '\n' + description
+                image_prompt = run_ollama(prompt2)
 
                 print('Processing power:', name)
-                process(filepath, entry['image_prompt'])
+                process(filepath, image_prompt)
 
 
 if __name__ == "__main__":

@@ -2,12 +2,9 @@ Corrosive Projectile:
   tier: Novice
   type: 1-Action
   brief: AAAA
-  image: https://i.pinimg.com/236x/c2/a5/0d/c2a50d30330dff18fe0241e6f00386d7.jpg
   traits: [Spell]
   effect: |
     Make a **Spellcast Roll** against a creature within far range. On a success, mark a **Stress**, deal **d6** magic damage to the target, and the target's Difficulty value is temporarily reduced by **1**.
-  image_prompt: |
-    (corrosive projectile), (magic spell), green acid, spellcasting, attack.
 
 Aerial Artistry:
   tier: Novice
@@ -15,8 +12,6 @@ Aerial Artistry:
   brief: You easily leap and jump over obstacles and into the air
   effect: |
     When you {Stride}, you can choose to make two short leaps instead of moving normally. For each leap, fly a distance through the air equal to half your Speed. You must end each leap on a creature, a solid object, or the ground. If you do not, you fall and your Stride ends.
-  image_prompt: |
-    (leaping acrobat), D&D monk, flying, epic. windy, bright, landscape, temple.
 
 Crane Stance:
   tier: Novice
@@ -27,8 +22,6 @@ Crane Stance:
     requirements: Your Defense is calculated with Agility
   effect: |
     You have +1 Defense and +10 feet Speed, but the only attacks you can make are unarmed Strikes. Your unarmed Strikes deal 1d6 [[Bludgeoning]] base damage and have the [[Finesse]] trait.
-  image_prompt: |
-    (martial artist), (crane stance), unarmed, peaceful, strong, light. outdoors, grassy, plains, sunny.
 
 Deflect Missile:
   tier: Novice
@@ -45,8 +38,6 @@ Deflect Missile:
         range: The range of the triggering Strike
       effect: |
         Make an Agility attack roll against your target's Defense. This attack has the same (critical) success/failure effects as the triggering Strike.
-  image_prompt: |
-    (fist), punching, deflecting, strong. arrow, fast, projectile.
 
 Evasive Dash:
   tier: Novice
@@ -58,8 +49,6 @@ Evasive Dash:
     Use the {Stride} power. You gain +1 Defense and Agility DC for each 10 feet you move, both during and after this Stride.
 
     *For example, if you use this power and Stride 30 feet, then Stride 30 more feet, then fall 20 feet, you have a total of +8 Defense and Agility DC.*
-  image_prompt: |
-    (running woman), evasive, fast, dodging. swamp, green blue, high contract.
 
 Leap Attack:
   tier: Novice
@@ -68,8 +57,6 @@ Leap Attack:
   traits: [Encounter, Move]
   effect: |
     You jump up to your Speed in a straight line. You can use other powers in the middle of this jump. You have advantage on your next melee {Strike} this turn.
-  image_prompt: |
-    (falling warrior), angry, fast. sword, swinging, powerful. mountainside, rock, orcs.
 
 Mighty Throw:
   tier: Novice
@@ -89,8 +76,6 @@ Mighty Throw:
 
     Failure
     : Your target falls {prone}
-  image_prompt: |
-    (wrestling throw), martial arts, powerful, epic.
 
 Stunning Strike:
   tier: Novice
@@ -101,8 +86,6 @@ Stunning Strike:
     duration: Until the end of your next turn
   effect: |
     Make a melee {Strike}. On a success, your target is {flat-footed}. On a critical success, your target is {stunned} instead.
-  image_prompt: |
-    (punch), pressure point, ki power, energy, martial arts, powerful.
 
 Tumble:
   tier: Novice
@@ -115,17 +98,8 @@ Tumble:
   effect: |
     Make an Agility+Athletics attack roll against your target's Agility DC.
 
-    Critical Success
-    : As success, except your target is {flat-footed} against everyone
-
     Success
     : You move through your target's space to any empty space adjacent to them, and your target is {flat-footed} against you
-
-    Failure
-    : No effect
-
-    Critical Failure
-    : You are {flat-footed} against everyone
 
     Using this power doesn't trigger any reactions.
 
