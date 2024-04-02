@@ -15,16 +15,8 @@ sidebar:
 
 <p>{{ class.brief }}</p>
 
-{% for tier2 in tiers %}
-  {% if tier2 == "Ribbon" %}
-    <h2>Ribbons</h2>
-  {% else %}
-    <h2>{{ tier2 }} Talents</h2>
-  {% endif %}
-
+<div class="card-list">
   {% for power2 in talents %}
-    {% if power2[1].tier == tier2 %}
-      {% include power.html power=power2 %}
-    {% endif %}
+    {% include power.html power=power2 %}
   {% endfor %}
-{% endfor %}
+</div>

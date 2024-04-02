@@ -1,10 +1,13 @@
 ---
+search: false
 ---
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
-@import "minimal-mistakes";
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+@import "cards";
 
 /* Colors */
 // $dark-gray: #0e2431 !default;
