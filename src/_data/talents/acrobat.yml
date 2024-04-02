@@ -6,6 +6,8 @@ Corrosive Projectile:
   traits: [Spell]
   effect: |
     Make a **Spellcast Roll** against a creature within far range. On a success, mark a **Stress**, deal **d6** magic damage to the target, and the target's Difficulty value is temporarily reduced by **1**.
+  image_prompt: |
+    (corrosive projectile), (magic spell), green acid, spellcasting, attack, fantasy, digital art
 
 Aerial Artistry:
   tier: Novice

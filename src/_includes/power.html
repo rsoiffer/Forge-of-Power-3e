@@ -15,7 +15,11 @@
     </div>
 
     <div class="art">
-      {% if power_body.image %}
+      {% capture image_path %}/assets/generated_images/{{ power_name }}.png{% endcapture %}
+      {% assign file = site.static_files | where: "path", image_path | first %}
+      {% if file %}
+        <img src="{{ image_path }}">
+      {% elsif power_body.image %}
         <img src="{{ power_body.image }}">
       {% endif %}
     </div>
