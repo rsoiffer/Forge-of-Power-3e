@@ -119,12 +119,12 @@ def process(filepath, prompt):
 
         cliptextencode = CLIPTextEncode()
         cliptextencode_6 = cliptextencode.encode(
-            text=prompt + " medieval fantasy, digital art, world of warcraft.\n",
+            text=prompt,
             clip=get_value_at_index(checkpointloadersimple_16, 1),
         )
 
         cliptextencode_7 = cliptextencode.encode(
-            text="nsfw, bad hands, text, watermark\n",
+            text="nsfw, bad hands, text, watermark, low quality",
             clip=get_value_at_index(checkpointloadersimple_16, 1),
         )
 
@@ -175,15 +175,13 @@ def process(filepath, prompt):
         images = get_value_at_index(vaedecode_13, 0)
         i = 255. * images[0].cpu().numpy()
         img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-        img.save(filepath)
+        img.save(filepath, quality=95, optimize=True)
 
 
 def run_ollama(prompt):
     ollama.pull('llama2')
     response = ollama.generate(model='llama2', prompt=prompt)['response']
-    print("Prompt: ", prompt)
-    print("Response: ", response)
-    return response
+    return response.strip()
 
 
 def main():
@@ -193,18 +191,22 @@ def main():
         with open(filepath, 'r') as file:
             contents = yaml.safe_load(file)
             for name, entry in contents.items():
-                filepath = 'src/assets/generated_images/' + name + '.png'
+                filepath = 'src/assets/generated_images/' + name + '.jpg'
                 if os.path.exists(filepath):
                     continue
 
-                prompt1 = 'The following is an ability in a medieval fantasy tabletop rpg system. Describe an image that captures the spirit of this ability. Describe any elements in the foreground, describe the background, and describe the general art style, in that order. Do not put humans in the foreground. Respond only with the description, nothing else.\n\n'
+                print('Processing power:', name)
+
+                prompt1 = 'The following is an ability in a medieval fantasy tabletop rpg system. Describe an image that shows this ability in action. Describe the focus of the image, then describe the background of the image, then describe the emotions and tone of the image. Your description should be formatted as a single very short paragraph of natural english writing. Be brief, be concise, and only include details the viewer can see with their eyes. Respond only with the description, nothing else.\n\n'
                 prompt1 += name + "\nType: " + class_name + ", " + entry['type'] + "\nDescription: " + entry['brief'] + "\nEffect: " + entry['effect']
                 description = run_ollama(prompt1)
+                # print('Generated Description:', description)
 
-                prompt2 = 'Write a stable diffusion prompt to generate an image that matches the following description. The prompt should be written as a comma-separated list of tags. Include tags describing the foreground, background, and general art style, in that order, with a period between each group. Respond only with the prompt, nothing else.\n\n' + name + ' (' + class_name + ')' + '\n' + description
-                image_prompt = run_ollama(prompt2)
+                # prompt2 = 'Write a image generator prompt that matches the following description. The prompt should be formatted as a comma-separated list of about a dozen tags, where each tag is something you can see in the image. Respond only with the prompt, nothing else.\n\n' + name + ' (' + class_name + ')' + '\n' + description
+                # image_prompt = run_ollama(prompt2)
+                image_prompt = 'D&D, anime style, digital art, high quality, landscape, wallpaper, distant camera. ' + description
+                print('Generated Prompt:', image_prompt)
 
-                print('Processing power:', name)
                 process(filepath, image_prompt)
 
 

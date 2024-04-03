@@ -4,7 +4,7 @@
 <div class="card">
 
   <div class="art">
-    {% capture image_path %}/assets/generated_images/{{ power_name }}.png{% endcapture %}
+    {% capture image_path %}/assets/generated_images/{{ power_name }}.jpg{% endcapture %}
     {% assign file = site.static_files | where: "path", image_path | first %}
     {% if file %}
       <img src="{{site.baseurl}}{{ image_path }}">
