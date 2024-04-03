@@ -2,50 +2,59 @@
 {% assign power_body = include.power[1] %}
 
 <div class="card">
+
+  <div class="art">
+    {% capture image_path %}/assets/generated_images/{{ power_name }}.png{% endcapture %}
+    {% assign file = site.static_files | where: "path", image_path | first %}
+    {% if file %}
+      <img src="{{site.baseurl}}{{ image_path }}">
+    {% endif %}
+  </div>
+
   <div class="card-inner">
 
-    <div class="title-bar">
-      <h3 class="title-text" id="{{ power_name | slugify }}">
-        {{ power_name }}
-      </h3>
+    <div class="title-bar-outer">
+      <div class="title-bar">
+        <h3 class="title-text" id="{{ power_name | slugify }}">
+          {{ power_name }}
+        </h3>
 
-      {% unless power_body.type == "Passive" %}
-        {% icon {{ power_body.type }} %}
-      {% endunless %}
+        {% unless power_body.type == "Passive" %}
+          {% icon {{ power_body.type }} %}
+        {% endunless %}
+      </div>
     </div>
 
-    <div class="art">
-      {% capture image_path %}/assets/generated_images/{{ power_name }}.png{% endcapture %}
-      {% assign file = site.static_files | where: "path", image_path | first %}
-      {% if file %}
-        <img src="{{site.baseurl}}{{ image_path }}">
-      {% endif %}
-    </div>
+    <div class="space"></div>
 
-    <div class="body">
-
-      {% if power_body.traits %}
+    {% if power_body.traits %}
+      <div class="traits-outer">
         <ul class="traits">
           {% for trait in power_body.traits %}
-            {% trait {{ trait }} %}
+            {% comment %} {% trait {{ trait }} %} {% endcomment %}
+            {{ trait }}
           {% endfor %}
         </ul>
-      {% endif %}
+      </div>
+    {% endif %}
 
-      {% if power_body.tags %}
-        <dl class="tags">
-          {% for tag in power_body.tags %}
-            <dt>{{ tag[0] | capitalize }}</dt>
-            <dd>{{ tag[1] | process_inline }}</dd>
-          {% endfor %}
-        </dl>
-      {% endif %}
+    <div class="body-outer">
+      <div class="body">
+        {% if power_body.tags %}
+          <dl class="tags">
+            {% for tag in power_body.tags %}
+              <dt>{{ tag[0] | capitalize }}</dt>
+              <dd>{{ tag[1] | process_inline }}</dd>
+            {% endfor %}
+          </dl>
+        {% endif %}
 
-      {{ power_body.effect | process }}
+        {{ power_body.effect | process }}
 
-      {% if power_body.fluff %}
-        <div class="fluff">{{ power_body.fluff | process }}</div>
-      {% endif %}
+        {% if power_body.fluff %}
+          <div class="fluff">{{ power_body.fluff | process }}</div>
+        {% endif %}
+      </div>
     </div>
   </div>
 
