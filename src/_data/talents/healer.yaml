@@ -1,0 +1,399 @@
+Aid:
+  tier: Novice
+  type: 1-Action
+  brief: You magically bolster your allies' toughness and resolve
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    target: Up to three creatures you can see within range
+    duration: 8 hours
+  effect: |
+    Your target's maximum and current health both increase by 2d6.
+
+    *When this spell ends, your target's maximum health returns to normal, but their current health doesn't decrease.*
+
+    #### Heightened
+    
+    For each +1 Mana, your target's maximum and current health both increase by an additional 1d6.
+
+Bless:
+  tier: Novice
+  type: 1-Action
+  brief: You bless your allies with good fortune and protection
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    target: Up to three creatures you can see within range
+    duration: Sustained, up to 1 minute
+  effect: |
+    Whenever your target makes an attack roll, they can add 1d4 to their result. Whenever they are the target of an attack, they can add 1d4 to their DC against the attack.
+
+    #### Heightened
+
+    For each +1 Mana, you target one additional creature.
+
+Enhance Ability:
+  tier: Novice
+  type: 1-Action
+  brief: You enhance your target's attribute, helping them out of combat
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    duration: 1 hour
+  effect: |
+    Choose an attribute. Your target has advantage on die rolls with that attribute other than attack rolls.
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+
+Exorcise:
+  tier: Novice
+  type: 1-Action
+  brief: You rebuke a spirit, damaging it and forcing it to free
+  traits: [Attack, Radiant, Specialize, Spell]
+  tags:
+    cost: 1 Mana
+    range: 60 feet
+    requirements: Your target is a [[Spirit]] creature
+    duration: Varies
+  effect: |
+    Make a Magic attack roll against your target's Spirit DC.
+
+    Critical Success
+    : Your target takes 4d10 damage and is {terrified} for 1 minute
+
+    Success
+    : Your target takes 4d10 damage and is {terrified} until the end of their next turn
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d10.
+
+    If you add +3 Mana, this spell loses its range and gains an area of a 30-foot emanation.
+  aside: |
+    ### Specializations
+
+    Choose one of [[Fey]], [[Outsider]], or [[Undead]]. When you cast **Exorcise** on a creature with that trait, you have advantage on the attack roll.
+
+Guiding Bolt:
+  tier: Novice
+  type: 1-Action
+  brief: You shoot a bolt of light at an enemy, highlighting their weak points
+  traits: [Attack, Cantrip, Light, Radiant, Spell]
+  tags:
+    cost: 0 Mana
+    range: 120 feet
+    duration: 1 minute
+  effect: |
+    Make a Magic attack roll against your target's Defense.
+
+    Success
+    : Your target takes 1d6 damage
+
+    Whether or not this attack succeeds, your target glitters with light, shining dim light out to 10 feet. The next attack roll against your target has advantage.
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d6.
+
+Heal:
+  tier: Novice
+  type: 1-Action
+  brief: You restore a creature's health and cure diseases
+  traits: [Healing, Spell]
+  tags:
+    cost: 1 Mana
+    target: One creature you can reach
+  effect: |
+    Your target heals 5 health and is cured of any nonmagical diseases. If your target is  an [[Outsider]] or an [[Undead]], they instead take 4d6 [[Radiant]] damage.
+
+    #### Heightened
+
+    For each +1 Mana, the healing increases by 5 and the damage increases by 2d6.
+
+    If you add +3 Mana, this spell loses its range and gains an area of a 30-foot emanation.
+
+Restorative Magic:
+  tier: Novice
+  type: Free
+  brief: You heal a creature that you affect with another spell
+  traits: [Healing]
+  tags:
+    trigger: You cast a spell
+    target: One creature targeted by the triggering spell
+  effect: |
+    Your target heals an amount equal to twice the cost of the triggering spell.
+
+Smite Evil:
+  tier: Novice
+  type: Free
+  brief: You punish an evil target with powerful radiant energy
+  traits: [Radiant, Spell]
+  tags:
+    cost: 1 Mana
+    trigger: You succeed on a {Strike}
+    target: One target of your Strike
+  effect: |
+    Your target takes 2d6 damage. If your target is an [[Outsider]] or an [[Undead]], this damage is doubled.
+
+    If your Strike was a ranged Strike, the damage dice are d4s instead of d6s.
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d6.
+
+Crusader's Mantle:
+  tier: Veteran
+  type: 1-Action
+  brief: You radiate holy power, awakening boldness in your allies
+  traits: [Radiant, Spell]
+  tags:
+    cost: 3 Mana
+    area: 30-foot emanation, which follows you for the duration
+    duration: 1 minute
+  effect: |
+    Whenever a friendly creature in the area (including you) succeeds on a {Strike}, they deal an extra 1d6 damage.
+
+    #### Heightened
+
+    For each +3 Mana, the damage bonus increases by 1d6.
+
+Daylight:
+  tier: Veteran
+  type: 1-Action
+  brief: You cover an area in bright light that illuminates and blinds enemies
+  traits: [Light, Spell]
+  tags:
+    cost: 3 Mana
+    range: 120 feet
+    area: 60-foot burst
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    The spell's area is filled with sunlight. It shines bright light out to a distance of 60 feet and dim light out to a distance of 120 feet.
+
+    You can use the **Blinding Light**, **Sunbeam**, and **Warding Light** powers.
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst increases by 20 feet.
+  tabs:
+    Blinding Light:
+      type: Free
+      traits: [Attack, Light]
+      tags:
+        target: One creature in the area of **Daylight**
+        duration: Varies
+      effect: |
+        Make a Magic attack roll against your target's Strength DC.
+
+        Critical Success
+        : Your target is {blinded} for 1 minute
+
+        Success
+        : Your target is {blinded} until the end of their next turn
+
+        Failure
+        : Your target is {dazzled} until the end of their next turn
+    Sunbeam:
+      type: 1-Action
+      traits: [Attack, Light, Radiant]
+      tags:
+        target: One creature in the area of **Daylight**
+      effect: |
+        Make a Magic attack roll against your target's Strength DC.
+
+        Success
+        : Your target takes 4d6 damage
+    Warding Light:
+      type: Reaction
+      traits: [Light]
+      tags:
+        target: One creature in the area of **Daylight**
+        trigger: An enemy attacks your target
+      effect: |
+        The triggering attack has disadvantage.
+
+Healing Spirit:
+  tier: Veteran
+  type: 1-Action
+  brief: You summon a radiant spirit that guards an area for you
+  traits: [Spell]
+  tags:
+    cost: 3 Mana
+    range: 120 feet
+    area: 30-foot burst
+    duration: Sustained, up to 1 minute
+  effect: |
+    You can use the **Healing Wave** power.
+
+    As an optional rule, the **Healing Wave** power can't heal targets to higher health than they were at the start of your last turn. The GM should enforce this rule if players try to abuse Healing Spirit out of combat.
+
+    #### Heightened
+
+    For each +2 Mana, the healing and damage each increase by 1d6.
+  aside: |
+    {% smallpower %}
+    Healing Wave:
+      type: Free
+      traits: [Healing, Radiant]
+      tags:
+        target: All creatures in the area of **Healing Spirit**
+        requirements: Your target took damage since the start of your last turn, or your target is an [[Outsider]] or [[Undead]]
+      effect: |
+        Your target heals 2d6 health. If your target is an [[Outsider]] or [[Undead]], they instead take 2d6 damage.
+    {% endsmallpower %}
+
+Revivify:
+  tier: Veteran
+  type: 1-Action
+  brief: You revive a recently-deceased creature, returning them to life
+  traits: [Healing, Spell]
+  tags:
+    cost: 3 Mana
+    target: One dead creature you can reach
+    requirements: Your target died within the last 10 minutes
+  effect: |
+    Your target returns to life with 0 health and 4 fatigue.
+
+    #### Heightened
+
+    For each +1 Mana, the time limit since your target died is doubled.
+
+Sacred Spell:
+  tier: Veteran
+  type: Free
+  brief: You channel divine energy to greatly buff a spell you cast
+  traits: [Encounter]
+  tags:
+    trigger: You cast a spell
+    requirements: Either the triggering spell is a Healer spell or it doesn't deal damage
+  effect: |
+    The triggering spell has -2 cost.
+
+Consecrate:
+  tier: Master
+  type: 1-Action
+  brief: You imbue an area with sacred magic that affects creatures inside
+  traits: [Ritual, Spell]
+  tags:
+    cost: 6 Mana
+    range: 30 feet
+    area: 60-foot burst
+    duration: Forever
+  effect: |
+    Choose two effects from the list below. You can choose for each effect to include or exclude certain types of creatures, such as creatures that follow a specific diety or creatures of a specific race. Your GM may let you make up your own effects.
+
+    If an effect asks for a roll, a creature can only attempt the roll once per turn. On a success, the creature is immune to that effect for an hour.
+
+    ***Binding.*** Creatures must succeed on a Spirit roll to leave the area.
+
+    ***Courage.*** Creatures in the area are immune to [[Fear]] effects.
+
+    ***Destruction.*** Creatures in the area take 2d6 [[Radiant]] damage at the start of each of their turns.
+
+    ***Exclusion.*** Creatures must succeed on a Spirit roll to enter the area.
+
+    ***Fear.*** Creatures in the area must succeed on a Spirit roll or be {terrified} of the area.
+
+    ***Hinderance.*** Creatures in the area must succeed on a Spirit roll or be {dazzled}.
+
+    ***Protection.*** Creatures in the area have 10 Shield against one damage type.
+
+    ***Vulnerability.*** Creatures in the area have 10 Weakness against one damage type.
+
+    #### Heightened
+
+    For each +2 Mana, you can choose another effect.
+
+Holy Aura:
+  tier: Master
+  type: 1-Action
+  brief: You shine with an aura that protects all your allies from harm
+  traits: [Spell]
+  tags:
+    cost: 8 Mana
+    area: 30-foot emanation, which follows you for the duration
+    duration: Sustained, up to 1 minute
+  effect: |
+    Attacks have disadvantage against your allies in the area (including you).
+
+    When you use this power, choose one of the following effects.
+
+    ***Hope.*** Your allies in the area are immune to harmful [[Emotion]] effects.
+
+    ***Purity.*** Your allies in the area have 10 [[Toxic]] Shield and 10 [[Necrotic]] Shield.
+
+    ***Vitality.*** At the start of each of your turns, your allies in the area heal 1d6 health.
+
+    #### Heightened
+
+    For each +2 Mana, you can choose another effect.
+
+Panacea:
+  tier: Master
+  type: Passive
+  brief: Your healing cures a creature of any and all negative conditions
+  tags:
+    prerequisites: Heal
+  effect: |
+    When you use your {Heal} power on a willing creature, you learn all powers currently affecting your target, and you can immediately end any number of those powers.
+
+Blessed Healer:
+  tier: Ribbon
+  type: Passive
+  brief: Your healing spells heal you as well when you cast them on others
+  effect: |
+    Whenever you cast a [[Healing]] spell, you heal health equal to the spell's cost.
+
+Ceremony:
+  tier: Ribbon
+  type: Passive
+  brief: You can perform a variety of magical religious ceremonies
+  effect: |
+    You can perform any of the following ceremonies. Each ceremony takes an hour to complete. After a creature benefits from a ceremony, they can't gain the same benefit again for a year.
+
+    ***Bless Water.*** You transform water into holy water. Covering a creature in holy water deals 0 [[Radiant]] damage to it. Thus holy water is safe for normal people, but dangerous for creatures that have [[Radiant]] Weakness, like [[Outsider]] and [[Undead]] creatures.
+
+    ***Dedication.*** You accept a person who dedicates themselves to your religion. Once in the next week, your target can reroll one die roll they make.
+
+    ***Funeral Rite.*** You bless a soul and send it to heaven. A corpse you target can never become an undead, or an undead you target passes on peacefully to heaven.
+
+    ***Wedding.*** You marry two or more willing adults. For the next week, each target has a +1 bonus to all their attribute DCs.
+
+Gentle Affect:
+  tier: Ribbon
+  type: Passive
+  brief: You appear generally peaceful and nonthreatening to others
+  traits: [Reputation]
+  effect: |
+    Other people intially judge you as gentle, peaceful, and kindly. This usually makes people more likely to trust and like you, and less likely to believe you're capable of violence.
+
+Light:
+  tier: Ribbon
+  type: 1-Action
+  brief: You cause an object to shine bright light like a torch
+  traits: [Cantrip, Light, Spell]
+  tags:
+    cost: 0 Mana
+    target: An unattended object you can reach
+    duration: 8 hours
+  effect: |
+    Your target shines bright light in all directions. The light is as bright as a torch, illuminating the area within 30 feet.
+
+    #### Heightened
+    
+    For each +1 Mana, the radius of illumination increases by 30 feet.
+
+Sanctuary:
+  tier: Ribbon
+  type: Passive
+  brief: You're hard to hurt while you don't attack your enemies
+  effect: |
+    You have a +2 bonus to Defense and to your Spirit DC. If you use any [[Attack]] power, you lose this benefit for the next hour.

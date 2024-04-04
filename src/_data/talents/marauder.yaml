@@ -1,0 +1,323 @@
+Charge:
+  tier: Novice
+  type: Free
+  brief: You charge aggressively towards an enemy, gaining bonus damage
+  traits: [Encounter]
+  effect: |
+    {Stride} in a straight line towards an enemy you can see. If you moved at least 10 feet, your next melee {Strike} against that enemy before the end of this turn deals an extra 1d6 damage on a success.
+
+Cleave:
+  tier: Novice
+  type: Reaction
+  brief: You cleave through one foe and into another
+  tags:
+    trigger: Your melee {Strike} reduces a creature to 0 HP, and another foe is adjacent to that creature
+  effect: |
+    You swing clear through one foe and into another. Make a melee {Strike} against the second foe.
+
+Iron Sweep:
+  tier: Novice
+  type: 1-Action
+  brief: You made a wide swing that hits multiple targets at once
+  effect: |
+    Make a melee {Strike}. This Strike targets two enemies you can reach that are adjacent to each other.
+
+Mindless Fury:
+  tier: Novice
+  type: Passive
+  brief: Your mind is filled with rage instead of thoughts, disrupting mental effects
+  effect: |
+    You have a +5 bonus to your DC against [[Mental]] powers.
+
+Power Attack:
+  tier: Novice
+  type: 1-Action
+  brief: You sacrifice the accuracy of your strike for pure power
+  effect: |
+    Make a melee {Strike} with a -5 penalty. If this Strike hits, its base damage is doubled.
+
+Rage:
+  tier: Novice
+  type: Free
+  brief: You enter a furious rage, gaining offensive power at the cost of defense
+  traits: [Daily, Emotion, Mental]
+  tags:
+    duration: 1 minute, until you can't sense any enemies, or until you fall {unconscious}
+  effect: |
+    You tap into your inner fury and begin raging. While raging:
+    * You have +5 damage to Strikes that add Strength to the attack roll
+    * You have 5 [[Physical]] Shield
+    * You take a -2 penalty to Defense
+    * You can't use [[Concentrate]] powers
+
+Reckless Attack:
+  tier: Novice
+  type: Free
+  brief: You lash out aggressively, ignoring your own defenses
+  tags:
+    duration: Until the start of your next turn
+  effect: |
+    You have advantage on all melee Strikes, but you are {flat-footed}.
+
+Second Wind:
+  tier: Novice
+  type: Free
+  brief: You find your second wind when most injured, preparing to fight on
+  traits: [Daily, Healing]
+  tags:
+    requirements: You are {bloodied}, and you are currently in combat
+  effect: |
+    You heal 2d6 + 2 * Strength health.
+
+Bloody Retribution:
+  tier: Veteran
+  type: Free
+  brief: You turn the pain of your wounds into a powerful strike
+  traits: [Daily]
+  tags:
+    requirements: You are {bloodied}
+    trigger: You make a melee {Strike} against a creature that has dealt damage to you within the past minute
+  effect: |
+    You have a +10 bonus to the triggering Strike.
+
+Frequent Rage:
+  tier: Veteran
+  type: Passive
+  brief: You are able to rage much more often
+  tags:
+    prerequisites: Rage
+  effect: |
+    Your {Rage} power is [[Encounter]] instead of [[Daily]].
+  fluff: |
+    That's my secret, Cap. I'm always angry.
+
+Ground Smash:
+  tier: Veteran
+  type: 1-Action
+  brief: You smash the ground, sending out a shockwave in all directions
+  traits: [Bludgeoning, Encounter]
+  tags:
+    area: 30-foot cone or 20-foot emanation
+  effect: |
+    Make a Strength attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes 3d6 + Strength damage and falls {prone}
+
+    Failure
+    : Half damage
+
+Retaliation:
+  tier: Veteran
+  type: Reaction
+  brief: You immediately strike out in revenge when you get hit
+  tags:
+    trigger: You take damage from a creature you can reach
+  effect: |
+    Make a melee {Strike} against the triggering creature.
+
+Third Wind:
+  tier: Veteran
+  type: Passive
+  brief: You never run out of second winds, and can always recover strength
+  tags:
+    prerequisites: Second Wind
+  effect: |
+    Your {Second Wind} power is [[Encounter]] instead of [[Daily]].
+
+Iron Whirlwind:
+  tier: Master
+  type: Passive
+  brief: You swing all around yourself, targeting many enemies at once
+  tags:
+    prerequisites: Iron Sweep
+  effect: |
+    When you use your {Iron Sweep} power, you can target up to 5 enemies you can reach. These enemies do not have to be adjacent to one another.
+
+Relentless:
+  tier: Master
+  type: Reaction
+  brief: You are almost impossible to take down, as you just keep fighting
+  tags:
+    trigger: You fall to 0 health
+  effect: |
+    Make a Strength roll against DC 10.
+
+    Success
+    : You instead fall to 1 health
+
+Supernatural Rage:
+  tier: Master
+  type: Passive
+  brief: You gain one of a number of magical effects while raging
+  traits: [Specialize]
+  tags:
+    prerequisites: Rage
+  effect: |
+    When you use your {Rage} power, you can choose for it to have an additional magical effect. The effect is determined by the specialization you choose.
+  aside: |
+    ### Specializations
+
+    #### Animal
+    *You transform into semi-humanoid wild beast.*
+
+    You have a +10 foot bonus to Speed. The damage bonus of your Rage power increases to +8.
+
+    #### Dragon
+    *You grow colorful scales and sprout draconic wings.*
+
+    You can fly at your full Speed. You have 20 Shield against one of [[Cold]], [[Electricity]], [[Fire]], or [[Toxic]], and the bonus damage of your Rage power gains that trait.
+
+    #### Giant
+    *You rise to a tremendous size, towering over others.*
+
+    Your Size increases by +2 and your reach increases by 10 feet. The damage bonus of your Rage power increases to +8.
+
+    #### Storm
+    *You are surrounded by the elemental fury of the storm.*
+
+    When another creature starts its turn within 10 feet of you, it takes 2d6 damage. This power gains one of the [[Cold]], [[Electricity]], or [[Fire]] traits.
+
+Abs of Steel:
+  tier: Ribbon
+  type: Passive
+  brief: Your bare skin is as tough as others' metal armor
+  tags:
+    requirements: You are not wearing apparel
+  effect: |
+    Your Defense is equal to 10 + Strength.
+  fluff: |
+    It is strongly recommended that your character shows at least some skin in the stomach/torso area while using this power. What's the point of having abs of steel if no one can see them?
+
+Environmental Resilience:
+  tier: Ribbon
+  type: Passive
+  brief: You are used to surviving in harsh climates
+  effect: |
+    Moderately harsh environments, such as extreme temperatures or strong winds, have no adverse effect on you. This doesn't apply to environments that are extreme enough to deal damage, such as the heat of a bonfire or the pressure of the deep ocean.
+
+Frenzy:
+  tier: Ribbon
+  type: Free
+  brief: You lash out in a frenzy, recklessly using up all your stamina
+  tags:
+    trigger: You make a melee {Strike}
+  effect: |
+    You have a +5 bonus to the triggering Strike. At the end of your turn, you gain 1 fatigue.
+
+Powerful Build:
+  tier: Ribbon
+  type: Passive
+  brief: You are bulky and strong, and are accustomed to carrying heavy loads
+  effect: |
+    Your carrying capacity is doubled.
+
+Property Destruction:
+  tier: Ribbon
+  type: Passive
+  brief: You are adept at tearing objects into tiny pieces
+  effect: |
+    Your melee Strikes deal double damage against inanimate objects.
+
+# Brutish Shove:
+#   tier: Novice
+#   type: Free
+#   tags:
+#     trigger: You hit a creature with a {Strike} with a two-handed melee weapon
+#     requirements: The creature is your size or smaller
+#   effect:
+#     Throwing your weight behind your attack, you hit your opponent hard enough to make them stumble back. You can automatically apply the effects of the {Shove} action (including the critical success effect, if your Strike was a critical hit). If you move to follow the target, your movement doesn't trigger reactions.
+
+# Mountain Stance:
+#   tier: Novice
+#   type: Free
+#   traits: [Stance]
+#   tags:
+#     requirements: You are unarmored and touching the ground
+#   effect: |
+#     You end the stance of an implacable mountain and strike with the weight of an avalanche. The only Strikes you can make are **falling stone** unarmed attacks. These deal 1d8 bludgeoning damage and have the forceful and unarmed traits.
+
+#     While in Mountain Stance, you gain a +2 bonus to Toughness, but you take a -2 penalty to Agility.
+
+# Power Attack:
+#   tier: Novice
+#   type: 1-Action
+#   effect:
+#     You unleash a particularly powerful attack that clobbers your foe but leaves you a bit unsteady. Make a melee {Strike} at -5 to the attack roll. If this Strike hits, you deal an extra die of weapon damage.
+
+# Rage:
+#   tier: Novice
+#   type: 1-Action
+#   brief: You enter a furious rage, gaining offensive power at the cost of defense
+#   traits: [Emotion, Encounter, Mental]
+#   tags:
+#     duration:
+#       1 minute, until you can't sense any enemies, or until you fall unconscious
+#   effect: |
+#     You tap into your inner fury and begin raging. You gain temporary HP equal to Berserker Level + Constitution. While raging, you gain the following benefits:
+#     * You deal 2 additional damage with melee or thrown weapon Strikes. This additional damage is halved if your weapon or unarmed attack is agile.
+#     * You take a -2 penalty to Agility
+#     * You can't use [[Concentrate]] powers
+
+# Sudden Charge:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Flourish, Open]
+#   effect:
+#     With a quick sprint, you dash up to your foe and swing. {Stride} twice. If
+#     you end your movement within reach of at least one enemy, you can make a
+#     melee {Strike} against that enemy.
+
+# Come and Get Me:
+#   tier: Veteran
+#   type: 1-Action
+#   tags:
+#     prerequisites: Rage
+#     requirements: You are raging
+#   effect:
+#     You open yourself to attacks so you can respond in turn. Until your rage ends, you are {flat-footed}, and damage rolls against you gain a +2 bonus. If a creature hits you, that creature is {flat-footed} to you until the end of your next turn. If you hit it before the end of your next turn, you gain temporary HP equal to your Constitution, or double that on a critical hit, which last until the end of your rage.
+
+# Furious Focus:
+#   tier: Veteran
+#   type: Passive
+#   tags:
+#     prerequisites: Power Attack
+#   effect:
+#     You've learned to maintain your balance even when swinging furiously. When you make a Power Attack with a melee weapon you're wielding in two hands, you only take a -2 penalty to the attack roll instead of -5.
+
+# Giant's Stature:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Polymorph]
+#   tags:
+#     prerequisites: Rage
+#     requirements: You are raging, and you are Medium size or smaller
+#   effect:
+#     You grow to incredible size. You become Large, increasing your reach by 5 feet and taking a -1 penalty to Agility until you stop raging. Your equipment grows with you.
+
+# Awesome Blow:
+#   tier: Master
+#   type: 1-Action
+#   tags:
+#     requirements: Your last action was a successful {Strike}
+#   effect:
+#     The weight of your swing drives your enemy back. Attempt an {Athletics} roll against your target's Fortitude save.
+#   critical-success: You gain the critical success effect of a {Shove}, then the critical success effect of a {Trip} against the target
+#   success: You gain the success effect of a {Shove}, then the success effect of a {Trip} against the target
+#   failure: You gain the success effect of a {Shove} against the target
+
+# Vengeful Strike:
+#   tier: Master
+#   type: Reaction
+#   tags:
+#     prerequisites: Come and Get Me
+#     trigger: A creature within your reach succeeds or critically succeeds at an attack against you
+#     requirements: You're under the effect of Come and Get Me
+#   effect:
+#     When struck by an enemy, you respond in turn. Make a melee {Strike} against the triggering creature. This Strike doesn't count toward MAP, and MAP doesn't apply to this Strike.
+
+# Savage Critical:
+#   tier: Epic
+#   type: Passive
+#   effect:
+#     The wounds you inflict are greivous. When you {Strike}, you critically succeed if you roll a 19 on the die as long as that result is a success.

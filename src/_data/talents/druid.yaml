@@ -1,0 +1,484 @@
+Animal Friendship:
+  tier: Novice
+  type: 1-Action
+  brief: You calm, befriend, or permanently ally with an animal
+  traits: [Auditory, Emotion, Ritual, Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    requirements: Your target is an unintelligent animal
+    duration: 1 hour, until you or your companions harm your target, or until you cast Animal Friendship on your target again
+  effect: |
+    If you or your companions are currently fighting your target, this spell gains the [[Attack]] trait, and you must make a Magic attack roll against your target's Spirit DC. On a failure or critical failure, this spell has no effect.
+
+    Your target's [attitude](http://localhost:4000/adventuring-rules.html#npc-attitude) towards you improves by two levels, such as from hostile to indifferent, or from indifferent to helpful.
+
+    If your target was already helpful towards you, and if its CR is no more than half your level, then it becomes totally loyal to you and gains the [[Minion]] trait. Your target obeys any command you give it, even putting itself at risk, unless those directions are obviously suicidal.
+
+    #### Heightened
+
+    If you add +1 Mana, this spell's duration changes to 24 hours. If you instead add +2 Mana, this spell's duration changes to Forever.
+
+    If you add +2 Mana, this spell gains an area of a 30-foot emanation, and it targets any number of animals in the area.
+
+Beast Link:
+  tier: Novice
+  type: Free
+  brief: You form a telepathic connection that lets you communicate with an animal
+  traits: [Mental, Spell]
+  tags:
+    cost: 1 Mana
+    target: An animal you can reach
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    You form a telepathic connection with your target. You always know the exact direction and distance to your target, and vice versa. You and your target can choose to mentally share thoughts, senses, emotions, and memories.
+
+    *This spell lets you speak with your target, though most animals lack the intelligence to understand sophisticated concepts. If you and your target continuously share senses, you can effectively see through each others' eyes.*
+
+    #### Heightened
+
+    If you add +1 Mana, this spell's duration changes to 24 hours. If you instead add +2 Mana, this spell's duration changes to Forever.
+
+    If you add +2 Mana, this spell gains an area of a 30-foot emanation, and it targets any number of animals in the area.
+
+Entangle:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure ensnaring vines from the ground to trap your foes
+  traits: [Attack, Spell]
+  tags:
+    cost: 1 Mana
+    range: 60 feet
+    area: 10-foot burst
+    requirements: Your target is on the ground
+    duration: Sustained, up to 1 hour
+  effect: |
+    Make a Magic attack roll against your target's Agility DC
+
+    Critical Success
+    : Your target is {restrained}
+
+    Success
+    : Your target is {immobilized}
+
+    Failure
+    : Your target is {slowed}
+
+    #### Heightened
+
+    For each +1 Mana, the radius increases by 10 feet.
+
+Gather Swarm:
+  tier: Novice
+  type: Free
+  brief: You gather a swarm of tiny animals or spirits that attack at your command
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    duration: 1 minute
+  effect: |
+    You can use the **Command Swarm** power.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Command Swarm** increases by 1d6, and the distance moved increases by 5 feet.
+  aside: |
+    {% smallpower %}
+    Command Swarm:
+      type: 1-Action
+      traits: [Attack, Piercing]
+      tags:
+        range: 30 feet
+      effect: |
+        Make a Magic attack roll against your target's Strength DC.
+
+        Success
+        : Your target takes 2d6 damage and is moved up to 15 feet in a direction of your choice
+    {% endsmallpower %}
+
+Goodberry:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure a handful of berries with magical healing properties
+  traits: [Healing, Spell]
+  tags:
+    cost: 1 Mana
+    duration: 1 hour
+  effect: |
+    Up to 10 berries appear in your hand. A creature can eat a berry (or feed it to an ally) with the {Interact} power. Eating a berry heals 1 health and provides enough nourishment to sustain a normal human for one day. Any uneaten berries disappear when the duration ends.
+
+    #### Heightened
+
+    For each +1 Mana, the healing of each berry increases by 1.
+
+Summon Animal:
+  tier: Novice
+  type: 1-Action
+  brief: You summon a fey spirit that takes the form of a normal animal
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    duration: 1 hour
+  effect: |
+    You summon a [[Minion]] eagle or wolf at the target point. Your minion loyally follows all your orders, unless those orders are obviously suicidal. When the spell's duration ends, your minion fades back into the spirit world.
+
+    You are free to describe the species of animal you summon as something other than the type listed, as long as you keep the same stats. For example, you could summon a hawk, owl, or raven using the eagle stats, or you could summon a brown bear, deer, or panther using the wolf stats.
+
+    #### Heightened
+
+    For each +1 Mana, your minion's maximum health increases by 10, and its Strength or Agility increases by 1.
+  aside: |
+    {% smallpower %}
+    Eagle Stats:
+      traits: [Animal, Spirit, Unintelligent]
+      tags:
+        attributes: Strength -2, Agilty +2, Intellect -4, Spirit +0
+        other stats: Health 5, Defense 12, Speed 60 feet (fly), Size -1
+      effect: |
+        The eagle adds +6 to Notice rolls that rely on sight instead of its normal modifier.
+
+        The eagle can slash with its claws as a [[Finesse]] melee weapon that deals 1d4 [[Slashing]] base damage.
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Wolf Stats:
+      traits: [Animal, Spirit, Unintelligent]
+      tags:
+        attributes: Strength +1, Agilty +1, Intellect -4, Spirit -1
+        other stats: Health 15, Defense 12, Speed 40 feet, Size +0
+      effect: |
+        The wolf can bite with its teeth as a melee weapon that deals 1d8 [[Piercing]] base damage.
+    {% endsmallpower %}
+
+Summon Fey:
+  tier: Novice
+  type: 1-Action
+  brief: You summon a fey spirit that takes the form of a normal animal
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    duration: 1 hour
+  effect: |
+    You summon a [[Minion]] dryad or pixie at the target point. Your minion loyally follows all your orders, unless those orders are obviously suicidal. When the spell's duration ends, your minion fades back into the spirit world.
+
+    #### Heightened
+
+    For each +1 Mana, your minion's maximum health increases by 10, and its Agility or Spirit increases by 1.
+  aside: |
+    {% smallpower %}
+    Dryad Stats:
+      traits: [Fey, Spirit]
+      tags:
+        attributes: Strength -1, Agilty +1, Intellect +1, Spirit +3
+        other stats: Health 15, Defense 11, Speed 30 feet, Size +0
+      effect: |
+        The dryad knows one of the following lists of spells.
+        * {Thorn Whip} and {Spark of Growth}
+        * {Suggestion} (as an [[Encounter]] power) and {Friends}
+        
+        These spells have no Mana cost, but cannot be heightened. The dryad's Magic stat is equal to its Spirit.
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Pixie Stats:
+      traits: [Fey, Spirit]
+      tags:
+        attributes: Strength -5, Agilty +3, Intellect -2, Spirit +1
+        other stats: Health 5, Defense 15, Speed 30 feet, Size -3
+      effect: |
+        The pixie can cast {Invisibility} as an [[Encounter]] power. This spell has no Mana cost, but cannot be heightened.
+    {% endsmallpower %}
+
+Thorn Whip:
+  tier: Novice
+  type: 1-Action
+  brief: You strike at an enemy with writhing thorn-covered vines
+  traits: [Attack, Cantrip, Piercing, Spell]
+  tags:
+    cost: 0 Mana
+    area: 30-foot cone
+  effect: |
+    Make a Magic attack roll against your target's Agility DC.
+
+    Critical Success
+    : Double damage
+
+    Success
+    : Your target takes 1d6 damage and is pulled up to 10 feet towards you
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 1d6.
+
+Awaken:
+  tier: Veteran
+  type: 1-Action
+  brief: You grant an animal humanoid intelligence and opposable thumbs
+  traits: [Ritual, Spell]
+  tags:
+    cost: 5 Mana
+    target: One unintelligent animal you can reach
+  effect: |
+    Your target becomes sentient, gaining intelligence as an [Awakened](awakened.html). Your target's form morphs to become more humanoid: they gain the proper limbs, can breathe air, gain opposable thumbs, can speak humanoid language, and so on.
+
+    After the transformation, your target is usually friendly towards you, though they may be shocked by the sudden change. If your target was helpful to you before the transformation, they act as a [[Minion]] loyal to you for the next hour, after which they become a normal NPC.
+
+Expert Summoner:
+  tier: Veteran
+  type: Passive
+  brief: You can summon spirits that are stronger and more varied than before
+  tags:
+    prerequisites: Summon Animal or Summon Fey
+  effect: |
+    When you cast {Summon Animal}, you can choose for your minion to gain two of the following abilities.
+
+    ***Megafauna.*** Your minion has +1 Size, +5 feet reach, and +2 Strength.
+
+    ***Natural Armor.*** Your minion has +2 Defense and +10 Health.
+
+    ***Trip Attack.*** When your minion suceeds on a {Strike}, their target falls {prone}.
+
+    ***Wild Speed.*** Your minion has +20 feet Speed and +2 Agility.
+
+    When you cast {Summon Fey}, you can choose for your minion to gain two of the following abilities.
+
+    ***Fascinating.*** Your minion gains the {Fascinating Performance} skill feat.
+
+    ***Fey Magic.*** Your minion learns a Novice [[Cantrip]] talent of your choice.
+
+    ***Hover.*** Your minion has +10 Speed and can fly up to 20 feet above the ground.
+
+    ***Tricksy.*** Your minion has +1 Defense, +1 Agility, and +1 Spirit.
+
+Insect Plague:
+  tier: Veteran
+  type: 1-Action
+  brief: You fill an area with biting insects that damage and distract enemies
+  traits: [Spell]
+  tags:
+    cost: 5 Mana
+    range: 60 feet
+    area: 20-foot burst
+    duration: Sustained, up to 10 minutes
+  effect: |
+    You conjure a swarm of insects in the spell's area. The area of the swarm is difficult terrain. When you sustain this spell, you can move the swarm up to 30 feet in any direction.
+
+    You can use the **Insect Bites** power.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Insect Bites** increases by 1d6.
+  aside: |
+    {% smallpower %}
+    Insect Bites:
+      type: Free
+      traits: [Attack, Piercing]
+      tags:
+        target: One creature in the area of **Insect Plague**
+      effect: |
+        Make a Magic attack roll against your target's Strength DC.
+
+        Success
+        : Your target takes 5d6 damage and is {dazzled} and {slowed}
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+
+Instant Tree:
+  tier: Veteran
+  type: 1-Action
+  brief: You cause a tree to appear, growing with explosive force
+  traits: [Attack, Bludgeoning, Spell]
+  tags:
+    cost: 3 Mana
+    range: 60 feet
+    area: 20-foot line
+  effect: |
+    A tree grows almost instantly, starting from the specified point, to fill the spell's area. You choose the species of tree. Once the tree is done growing, it stays around forever as a normal tree.
+
+    Make a Magic attack roll against your target's Agility DC.
+
+    Critical Success
+    : Double damage and double push distance
+
+    Success
+    : Your target takes 4d10 damage and is pushed 20 feet away from the base of the tree
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 1d10, the area extends by 10 feet, and the push distance increases by 10 feet.
+  fluff: |
+    We can never forget the Treeagle incident of 2015.
+
+Tree Stride:
+  tier: Veteran
+  type: 1-Action
+  brief: You can repeatedly teleport between all nearby trees
+  traits: [Spell]
+  tags:
+    cost: 3 Mana
+    range: 200 feet
+    duration: 1 minute
+  effect: |
+    You know the exact location of all trees within range. You can use the **Tree Step** power.
+
+    #### Heightened
+
+    If you add +1 Mana, the duration increases to 1 hour.
+
+    If you add +1 Mana, the range increases to 500 feet.
+  aside: |
+    {% smallpower %}
+    Tree Step:
+      type: Free
+      traits: [Teleportation]
+      tags:
+        requirements: You are adjacent to a tree
+      effect: |
+        Choose a tree within the range of **Tree Stride**. You teleport to an empty space adjacent to that tree.
+    {% endsmallpower %}
+
+Control Plants:
+  tier: Master
+  type: 1-Action
+  brief: You animate and control all plants in a large area
+  traits: [Spell]
+  tags:
+    cost: 6 Mana
+    range: 120 feet
+    area: 60-foot burst
+    target: Any number of unintelligent plants in the area
+    duration: 10 minutes
+  effect: |
+    Your target gains the [[Minion]] trait and is completely loyal to you. If your target's Speed is less than 10 feet, their Speed becomes 10 feet. Your target can use the **Crushing Vine** and **Grasping Vine** powers. Your target uses your Magic score instead of its own for these powers.
+
+    *This spell targets both magical plant creatures and normal immobile plants.*
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Crushing Vine** increases by 1d6, and the push distance of **Grasping Vine** increases by 10 feet.
+  aside: |
+    {% smallpower %}
+    Crushing Vine:
+      type: 1-Action
+      traits: [Attack, Bludgeoning]
+      tags:
+        range: 30 feet
+      effect: |
+        Make a Magic attack roll against your target's Defense.
+
+        Success
+        : Your target takes 7d6 damage
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Grasping Vine:
+      type: 1-Action
+      traits: [Attack]
+      tags:
+        range: 30 feet
+        duration: Until the end of your next turn
+      effect: |
+        Make a Magic attack roll against your target's Strength DC.
+
+        Critical Success
+        : As success, and your target is {restrained}
+
+        Success
+        : Your target is {immobilized}, and you push your target up to 20 feet
+    {% endsmallpower %}
+
+Permanent Summons:
+  tier: Master
+  type: Passive
+  brief: Your summoned creatures can stay forever
+  tags:
+    prerequisites: Summon Animal or Summon Fey
+  effect: |
+    Your {Summon Animal} and {Summon Fey} powers gain the following effect.
+
+    #### Heightened
+
+    If you add +2 Mana, the duration changes to Forever. However, your maximum Mana decreases by half the cost of this spell (before any reductions to the cost). If you have multiple permanent summons, this penalty only applies to the highest cost summon.
+
+Swarm Body:
+  tier: Master
+  type: Reaction
+  brief: You briefly transform into a swarm of insects, avoiding a hit
+  traits: [Polymorph, Spell]
+  tags:
+    cost: 6 Mana
+    trigger: You are targeted by an attack
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    The triggering attack no longer targets you, as you transform into a swarm of insects that scatter in every direction. While you are a swarm, you gain the following benefits:
+    * You have a +10 bonus to your DC against all attacks, except against attacks that target all creatures in an area
+    * You have a +20 feet bonus to Speed
+    * You can squeeze through tiny spaces, even ones as small as a few inches wide
+
+    *The real question is whether you were made of bees the whole time.*
+
+Animal Messenger:
+  tier: Ribbon
+  type: 1-Action
+  brief: You send an animal to carry a message to a specific distact recipient
+  traits: [Ritual, Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    requirements: Your target is an unintelligent animal of Size -2 or smaller that is not hostile towards you
+    duration: 1 day, or until the message is delivered
+  effect: |
+    Specify a location that you have visited or that you know how to reach, and describe a recipient there. Also speak a short message, up to 25 words. Your target begins to travel to the specified location and searches for the specified recipient. If your target finds someone matching the given description, they deliver your message, replicating the sound of your voice. A flying animal can travel up to 50 miles per day, other animals travel up to 25 miles per day.
+
+    #### Heightened
+
+    For each +1 Mana, the duration increases by 1 day.
+
+Detect Poison:
+  tier: Ribbon
+  type: 1-Action
+  brief: You identify and locate any nearby poisons or diseases
+  traits: [Ritual, Spell]
+  tags:
+    cost: 1 Mana
+    area: 30-foot emanation
+  effect: |
+    You detect all poisons, poisonous creatures, diseases, and diseased creatures in the area. You sense the precise location and the exact type of each poison or disease.
+
+Friend of Nature:
+  tier: Ribbon
+  type: Passive
+  brief: You naturally have the friendship and trust of animals
+  effect: |
+    Animals and sapient plants tend to like you. Unless given reason to act otherwise, they will treat you as a trusted friend or ally, and are helpful towards you. If you have some way to speak with animals, you can usually get them to perform simple favors for you.
+
+Spark of Growth:
+  tier: Ribbon
+  type: 1-Action
+  brief: You encourage a plant to grow magically quickly
+  traits: [Cantrip, Healing, Ritual, Spell]
+  tags:
+    cost: 0 Mana
+    target: An unintelligent plant you can reach
+    requirements: Your target hasn't been affected by **Spark of Growth** in the past week
+  effect: |
+    Your target instantly undergoes up to a year of normal growth. The plant might grow in size, gain or shed leaves, or grow blossoms.
+
+    #### Heightened
+
+    For each +1 Mana, your target heals 1d6 health or recovers from one disease afflicting it.
+
+Speak with Animals:
+  tier: Ribbon
+  type: Passive
+  brief: You can communicate simple concepts with animals
+  traits: [Auditory]
+  effect: |
+    You can let animals understand your speech, no matter what language you speak in. In turn, you can decipher an animal's intent by interpreting its noises and motions. Most animals lack the intelligence to understand sophisticated concepts.

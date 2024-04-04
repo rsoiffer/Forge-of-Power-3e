@@ -1,0 +1,398 @@
+Arcane Shield:
+  tier: Novice
+  type: Reaction
+  brief: You conjure a shimmering field of magical force that blocks an attack
+  traits: [Force, Spell]
+  tags:
+    cost: 1 Mana
+    trigger: An attack targets your Defense
+    duration: Until the start of your next turn
+  effect: |
+    You gain +5 Defense.
+
+Counterspell:
+  tier: Novice
+  type: Reaction
+  brief: You disrupt another caster's spell, preventing it from taking effect
+  traits: [Cantrip, Spell]
+  tags:
+    cost: 0 Mana
+    range: 120 feet
+    trigger: Your target casts a spell
+  effect: |
+    Roll a d6. If your result is higher than the cost of the triggering spell, the triggering spell doesn't take effect. The cost of the triggering spell is calcuated before any effects that reduce the spell's cost.
+
+    #### Heightened
+
+    For each +1 Mana, add 1 to the result of the d6.
+
+Death Ward:
+  tier: Novice
+  type: 1-Action
+  brief: You ward your ally against death with a last-ditch shield
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    duration: 8 hours
+  effect: |
+    When your target would fall to 0 health, they instead fall to 1 health, and this spell ends.
+
+Dispel Magic:
+  tier: Novice
+  type: 1-Action
+  brief: You dispel a magical spell, ending its effect early
+  traits: [Attack, Spell]
+  tags:
+    cost: 1 Mana
+    range: 60 feet
+  effect: |
+    Make a Magic attack roll against the Magic DC of each spell affecting your target.
+
+    Success
+    : The spell immediately ends
+
+Glyph:
+  tier: Novice
+  type: 1-Action
+  brief: You carve a magical glyph that contains another spell
+  traits: [Ritual, Spell]
+  tags:
+    cost: 2 Mana
+    materials: 1 gp of expensive chalk
+    target: A flat surface you can reach
+    duration: 1 year, until the glyph triggers, or until the glyph is destroyed
+  effect: |
+    You inscribe a small magical glyph onto your target. The glyph does nothing until it triggers. When the glyph triggers, the **Explosive Runes** effect activates.
+
+    You choose the conditions that trigger the glyph. For example, you could choose for the glyph to trigger when any creature touches or stands on the surface, when an object covering the glyph is removed, or when a creature reads the glyph. You can also specify more complex conditions, such as only triggering when a creature fails to speak a particular password. If the glyph is damaged, it triggers immediately. If two glyphs are in the same 5-foot space for 1 hour, their magic interferes and both trigger. If the glyph is moved more than 5 feet, it becomes unable to trigger for 1 minute.
+
+    Optionally, you can store a different effect in the glyph instead of **Explosive Runes**. When you cast this spell, also cast another spell of your choice. This other spell doesn't take effect as normal, but is instead stored inside the glyph. This other spell takes effect when the glyph triggers. You must specify all the parameters of the spell (including its target, any heightening, and so on) when you store it in the glyph.
+
+    Heightened (per +1 Mana)
+    : The damage of the **Explosive Runes** effect increases by 1d6
+  aside: |
+    {% smallpower %}
+    Explosive Runes:
+      traits: [Fire]
+      tags:
+        area: 20-foot burst
+      effect: |
+        Make a Magic attack roll against your target's Agility DC.
+
+        Success
+        : Your target takes 4d6 damage
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+  fluff: |
+    I prepared Explosive Runes this morning.
+
+Hold Creature:
+  tier: Novice
+  type: 1-Action
+  brief: You paralyze a creature, holding them in place with magical force
+  traits: [Attack, Force, Spell]
+  tags:
+    cost: 2 Mana
+    range: 60 feet
+    duration: Sustained, up to 1 minute
+  effect: |
+    Make a Magic attack roll against your target's Strength DC.
+
+    Critical Success
+    : Your target is {restrained} and {incapacitated}
+
+    Success
+    : Your target is {restrained}
+
+    Failure
+    : Your target is {slowed} until the end of its next turn
+
+Protector Ward:
+  tier: Novice
+  type: 1-Action
+  brief: You shield a creature with a magical ward, protecting it from hard
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    duration: 8 hours
+  effect: |
+    Your target has 10 Shield against a damage type of your choice.
+
+    #### Heightened
+
+    For each +1 Mana, the amount of Shield increases by 10.
+
+Sever Mana:
+  tier: Novice
+  type: 1-Action
+  brief: You disrupt an enemy's internal mana, dealing heavy damage
+  traits: [Attack, Force, Spell]
+  tags:
+    cost: 2 Mana
+    range: 60 feet
+    requirements: Your target has a mystic origin
+  effect: |
+    Make a Magic attack roll against your target's Spirit DC.
+
+    Critical Success
+    : Double damage and double mana loss
+
+    Success
+    : Your target takes 3d12 damage and loses 3d4 mana
+
+    Failure
+    : Half damage and half mana loss
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 1d12 and the mana loss increases by 1d4.
+
+Arcane Hand:
+  tier: Veteran
+  type: Free
+  brief: You conjure a giant hand made of magical force that mimics your own hand
+  traits: [Spell]
+  tags:
+    cost: 5 Mana
+    duration: 1 minute
+  effect: |
+    You conjure a giant hand of shimmering, translucent force. The hand mimics the movements of your own hand, but with extended range and power. You can use the **Grasping Hand**, **Interposing Hand**, and **Punching Hand** powers.
+
+    At the GM's discretion, the hand can perform other useful tasks, such as manipulating objects or carrying items. As a general rule, the hand uses your Magic score instead of Strength or Agility, and it can function out to a range of 60 feet.
+
+    #### Heightened
+
+    For each +1 Mana, the range of each power increases by 10 feet, and the damage of **Punching Hand** increases by 1d6.
+  aside: |
+    {% smallpower %}
+    Grasping Hand:
+      type: 1-Action
+      tags:
+        range: 60 feet
+      effect: |
+        You {Disarm}, {Grapple}, {Shove}, or {Trip} your target. Use your Magic score instead of your Strength score for the attack roll.
+
+        *If you Grapple a creature, you don't need to be able to reach them, you aren't {slowed}, and you can't drag them with you when you move. It's the hand grabbing them, not you.*
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Interposing Hand:
+      type: 1-Action
+      tags:
+        range: 60 feet
+        target: An empty space you can see within range
+      effect: |
+        The target space is occupied by the hand. The space is completely impassable and provides cover.
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Punching Hand:
+      type: 1-Action
+      traits: [Attack, Bludgeoning]
+      tags:
+        range: 60 feet
+      effect: |
+        Make a Magic attack roll against your target's Defense.
+
+        Success
+        : Your target takes 6d6 damage
+    {% endsmallpower %}
+
+Reflect Spell:
+  tier: Veteran
+  type: Passive
+  brief: You counter spells so well that you reflect them onto your enemies
+  tags:
+    prerequisites: Counterspell
+  effect: |
+    When you cast {Counterspell}, you can choose to redirect the triggering spell instead of disrupting it. When you redirect a spell, you choose the target of the spell instead of the original caster.
+
+Resilient Sphere:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure an indestructible sphere around several creatures
+  traits: [Attack, Spell]
+  tags:
+    cost: 4 Mana
+    range: 30 feet
+    requirements: Your target is Size +1 or smaller
+    duration: Varies
+  effect: |
+    You conjure a sphere of magical force around your target. The sphere is translucent, solid, weightless, and completely indestructible. Nothing can pass in or out of the sphere except light. Your target can roll the sphere to move at half Speed, but can't move normally. Your target can use the **Rolling Sphere** power.
+
+    Make a Magic attack roll against your target's Agility DC.
+
+    Critical Success
+    : This spell lasts 10 minutes
+
+    Success
+    : This spell lasts 1 minute
+
+    Failure
+    : This spell lasts until the end of your target's next turn
+
+    Critical Failure
+    : This spell ends immediately
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+  aside: |
+    {% smallpower %}
+    Rolling Sphere:
+      type: Free
+      traits: [Move]
+      tags:
+        duration: 1 minute, or until you use **Crashing Sphere**
+      effect: |
+        Choose a direction. At the end of each of your turns, you roll 10 feet in that direction. This movement stacks with further uses of this power: if you use Rolling Sphere 10 times, then you move 100 feet at the end of each of your turns. If this movement would carry you into another creature or a solid object, use the **Crashing Sphere** effect on that target.
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Crashing Sphere:
+      traits: [Attack, Bludgeoning]
+      effect: |
+        Make an Agility attack roll against your target's Agility DC.
+
+        Critical Success
+        : Your target takes 1d6 damage for each 10 feet you would move and falls {prone}
+
+        Success
+        : Your target takes 1d6 damage for each 10 feet you would move
+
+        Critical Failure
+        : You take 1d6 damage for each 10 feet you would move
+    {% endsmallpower %}
+
+Stabilized Glyph:
+  tier: Veteran
+  type: Passive
+  brief: Your glyphs are stable and can apply spells multiple times
+  tags:
+    prerequisites: Glyph
+  effect: |
+    When a glyph created by your {Glyph} spell triggers, you can choose for the glyph to be only temporarily disabled instead of permanently destroyed. Any Novice Arcanist can manually reset a disabled glyph, which lets the glyph trigger again in the future. If the glyph contains **Explosive Runes** or a spell of cost 0, the glyph automatically resets after 1 hour.
+
+    Manually resetting a glyph requires 1 minute of work. If the glyph contains a spell of cost 1 or higher, this work consumes an amount of expensive chalk worth 1 gp times the Mana cost of the spell stored in the glyph.
+
+Wall of Force:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure a transparent and almost indestructible wall of magical force
+  traits: [Force, Spell]
+  tags:
+    cost: 5 Mana
+    range: 120 feet
+    duration: Sustained, up to 10 minutes
+  effect: |
+    You conjure an invisible wall of force. The wall consists of up to 10 flat, thin square panels, each of which is 10 feet by 10 feet in size. You can choose each panel's position and orientation, so long as all panels are connected and within range. You cannot conjure a panel in a space occupied by a creature or a solid object.
+
+    The wall is physically solid and is weightless. Each panel has 10 Health and 100 [[Anything]] Shield. You choose whether the wall is free-floating or whether it rests on a solid surface.
+
+Antimagic Field:
+  tier: Master
+  type: 1-Action
+  brief: You conjure a field that blocks all magic within an area
+  traits: [Ritual, Spell]
+  tags:
+    cost: 6 Mana
+    range: 120 feet
+    area: 10-foot burst
+    duration: 1 hour
+  effect: |
+    You conjure an antimagic field that fills the spell's area. Creatures within the field cannot cast spells, and new spells cannot target anything within the field. Any existing spell affecting a target within the field is temporarily suppressed on that target. (While suppressed, the spell has no effect on the target, but its duration still counts down.)
+
+    *Antimagic Field does not suppress itself. That would just be silly.*
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst doubles.
+
+Forcecage:
+  tier: Master
+  type: 1-Action
+  brief: You trap your target in a conjured cage of magical force
+  traits: [Force, Spell]
+  tags:
+    cost: 7 Mana
+    range: 120 feet
+    duration: 1 hour
+  effect: |
+    Your target is {immobilized}. You have a +10 bonus to Magic DC against any attempts to free or move your target, such as the {Escape} power. This spell ends immediately if your target is moved with a [[Teleportation]] power.
+
+Reactive Ward:
+  tier: Master
+  type: Passive
+  brief: You can conjure wards around your allies right before they're hit
+  tags:
+    prerequisites: Protector Ward
+  effect: |
+    Your {Protector Ward} power gains the following effect.
+
+    #### Heightened
+
+    If you add +1 Mana, this spell is {% icon Reaction %} instead of {% icon 1-Action %}, and it gains a trigger of "Your target takes damage". This spell's duration changes to 1 minute.
+
+Floating Disk:
+  tier: Ribbon
+  type: 1-Action
+  brief: You conjure a magical disk that can support heavy weights
+  traits: [Ritual, Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    duration: 1 hour
+  effect: |
+    You summon a floating disk of translucent magical force at the target location. The disk is roughly 3 feet wide. The disk can support up to 500 pounds before collapsing. You can use the **Command Disk** power.
+  aside: |
+    {% smallpower %}
+    Command Disk:
+      type: Free
+      effect: |
+        The disk moves 20 feet in a direction of your choice.
+    {% endsmallpower %}
+
+Identify Magic:
+  tier: Ribbon
+  type: 1-Action
+  brief: You learn all the spells that are currently affecting a target
+  traits: [Divination, Ritual, Spell]
+  tags:
+    cost: 1 Mana
+    range: 10 feet
+  effect: |
+    You learn all the spells currently affecting your target. You learn the broad effects of these spells, but you don't learn all the specifics of how those spells work. You don't learn about any hidden curses affecting your target.
+
+Ritual Expert:
+  tier: Ribbon
+  type: Passive
+  brief: You can complete rituals much more quickly than normal
+  effect: |
+    You can complete the optional ritual for [[Ritual]] spells in a tenth of the normal time.
+
+Unseen Servant:
+  tier: Ribbon
+  type: 1-Action
+  brief: Conjure a helpful invisible servant that acts for you
+  traits: [Ritual, Spell]
+  tags:
+    cost: 1 Mana
+    duration: 8 hours
+  effect: |
+    You conjure an unseen servant, which is an invisible force that obeys your orders. You have a telepathic connect with your unseen servant, and you can order it to perform common household tasks, such as preparing meals, cleaning up, or delivering objects. If combat stats are necessary, your unseen servant is a [[Minion]] [[Spirit]] commoner.
+
+Zone of Truth:
+  tier: Ribbon
+  type: 1-Action
+  brief: Detect whenever anyone in an area tells a lie
+  traits: [Divination, Ritual, Spell]
+  tags:
+    cost: 2 Mana
+    area: 30-foot burst
+    duration: 10 minutes
+  effect: |
+    Whenever anyone in this spell's area knowingly speaks a lie, the spell sends you a ping. This power doesn't detect half-truths or lies by omission. When you cast **Zone of Truth**, you choose whether the ping is perceptible to only you or to everyone nearby.

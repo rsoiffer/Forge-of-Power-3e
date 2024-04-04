@@ -1,0 +1,341 @@
+Attack of Opportunity:
+  tier: Novice
+  type: Reaction
+  brief: You sieze on any opportunities to attack and distract your foes
+  tags:
+    trigger: A creature you can reach uses a [[Manipulate]] power or a [[Move]] power, makes a ranged {Strike}, or leaves a square during a [[Move]] power it's using
+  effect: |
+    You lash out at a foe that leaves an opening. Make a melee {Strike} against the triggering creature. If your Strike is a critical success and the trigger is a [[Manipulate]] power, you disrupt that power.
+
+Dueling Parry:
+  tier: Novice
+  type: Reaction
+  brief: You deflect all kinds of enemy attacks with ease
+  tags:
+    requirements: You are wielding a melee weapon
+    trigger: An attack targets your Defense
+  effect: |
+    You have +2 Defense against the attack.
+
+Feint:
+  tier: Novice
+  type: 1-Action
+  brief: You fool your enemy with a false attack, making a hole in their defense
+  traits: [Attack]
+  tags:
+    requirements: You are wielding a melee weapon
+    target: One creature you can reach
+    duration: Until the end of your next turn
+  effect: |
+    Make a Strength or Agility attack roll against your target's Defense.
+
+    Critical Success
+    : You have a +15 bonus to your next melee {Strike} against your target
+
+    Success
+    : You have a +10 bonus to your next melee {Strike} against your target
+
+Panache:
+  tier: Novice
+  type: Free
+  brief: You leverage your bravado to perform spectacular, deadly maneuvers
+  traits: [Specialize]
+  tags:
+    trigger: You succeed on a flair roll
+    requirements: The DC of the triggering roll was at least 10
+    duration: 1 minute, or until you take damage
+  effect: |
+    You have a +10 bonus to Speed. You have advantage on flair rolls. Your melee Strikes deal an extra 1d6 damage.
+  aside: |
+    ### Specializations
+
+    Choose one of the {Athletics}, {Eloquence}, {Perform}, or {Provoke} skills, or choose [[Wrestling]] attacks. Rolls with the chosen skill or chosen traits are called flair rolls.
+
+Prepared Defense:
+  tier: Novice
+  type: 1-Action
+  brief: You enter a stance that lets you intercept and counter enemy attacks
+  tags:
+    duration: Until the start of your next turn
+  effect: |
+    You have +5 Defense. You can use the **Prepared Counter** power.
+  aside: |
+    {% smallpower %}
+    Prepared Counter:
+      type: Reaction
+      tags:
+        trigger: A creature makes a melee Strike against you
+      effect: |
+        Make a melee {Strike} against the triggering creature.
+    {% endsmallpower %}
+
+Riposte:
+  tier: Novice
+  type: Reaction
+  brief: You quickly counterattack when an enemy fails to hit you
+  tags:
+    trigger: A creature fails a melee Strike against you
+  effect: |
+    Make a melee {Strike} against the triggering creature.
+
+Singular Focus:
+  tier: Novice
+  type: 1-Action
+  brief: You focus all your attention on a single enemy
+  tags:
+    range: 30 feet
+    duration: 1 minute, or until you use this power again
+  effect: |
+    You have a +2 bonus to attacks against your target.
+
+Sudden Lunge:
+  tier: Novice
+  type: Free
+  brief: You surprise your opponent with a sudden burst of speed
+  traits: [Encounter]
+  tags:
+    trigger: You make a melee Strike
+  effect: |
+    The triggering Strike has +5 feet reach and a +5 bonus to the attack roll.
+
+Tiger Stance:
+  tier: Novice
+  type: 1-Action
+  brief: You enter the stance of a tiger, punching with speed and fury
+  traits: [Stance]
+  effect: |
+    Your unarmed Strikes deal 1d8 [[Bludgeoning]] base damage and have the [[Finesse]] trait. You have a +1 bonus to unarmed Strikes.
+
+Counterattack:
+  tier: Veteran
+  type: Reaction
+  brief: You interrupt an enemy attack with an attack of your own
+  traits: [Encounter]
+  tags:
+    requirements: You are wielding a melee weapon
+    trigger: A creature you can reach targets you with a melee Strike
+    target: The creature attacking you
+  effect: |
+    Make a melee {Strike} against your target. Your attack roll is the DC of your target's Strike, and your target's attack roll is the DC of your Strike.
+
+Combat Reflexes:
+  tier: Veteran
+  type: Passive
+  brief: You can react quickly to multiple events at once
+  tags:
+    prerequisites: Any Duelist {% icon Reaction %} talent 
+  effect: |
+    You can use an extra Duelist {% icon Reaction %} talent each round, bypassing the normal limit of one {% icon Reaction %} power per round.
+
+Dueling Guard:
+  tier: Veteran
+  type: Passive
+  brief: You are even better at parrying attacks from one target
+  tags:
+    prerequisites: Dueling Parry
+  effect: |
+    Your {Dueling Parry} power gives you +4 Defense instead of +2 Defense.
+
+Flurry of Strikes:
+  tier: Veteran
+  type: 1-Action
+  brief: You attack in a blur of movement, striking twice in rapid succession
+  traits: [Encounter]
+  effect: |
+    Make two melee Strikes against the same target.
+
+Penetrating Strike:
+  tier: Veteran
+  type: 1-Action
+  brief: You attack in just the right way to slip past your enemy's shields
+  effect: |
+    Make a melee Strike. This Strike ignores all Shield your target has.
+
+Defensive Focus:
+  tier: Master
+  type: Passive
+  brief: You focus on your enemy's attacks, improving your defense against them
+  tags:
+    prerequisites: Singular Focus
+  effect: |
+    When you use your {Singular Focus} power, you also gain +2 DC against all of your target's attacks.
+
+Perfect Accuracy:
+  tier: Master
+  type: Free
+  brief: You recover from a close miss, hitting your target anyways
+  traits: [Encounter]
+  tags:
+    trigger: Your Strike fails
+  effect: |
+    The triggering {Strike} succeeds instead.
+
+Spellsplinter:
+  tier: Master
+  type: Passive
+  brief: You are an expert at disrupting spellcasters
+  tags:
+    prerequisites: Attack of Opportunity
+  effect: |
+    When you use {Attack of Opportunity}, if your Strike is a success and the trigger is a [[Spell]] power, you disrupt that power.
+
+Done Holding Back:
+  tier: Ribbon
+  type: Free
+  brief: You reveal you've actually been holding back this whole time
+  traits: [Daily]
+  tags:
+    duration: Until the end of your turn
+  effect: |
+    You have advantage on the next melee Strike you make.
+  fluff: |
+    I am not left-handed!
+
+Flourish:
+  tier: Ribbon
+  type: Free
+  brief: You flourish your weapon in a display of skill to impress others
+  traits: [Encounter]
+  tags:
+    requirements: You are wielding a melee weapon
+    trigger: You make a die roll to entertain or intimidate others through martial skill
+  effect: |
+    You have a bonus to the die roll equal to your Duelist level.
+
+Martial Studies:
+  tier: Ribbon
+  type: Passive
+  brief: You have studied weapons and warfare extensively
+  effect: |
+    You have advantage on all die rolls made to recall information about weapons, warfare, strategy, and tactics.
+
+Renowned Duelist:
+  tier: Ribbon
+  type: Passive
+  brief: You are known as a skilled and honorable duelist
+  traits: [Reputation]
+  effect: |
+    You have a reputation as an expert duelist who has defeated many opponents. Other people respect your combat prowess and trust you to fight with honor.
+
+Weapons Expert:
+  tier: Ribbon
+  type: 1-Action
+  brief: You instantly analyze a weapon, learning all its special properties
+  tags:
+    target: One weapon you can see within 10 feet
+  effect: |
+    You learn all the properties of your target: its type, cost, damage, quality, any permanent enchantments on it, and so on. You don't learn whether the weapon has any magical spells affecting it other than permanent enchantments, including curses.
+
+# Deflect Bullet:
+#   tier: Novice
+#   type: Reaction
+#   tags:
+#     trigger: You are the target of a ranged attack
+#     requirements: You're aware of the attack, are not flat-footed against it, and are wielding a melee weapon or have a hand free
+#   effect:
+#     You gain a +4 bonus to AC against the triggering attack. If the attack misses, you have deflected it. You cannot use this power to deflect usually massive ranged projectiles (such as boulders or ballista bolts).
+
+# Dragon Stance:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Stance]
+#   tags:
+#     requirements: You are unarmored
+#   effect: |
+#     You enter the stance of a dragon and make powerful strikes like a lashing dragon's tail. You can make dragon tail attacks that deal 1d10 bludgeoning damage. They have the backswing and unarmed traits.
+    
+#     While in Dragon Stance, you can ignore the first square of difficult terrain while Striding.
+
+# Dueling Parry:
+#   tier: Novice
+#   type: 1-Action
+#   tags:
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     You can parry attacks against you with your weapon. You gain a +2 bonus to AC until the start of your next turn as long as you continue to meet the requirements.
+
+# Lunge:
+#   tier: Novice
+#   type: 1-Action
+#   tags:
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     Extending your body to its limits, you attack an enemy that would normally be beyond your reach. Make a Strike with a melee wapon, increasing your reach by 5 feet for that Strike. If the weapon has the disarm, shove, or trip trait, you can use the corresponding power instead of a Strike.
+
+# Bullet Snatching:
+#   tier: Veteran
+#   type: Passive
+#   tags:
+#     prerequisites: Deflect Bullet
+#   effect:
+#     You pluck missiles from the air and hurl them back at their source. When you successfully deflect an attack with Deflect Bullet, as part of that reaction, you can immediately make a ranged Strike against the attacker using the projectile you deflected. This is a thrown weapon with the same range increment and effect on a hit as the triggering attack.
+
+# Disarming Stance:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Stance]
+#   tags:
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     You adopt a fencing stance that improves your control over your weapon. While you are in this stance, you gain a +1 bonus to rolls to Disarm and a +2 bonus to your Reflex DC when defending against attempts to Disarm you.
+
+# Disarming Twist:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Press]
+#   tags:
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     After your initial attack redirects your foe's defenses, your follow-up wrests their weapon from their grasp. Make a melee Strike. In addition to its other effects, this Strike gains the success and critical succews effects of the {Disarm} power. The Strike also has the following failure effect.
+#   failure: The target is flat-footed until the end of your current turn
+
+# Dueling Riposte:
+#   tier: Veteran
+#   type: Reaction
+#   tags:
+#     prerequisites: Dueling Parry
+#     trigger: A creature within your reach critically fails a Strike against you
+#     requirements: You are benefiting from Dueling Parry
+#   effect:
+#     You riposte against your flailing enemy. Make a melee Strike against the triggering creature.
+
+# Guardian's Deflection:
+#   tier: Veteran
+#   type: Reaction
+#   tags:
+#     trigger: An ally within your melee reach is hit by an attack and you can see the attacker
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     You use your weapon to deflect the attack against your ally, granting a +2 bonus to their AC against the triggering attack. (You can use this ability after knowing whether the +2 bonus would turn a hit into a miss.)
+
+# Dueling Dance:
+#   tier: Master
+#   type: 1-Action
+#   traits: [Stance]
+#   tags:
+#     prerequisites: Dueling Parry
+#     requirements: You are wielding a melee weapon
+#   effect:
+#     You both attack and defend with your weapon. While you are in this stance, you constantly have the benefits of Dueling Parry.
+
+# Guiding Riposte:
+#   tier: Master
+#   type: Passive
+#   tags:
+#     prerequisites: Dueling Riposte
+#   effect:
+#     By shifting your weight and angling your weapon, you guide your opponent to a more favorable position. When you use Dueling Riposte to Strike and you hit, you can move the target up to 10 feet into a space in your reach.
+
+# Improved Dueling Riposte:
+#   tier: Master
+#   type: Passive
+#   tags:
+#     prerequisites: Dueling Riposte
+#   effect:
+#     Your weapon whirls and darts, striking foes whenever the opportunity presents itself. At the start of each of your turns, you gain an additional reaction that you can use only to make a Dueling Riposte. You can use this extra reaction even if you are not benefiting from Dueling Parry.
+
+# Boundless Reprisals:
+#   tier: Epic
+#   type: Passive
+#   effect:
+#     With a sixth sense for the flow of combat, you can quickly react to any situation as required. At the start of each enemy's turn, you gain a reaction you can use only during that turn.

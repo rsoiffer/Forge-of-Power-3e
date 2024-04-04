@@ -1,0 +1,277 @@
+Bear Trap:
+  tier: Novice
+  type: 1-Action
+  brief: You throw a portable bear trap towards a nearby enemy
+  traits: [Attack, Encounter, Piercing]
+  tags:
+    range: 60 feet
+    duration: Forever
+  effect: |
+    Make an Agility attack roll against your target's Agility DC.
+
+    Critical Success
+    : Your target takes 3d6 damage and is {restrained}
+
+    Success
+    : Your target takes 2d6 damage and is {immobilized}
+
+    Failure
+    : Your target takes 1d6 damage and is {slowed} until the end of your next turn
+  fluff: |
+    But your leg! Ah! It's caught in a bear trap!
+
+Called Shot:
+  tier: Novice
+  type: 1-Action
+  brief: You aim for an enemy's weakest point, trading accuracy for power
+  effect: |
+    Make a ranged {Strike} with a -5 penalty. If this Strike hits, its base damage is doubled.
+
+Distracting Fire:
+  tier: Novice
+  type: 1-Action
+  brief: Your rapid shots distract a foe, making it easier for allies to hit them
+  tags:
+    duration: Until the start of your next turn
+  effect: |
+    Make a ranged {Strike} with a -5 penalty. The target of your Strike is {flat-footed}.
+
+Double Shot:
+  tier: Novice
+  type: 1-Action
+  brief: You fire two arrows at one target, with almost no delay
+  traits: [Encounter]
+  effect: |
+    Make two ranged Strikes against the same target.
+
+Focus Aim:
+  tier: Novice
+  type: 1-Action
+  brief: You steady your aim, preparing for a single strike
+  traits: [Concentrate]
+  tags:
+    duration: 1 minute, or until you use any [[Move]] power
+  effect: |
+    You have a +2 bonus to your next {Strike}. This bonus stacks with further uses of this power, up to a maximum of +6.
+
+Hunt Prey:
+  tier: Novice
+  type: Free
+  brief: You focus on hunting down and attacking a single target
+  traits: [Concentrate]
+  tags:
+    target: One creature you can see, or one creature whose trail you're following
+    duration: 24 hours, or until you use this power again
+  effect: |
+    You have advantage on die rolls made to search for or track your target. Your first successful {Strike} each round against your target deals an extra 1d6 damage.
+
+Sharpshooter:
+  tier: Novice
+  type: Passive
+  brief: You are an expert at making long range shots on difficult targets
+  effect: |
+    You treat ranged weapons as having double their normal range, and you ignore [cover](combat-rules.html#cover) when making ranged Strikes.
+
+Sniper's Shot:
+  tier: Novice
+  type: 1-Action
+  brief: You make a long-range attack with increased accuracy and damage
+  traits: [Encounter]
+  effect: |
+    Make a ranged {Strike} with a +5 bonus. This Strike doesn't get disadvantage for being a long-range Strike.
+
+Debilitating Shot:
+  tier: Veteran
+  type: 1-Action
+  brief: You aim for a weak point and cripple your enemy for a time
+  traits: [Encounter]
+  tags:
+    duration: Until the end of your next turn
+  effect: |
+    Make a ranged Strike. On a success, your target is {slowed}. On a critical success, your target is {flat-footed} and {immobilized}.
+
+Hunter's Vision:
+  tier: Veteran
+  type: 1-Action
+  brief: You can always see your hunted prey in your mind's eye
+  traits: [Concentrate]
+  tags:
+    prerequisites: "{Hunt Prey}"
+    target: The target of your Hunt Prey power
+    duration: Until your Hunt Prey power ends
+  effect: |
+    While your target is within 500 feet, you know their exact position even if you can't see them. Your ranged Strikes against your target have double their normal range and a +2 bonus to the attack roll.
+
+Running Shot:
+  tier: Veteran
+  type: 1-Action
+  brief: You circle around an enemy and fire a shot from an unexpected direction
+  traits: [Encounter]
+  effect: |
+    Use the {Stride} power. At any time during this Stride, make a ranged {Strike} with advantage against a target within 60 feet.
+
+Traps Everywhere:
+  tier: Veteran
+  type: Passive
+  brief: You can remotely activate the countless traps that you've placed beforehand
+  effect: |
+    You can fight with remote traps, a special type of ranged weapon that works by triggering a pre-placed trap that happens to be under your target's feet. Making a Strike with a remote trap is a [[Retroactive]] ability, as you are declaring that you happened to hide a trap in that exact spot beforehand.
+
+    Your remote traps are a ranged weapon with 2d6 base damage and 100 range. Whenever you use a remote trap, you choose whether the base damage is [[Bludgeoning]], [[Fire]], [[Piercing]], [[Toxic]], or [[Slashing]] (or another trait approved by the GM).
+
+    Strikes with your remote traps have the following rules:
+    * You don't need a clear line to your target
+    * Your target doesn't benefit from cover
+    * Your target must be within 10 feet of a solid surface
+    * Optionally, you can add your Intellect to the attack and damage rolls instead of your Agility
+    * Optionally, you can attack your target's Agility DC instead of their Defense
+
+Volley:
+  tier: Veteran
+  type: 1-Action
+  brief: You fire a rain of shots, targeting everyone in an area
+  traits: [Encounter]
+  tags:
+    range: The range of your weapon
+    area: 20-foot burst
+  effect: |
+    Make a ranged {Strike}. This Strike targets all creatures in this power's area.
+
+Hunter's Instincts:
+  tier: Master
+  type: Free
+  brief: You can see enemies through walls, and can track their health and footprints
+  tags:
+    area: 300-foot emanation, which follows you for the duration
+    duration: 1 minute
+  effect: |
+    You can sense all creatures in this power's area as well as if you could see them.
+
+    You have a +10 bonus to Intellect+Travel rolls made to track creatures.
+
+Sharpened Focus:
+  tier: Master
+  type: Passive
+  brief: You can focus your aim even better as you prepare a strike
+  tags:
+    prerequisites: Focus Aim
+  effect: |
+    Your {Focus Aim} power gives you a +5 bonus your next Strike, stacking up to +15.
+
+Triple Shot:
+  tier: Master
+  type: Passive
+  brief: You can fire three projectiles at once instead of two
+  tags:
+    prerequisites: Double Shot
+  effect: |
+    When you use {Double Shot}, make three ranged Strikes against the same target instead of two.
+
+Eagle Eyes:
+  tier: Ribbon
+  type: Passive
+  brief: You have incredibly sharp eyesight and can perceive details from a distance
+  effect: |
+    You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you.
+
+Favored Enemy:
+  tier: Ribbon
+  type: Passive
+  brief: You are especially skilled at hunting down a particular kind of creature
+  effect: |
+    Choose a type of favored enemy: animals, fey, humanoids, outsiders, or undead. You have advantage on die rolls to track or recall information about your favored enemies. You also learn one language of your choice that is spoken by your favored enemies (if they don't speak, you can learn any language of your choice).
+
+Find Arrows:
+  tier: Ribbon
+  type: 1-Action
+  brief: You're always able to find or craft more ammunition
+  traits: [Daily]
+  effect: |
+    You acquire a bundle of 50 arrows or bolts. This ammunition might be a set you constructed at a fletcher's shop, a set you crafted from primitive natural materials, or a lucky find on the battlefield.
+
+Pass Without Trace:
+  tier: Ribbon
+  type: Passive
+  brief: You can perfectly camouflage your tracks to avoid pursuers
+  effect: |
+    You can hide your trail while travelling in natural environments, giving you a +10 bonus to any die rolls made to avoid being tracked.
+
+Perfect Shot:
+  tier: Ribbon
+  type: Passive
+  brief: You can hit stationary targets perfectly out of combat
+  effect: |
+    Out of combat, when you make a ranged {Strike} against a stationary target, your Strike is automatically a critical success. You must have a minute to prepare for the shot, and your target must be completely stationary.
+
+# Far Shot:
+#   tier: Novice
+#   type: Passive
+#   effect:
+#     Your experience in the field has taught you how to focus your aim at a distance, increasing your accuracy. Double your weapons' range increments.
+
+# Hunt Prey:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Concentrate]
+#   tags:
+#     duration: 24 hours, or until you use this power again
+#   effect:
+#     You designate a single creature as your prey and focus your attacks against that creature. You must be able to see or hear the prey, or you must be tracking the prey during exploration. You gain a +2 bonus to Perception rolls or Survival rolls made to Seek or Track your prey. You also ignore the penalty for making ranged attacks within your second increment against the prey you're hunting. The first time you hit your hunted prey in a round, you also deal 1d8 additional precision damage.
+
+# Hunter's Aim:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Concentrate]
+#   effect:
+#     By spending a moment to focus, you can ensure your attack strikes true. Make a ranged weapon Strike. On this Strike, you gain a +2 bonus to the attack roll and ignore the target's concealed condition.
+
+# Camouflage:
+#   tier: Veteran
+#   type: Passive
+#   effect:
+#     You alter your appearance to blend in to your surroundings. While outdoors, you can Sneak even if you're observed.
+
+# Deadly Aim:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Open]
+#   effect:
+#     You aim for your prey's weak spots, making your shot more challenging but dealing more damage if you hit. Make a ranged Strike against your hunted prey at a -2 penalty. Your Strike's damage increases by 2 + Prof.
+
+# Debilitating Shot:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Flourish]
+#   effect:
+#     Aiming for a weak point, you impede your foe with a precise shot. Make a ranged weapon Strike. If it hits and deals damage, the target is slowed 1 until the end of its next turn.
+
+# Incredible Ricochet:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Concentrate, Press]
+#   effect:
+#     After your first shot singles out your opponent's position, you direct another that ricochets around obstacles and strikes unerringly. Make a ranged weapon Strike. You ignore the target's concealed condition and all cover.
+
+# Double Prey:
+#   tier: Master
+#   type: Passive
+#   tags:
+#     prerequisites: Hunt Prey
+#   effect:
+#     You can focus on two foes at once, hunting both of them down. When you use the Hunt Prey power, you can pick two creatures as your prey.
+
+# Legendary Shot:
+#   tier: Epic
+#   type: Passive
+#   tags:
+#     prerequisites: Far Shot, Hunt Prey
+#   effect:
+#     Your focus on your hunted prey, perceiving angles, air resistance, and every variable that would affect your ranged attack. You can ignore the penalty for attacking up to five range increments away when attacking your hunted prey.
+
+# Shadow Hunter:
+#   tier: Epic
+#   type: Passive
+#   tags:
+#     prerequisites: Camouflage
+#   effect:
+#     You blend in to your surroundings so well that others have trouble telling you apart from the terrain. While outdoors, you're always concealed from all foes if you choose to be.

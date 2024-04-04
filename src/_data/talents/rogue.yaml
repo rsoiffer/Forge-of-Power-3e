@@ -1,0 +1,207 @@
+Assassinate:
+  tier: Novice
+  type: Passive
+  brief: You can take advantage of your foe's surprise to deal deadly blows
+  effect: |
+    When you succeed on a Strike against a surprised target, your Strike is a critical success.
+
+Bleeding Strike:
+  tier: Novice
+  type: 1-Action
+  brief: You slice your target open, causing them to start bleeding out
+  traits: [Encounter]
+  effect: | 
+    Make a melee Strike with a weapon that deals [[Piercing]] or [[Slashing]] damage. This Strike gains the following effects.
+
+    Critical Success
+    : As success, and the bleed damage is doubled
+
+    Success
+    : Your target starts **bleeding**
+  aside: |
+    ### Bleeding Condition
+
+    While you are bleeding, you take 1d6 [[Necrotic]] damage at the start of each of your turns. You can end this condition by using a {% icon 1-Action %} power to staunch the bleeding.
+
+Charmed Life:
+  tier: Novice
+  type: Reaction
+  brief: You luckily avoid effects that would incapacitate others
+  tags:
+    trigger: An attack targets your Strength DC, Agility DC, Intellect DC, or Spirit DC
+  effect: |
+    You have a +2 bonus to your DC against the triggering attack.
+
+Lucky:
+  tier: Novice
+  type: Passive
+  brief: You have supernaturally good luck that kicks in when it's needed most
+  traits: [Fortune]
+  effect: |
+    You have three luck points. You can spend a luck point to reroll any die roll that you make, or to reroll any attack roll against you. You regain all your luck points when you finish an 8-hour rest.
+
+Sidestep:
+  tier: Novice
+  type: Reaction
+  brief: You confuse an enemy, causing it to hit its ally instead
+  traits: [Encounter]
+  tags:
+    trigger: A Strike targeting you fails or critically fails
+  effect: |
+    The triggering Strike targets a creature adjacent to you instead of you. The attacker must reroll the Strike's attack roll against the new target.
+
+Poison Blade:
+  tier: Novice
+  type: Free
+  brief: You poison your blade, making your attacks more deadly
+  traits: [Encounter, Toxic]
+  tags:
+    target: A weapon you're wielding that deals [[Piercing]] or [[Slashing]] damage
+    duration: 1 minute
+  effect: |
+    The next time you succeed on a {Strike} with the targeted weapon, you deal an extra 4d6 damage.
+
+Smoke Bomb:
+  tier: Novice
+  type: Free
+  brief: You detonate a smoke bomb and run to clear the area
+  traits: [Encounter]
+  tags:
+    range: 10 feet
+    area: 20-foot burst
+    duration: 1 minute
+  effect: |
+    A cloud of smoke explodes in this power's area, making it impossible to see through the area. Use the {Stride} power.
+
+Sneak Attack:
+  tier: Novice
+  type: 1-Action
+  brief: You take advantage of your enemy to strike for extra damage
+  effect: |
+    Make a {Strike} against a {flat-footed} creature. The weapon you Strike with must be a [[Finesse]] weapon or a ranged weapon. The base damage of this Strike increases by 2d6.
+
+Debilitation:
+  tier: Veteran
+  type: Free
+  brief: You impair and debilitate creatures you hit with strikes
+  tags:
+    trigger: You succeed on a melee Strike
+    target: The target of the triggering Strike
+    duration: Until the end of your next turn
+  effect: |
+    Choose one of the following options:
+    * Your target is {dazzled}
+    * Your target is {flat-footed}
+    * Your target is {slowed}
+
+Improved Sneak Attack:
+  tier: Veteran
+  type: Passive
+  brief: You deal massive damage against enemies you sneak attack
+  tags:
+    prerequisites: Sneak Attack
+  effect: |
+    The damage bonus of your {Sneak Attack} talent is 4d6 instead of 2d6.
+
+Infinite Luck:
+  tier: Veteran
+  type: Passive
+  brief: You never seem to run out of luck, no matter the circumstances
+  tags:
+    prerequisites: Lucky
+  effect: |
+    If you are at 0 luck points, you regain 1 luck point when you finish a 5-minute rest.
+
+Opportune Backstab:
+  tier: Veteran
+  type: Reaction
+  brief: You capitalize upon the distraction when your enemy gets hit
+  tags:
+    trigger: A Strike suceeds against a creature you can reach
+    requirements: A creature other than you made the triggering Strike
+  effect: |
+    Make a melee Strike against the triggering creature.
+
+Stumbling Steps:
+  tier: Veteran
+  type: Passive
+  brief: Your stumbling steps get your enemies to repeatly hit each other
+  tags:
+    prerequisites: Sidestep
+  effect: |
+    Your {Sidestep} power loses the [[Encounter]] trait. You have +2 Defense while adjacent to two or more enemies.
+
+Guess Who's Back:
+  tier: Master
+  type: Passive
+  brief: You can never truly be defeated, as you always find a way back
+  effect: |
+    You cannot be permanently killed, jailed, disabled, or otherwise prevented from acting freely. Whenever you are seemingly killed or disabled, after 1 week or so, the GM should introduce some kind of plot contrivance to let you rejoin the action. This might come at a minor narrative cost, such as losing your equipment, owing a favor to your rescuers, or being targeted by a magical curse.
+
+Night Stalker:
+  tier: Master
+  type: Free
+  brief: You remain hidden even when you would normally be seen
+  tags:
+    trigger: One or more creatures would notice you
+  effect: |
+    Make an Agility+Stealth roll against the Intellect+Notice DC of all creatures trying to notice you.
+
+    Success
+    : The triggering creatures do not notice you, and cannot perceive you for the rest of your turn
+
+    *This power lets you Strike without being seen, sneak through an open room with no cover, or otherwise act brazenly while remaining hidden. Since this power only lasts until the end of your turn, you must end your turn in a hiding spot if you want to stay hidden.*
+
+Poison Expert:
+  tier: Master
+  type: Passive
+  brief: You make use of deadlier poisons that disable your enemies
+  tags:
+    prerequisites: Poison Blade
+  effect: |
+    When you damage a creature with your {Poison Blade} power, choose one of the following effects:
+    * The damage increases to 8d6
+    * Your target is {blinded} until the end of their next turn
+    * Your target is {incapacitated} until the end of their next turn
+
+Ambush Master:
+  tier: Ribbon
+  type: Passive
+  brief: You are always ready to jump into fights and surprise enemies
+  effect: |
+    During the first round of combat, all creatures are {flat-footed} to you.
+
+Fast Hands:
+  tier: Ribbon
+  type: Free
+  brief: You can disarm traps or pickpocket others incredibly quickly
+  effect: |
+    Use the {Interact} power. Your interaction must be a task that requires an Agility roll.
+
+Never Tell Me the Odds:
+  tier: Ribbon
+  type: Passive
+  brief: You ignore the normal odds and substitute your own
+  effect: |
+    Whenever you perform an entirely luck-based activity with two possible outcomes, you can choose to ignore the normal odds and instead make it a 50-50 chance either way. If the original chance of the good outcome was much less than 50%, then the GM should add narrative consequences to the good outcome proportional to how unlikely it was.
+
+    *For example, if you play the lottery, you could choose to have a 50% chance of winning. Since winning the lottery was extremely unlikely, the GM should add severe consequences - maybe a thieves' guild targets you for your newfound riches, or the local lord tries to throw you in jail and take your winnings.*
+
+    *As another example, if you sail a ship along a random path through dangerous waters, you could choose to have a 50% chance of making it through successfully. Since surviving the trip intact was moderately unlikely, the GM should add moderate consequences - maybe your passing aggravated a nearby sea serpent, or maybe you're now hopelessly lost.*
+
+Supreme Sneak:
+  tier: Ribbon
+  type: Free
+  brief: You move slowly and carefully, not making any noise
+  tags:
+    requirements: You haven't used a [[Move]] power yet this turn
+    duration: Until the start of your next turn
+  effect: |
+    You are {slowed}, but you have advantage on Stealth rolls made to hide or move silently.
+
+Unreadable:
+  tier: Ribbon
+  type: Passive
+  brief: You can lie without any way to prove you aren't telling the truth
+  effect: |
+    You have advantage on Spirit rolls made to lie to other people. When you're targeted by a [[Divination]] effect that reveals whether you're lying, you choose what the divination reports.

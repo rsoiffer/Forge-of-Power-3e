@@ -1,0 +1,263 @@
+Brace:
+  tier: Novice
+  type: 1-Action
+  brief: You ready yourself to defend against a particular damage type
+  tags:
+    requirements: You haven't used a [[Move]] power yet this turn
+    duration: Until the start of your next turn
+  effect: |
+    You are {slowed}, but you gain (10 + Strength) Shield against a damage type of your choice.
+
+Cover Ally:
+  tier: Novice
+  type: Reaction
+  brief: You move in front of your ally, taking a hit for them
+  traits: [Move]
+  tags:
+    target: An ally adjacent to you
+    trigger: Your ally is targeted by an attack against their Defense, Strength DC, or Agility DC
+  effect: |
+    The triggering attack targets you instead of your ally.
+
+Distracting Strike:
+  tier: Novice
+  type: 1-Action
+  brief: Your strike distracts enemies from attacking anyone but you
+  tags:
+    duration: Until the end of your next turn
+  effect: |
+    Make a melee {Strike}. Your target has disadvantage on attacks against targets other than you.
+
+Heavy Armor:
+  tier: Novice
+  type: Passive
+  brief: Your heavy armor can absorb a massive amount of punishment
+  tags:
+    requirements: You are currently adding your Strength to your Defense
+  effect: |
+    You have [[Physical]] Shield equal to 2 + your Guardian level.
+
+Knockdown:
+  tier: Novice
+  type: Free
+  brief: You knock enemies to the ground with your strongest hits
+  traits: [Encounter]
+  tags:
+    trigger: You succeed on a melee Strike
+    target: The target of the triggering Strike
+    duration: Until the end of your target's next turn
+  effect: |
+    Your target falls {prone} and is {slowed}.
+
+Sentinel:
+  tier: Novice
+  type: Reaction
+  brief: You strike at enemies that try to run away from you, blocking them
+  tags:
+    trigger: A creature you can reach uses a [[Move]] power or leaves a square during a [[Move]] power it's using
+  effect: |
+    Make a melee {Strike} against the triggering creature. On a success, you disrupt the triggering [[Move]] power.
+
+Taunting Shout:
+  tier: Novice
+  type: 1-Action
+  brief: You let out a shout that draws the attention of all enemies nearby
+  traits: [Auditory, Attack, Emotion, Encounter]
+  tags:
+    area: 30-foot emanation
+    target: Any number of creatures within the area
+    duration: 1 minute
+  effect: |
+    Make a Spirit+Provoke attack roll against your target's Spirit DC.
+
+    Success
+    : Your target is {taunted} by you
+
+Tenacity:
+  tier: Novice
+  type: Passive
+  brief: You are resistant to effects that would limit your actions
+  effect: |
+    You have a +5 bonus to your DC against attacks that would impose the {immobilized}, {incapacitated}, or {stunned} conditions.
+
+Cover Move:
+  tier: Veteran
+  type: Passive
+  brief: You dash to tank hits for even distant allies
+  tags:
+    prerequisites: Cover Ally
+  effect: |
+    Your {Cover Ally} power targets an ally you can see within 30 feet. When you use Cover Ally and target an ally not adjacent to you, Cover Ally gains the [[Move]] trait and you move to an empty space adjacent to your ally.
+
+Improved Brace:
+  tier: Veteran
+  type: Passive
+  brief: You are even better at hunkering down to resist incoming damage
+  tags:
+    prerequisites: Brace
+  effect: |
+    Your {Brace} power gives you twice the amount of Shield. You gain this Shield against two damage types of your choice instead of against one damage type.
+
+Magic Resistance:
+  tier: Veteran
+  type: Passive
+  brief: You are naturally very resistant to magic spells
+  effect: |
+    You have a +5 bonus to your DC against [[Spell]] attacks.
+
+Vigilant Sentinel:
+  tier: Veteran
+  type: Passive
+  brief: You can react quickly to keep a horde of enemies in place
+  tags:
+    prerequisites: Sentinel
+  effect: |
+    When you use your {Sentinel} power, if you succeed on the Strike, you can use another {% icon Reaction %} power this round.
+
+Unwavering Mark:
+  tier: Veteran
+  type: Free
+  brief: You menace a foe, threatening to punish them for harming others
+  tags:
+    target: One creature you can reach
+    duration: Until the end of your next turn
+  effect: |
+    While your target is within your reach, they have disadvantage on attacks against targets other than you. If your target deals damage to any creature other than you, you can use the **Unwavering Punishment** power.
+  aside: |
+    {% smallpower %}
+    Unwavering Punishment:
+      type: Free
+      effect: |
+        Make a melee {Strike} with advantage against the target of your **Unwavering Mark**. On a success, this Strike deals extra damage equal to your Guardian level.
+    {% endsmallpower %}
+
+Aura of Protection:
+  tier: Master
+  type: Passive
+  brief: You defend all nearby allies against all incoming attacks
+  tags:
+    area: 15-foot emanation
+  effect: |
+    All attacks have disadvantage against your allies in the area (other than you). You can use the **Expanded Protection** power.
+  aside: |
+    {% smallpower %}
+    Expanded Protection:
+      type: 1-Action
+      tags:
+        duration: Until the end of your next turn
+      effect: |
+        The area of your **Aura of Protection** power increases to a 60-foot emanation.
+    {% endsmallpower %}
+
+Enchanted Armor:
+  tier: Master
+  type: Passive
+  brief: Your heavy armor is enchanted to protect against all kinds of damage
+  tags:
+    prerequisites: Heavy Armor
+  effect: |
+    The Shield from your {Heavy Armor} power is [[Anything]] Shield instead of [[Physical]] Shield.
+
+Roaring Taunt:
+  tier: Master
+  type: Passive
+  brief: You taunt your enemies with louder and faster shouts
+  tags:
+    prerequisites: Taunting Shout
+  effect: |
+    Your {Taunting Shout} power is {% icon Free %} instead of {% icon 1-Action %}, and its area increases to a 60-foot emanation.
+
+Cavalier:
+  tier: Ribbon
+  type: Passive
+  brief: You are experienced in riding mounts into battle
+  tags:
+    requirements: You are riding a [[Minion]] creature as a mount
+  effect: |
+    Your mount has a +5 bonus to their DC against all attacks.
+
+Find Armor:
+  tier: Ribbon
+  type: 1-Action
+  brief: You're always able to find an easy replacement for your armor
+  traits: [Daily]
+  tags:
+    requirements: You do not own a set of {chain mail} or {plate armor}
+  effect: |
+    You acquire a set of {chain mail} or {plate armor}. This apparel might be a set you constructed at a smithy, a gift from an ally, or a lucky find on the battlefield.
+
+    *You can use this power to gain your first set of armor or to replace a set that was lost or broken. You cannot use this power to replace apparel that you sold for profit.*
+
+Knight:
+  tier: Ribbon
+  type: Passive
+  brief: You are recognized as a knight of the kindgom
+  traits: [Reputation]
+  effect: |
+    You have a reputation as a noble knight who serves king and country. Other people respect your legal and moral authority, and you have elevated social status as a minor noble.
+
+Squire Companion:
+  tier: Ribbon
+  type: Passive
+  brief: You have a loyal squire follower who assists you outside of battle
+  effect: |
+    You have earned the allegiance of a squire who trains under you. Your squire loyally follows orders you give them, unless those orders go strongly against their personality or would put them in extreme danger. If combat stats are necessary, your squire is a [[Minion]] commoner.
+
+Unflinching:
+  tier: Ribbon
+  type: Reaction
+  brief: You can completely shrug off small amounts of damage
+  tags:
+    trigger: You take exactly 1 damage from an effect
+  effect: |
+    You instead take 0 damage from the triggering effect.
+
+# Cover Ally:
+#   tier: Novice
+#   type: 1-Action
+#   brief: You cover your ally with a shield, protecting them from attacks
+#   tags:
+#     duration: Until the start of your next turn
+#   effect:
+#     Choose an ally you can see. Attacks against your ally have disadvantage while you are wielding a shield and your ally is adjacent to you.
+
+# Implacable Mark:
+#   tier: Novice
+#   type: 1-Action
+#   brief: You foil enemy attacks by menacing your foes
+#   effect:
+#     Make a melee {Strike}. If you hit, the target is **marked** until the end of your next turn. A marked target has disadvantage on any attack against a creature other than you.
+
+# Polearm Master:
+#   tier: Novice
+#   type: Reaction
+#   brief: You hit any creature that enters your reach
+#   tags:
+#     trigger: A creature enters your reach
+#   effect:
+#     Make a melee {Strike} with a polearm or spear against the triggering creature.
+
+# Pushing Strike:
+#   tier: Novice
+#   type: 1-Action
+#   brief: You reposition your enemies as you hit them with attacks
+#   effect:
+#     Make a melee {Strike} with a club, polearm, shield, or spear. If you hit, you can push your target up to 5 feet in a direction of your choice.
+
+# Sentinel:
+#   tier: Novice
+#   type: Reaction
+#   brief: You occupy your enemies' attention, protecting nearby allies
+#   tags:
+#     trigger: A creature you can reach attacks a target other than you
+#   effect:
+#     Make a melee {Strike} against the triggering creature.
+
+# Stand and Fight:
+#   tier: Novice
+#   type: Reaction
+#   brief: You stop creatures from running away from you
+#   tags:
+#     trigger: A creature you can reach uses a [[Move]] power
+#   effect:
+#     Make a melee {Strike} against the triggering creature. If you hit, you cancel your target's power, and your target can't use [[Move]] powers for the rest of its turn.

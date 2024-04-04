@@ -124,7 +124,7 @@ def process(filepath, prompt):
         )
 
         cliptextencode_7 = cliptextencode.encode(
-            text="nsfw, bad hands, text, watermark, low quality",
+            text="nsfw, bad hands, text, watermark, low quality, person, human, man, woman, 1boy, 1girl",
             clip=get_value_at_index(checkpointloadersimple_16, 1),
         )
 
@@ -185,7 +185,7 @@ def run_ollama(prompt):
 
 
 def main():
-    for filepath in glob.iglob('src/_data/talents/*.yml'):
+    for filepath in glob.iglob('src/_data/talents/*.yaml'):
         class_name = Path(filepath).stem
         print('Processing class:', class_name)
         with open(filepath, 'r') as file:
@@ -197,7 +197,7 @@ def main():
 
                 print('Processing power:', name)
 
-                prompt1 = 'The following is an ability in a medieval fantasy tabletop rpg system. Describe an image that shows this ability in action. Describe the focus of the image, then describe the background of the image, then describe the emotions and tone of the image. Your description should be formatted as a single very short paragraph of natural english writing. Be brief, be concise, and only include details the viewer can see with their eyes. Respond only with the description, nothing else.\n\n'
+                prompt1 = 'The following is an ability in a medieval fantasy tabletop rpg system. Describe an image that shows this ability in action. The image should NOT focus on a person. Describe the focus of the image, then describe the background of the image, then describe the emotions and tone of the image. The image should NOT focus on a person. Your description should be formatted as a single very short paragraph of natural english writing. Be brief, be concise, and only include details the viewer can see with their eyes. Respond only with the description, nothing else.\n\n'
                 prompt1 += name + "\nType: " + class_name + ", " + entry['type'] + "\nDescription: " + entry['brief'] + "\nEffect: " + entry['effect']
                 description = run_ollama(prompt1)
                 # print('Generated Description:', description)

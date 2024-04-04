@@ -1,0 +1,380 @@
+Critical Invocations:
+  tier: Novice
+  type: Passive
+  brief: You inflict additional effects when you critically succeed on a invocation
+  effect: |
+    When you critically succeed on an [[Invocation]] attack, you apply an additional effect to your target depending on the attack's element.
+
+    Bludgeoning
+    : Your target falls {prone}
+
+    Cold
+    : Your target is {slowed} until the end of their next turn
+
+    Electricity
+    : Your target can't use {% icon Reaction %} powers until the end of the next round
+
+    Fire
+    : Your target takes 1d6 [[Fire]] damage at the start of your next turn
+
+    Necrotic
+    : Your target can't heal until the end of their next turn
+
+    Radiant
+    : Your target is {dazzled} until the end of their next turn
+
+    Sonic
+    : Your target can't hear for 1 minute
+
+    Toxic
+    : Your target takes 1d6 [[Toxic]] damage at the start of your next turn
+
+Invoke Beam:
+  tier: Novice
+  type: Free
+  brief: You begin to emanate a beam of energy that continuously zaps enemies
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    duration: 1 minute, until you use **Channel Beam** three times, or until you end your turn without using **Channel Beam**
+  effect: |
+    You can use the **Channel Beam** power.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Channel Beam** increases by 1d6.
+  aside: |
+    {% smallpower %}
+    Channel Beam:
+      type: 1-Action
+      traits: [Attack, Invocation]
+      tags:
+        range: 30 feet
+      effect: |
+        Make a Magic attack roll against your target's Defense.
+
+        Success
+        : Your target takes 2d6 damage
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+
+Invoke Burn:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure an elemental arrow that continues damaging after it hits
+  traits: [Attack, Cantrip, Invocation, Spell]
+  tags:
+    cost: 0 Mana
+    range: 120 feet
+    duration: Sustained, up to 1 minute
+  effect: |
+    Make a Magic attack roll against your target's Agility DC.
+
+    Critical Success
+    : Double damage
+
+    Success
+    : Your target takes 1d6 damage
+
+    #### Heightened
+
+    For each +1 Mana, this spell's damage increases by 1d6.
+
+Invoke Hazard:
+  tier: Novice
+  type: 1-Action
+  brief: You cover the ground nearby with a dangerous elemental field
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: Sustained, up to 10 minutes
+  effect: |
+    You can use the **Trigger Hazard** power.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Trigger Hazard** increases by 1d6.
+  aside: |
+    {% smallpower %}
+    Trigger Hazard:
+      type: Reaction
+      traits: [Attack, Invocation]
+      tags:
+        trigger: A creature enters a square in the area of **Invoke Hazard**
+        target: The triggering creature
+        requirements: You haven't used **Trigger Hazard** on this target yet (for this casting of **Invoke Hazard**)
+      effect: |
+        Make a Magic attack roll against your target's Defense.
+
+        Success
+        : Your target takes 2d6 damage
+    {% endsmallpower %}
+
+Invoke Vengeance:
+  tier: Novice
+  type: Reaction
+  brief: You retaliate against an attack with a pulse of elemental energy
+  traits: [Attack, Invocation, Spell]
+  tags:
+    trigger: You take damage from an attack
+    cost: 1 Mana
+    target: The creature that made the triggering attack
+  effect: |
+    Make a Magic attack roll against the target's Agility DC.
+
+    Success
+    : Your target takes 3d10 damage
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +2 Mana, the damage increases by 3d10.
+
+Invoke Wave:
+  tier: Novice
+  type: 1-Action
+  brief: You emit elemental energy in a wave all around you
+  traits: [Attack, Cantrip, Invocation, Spell]
+  tags:
+    cost: 0 Mana
+    area: 10-foot emanation or 15-foot cone
+  effect: |
+    Make a Magic attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes 1d6 damage
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 1d6.
+
+Trance:
+  tier: Novice
+  type: Free
+  brief: You enter a mystical trance, gaining offensive power at the cost of defense
+  traits: [Daily, Emotion, Mental]
+  tags:
+    duration: 1 minute, until you fall to 0 Mana, or until you fall {unconscious}
+  effect: |
+    You enter a meditative state and begin trancing. While trancing:
+    * You have +5 damage to all spells
+    * You take a -2 penalty to Defense
+    * You can't make Strikes
+
+Versatile Invoker:
+  tier: Novice
+  type: Passive
+  brief: You can modify your spells to deal damage of any type you want
+  effect: |
+    Whenever you use an [[Invocation]] power, you can change the damage type of the power to be any one of the options given by the [[Invocation]] trait.
+
+Empowered Trance:
+  tier: Veteran
+  type: Passive
+  brief: Your trance further enhances all of your magic, lowering mana costs
+  tags:
+    prerequisites: Trance
+  effect: |
+    While trancing, all of your spells have -1 cost.
+
+# 6 dice * 2 AOE / 4 base = 3 cost
+Invoke Blast:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure a mote of energy that explodes into a large blast
+  traits: [Attack, Invocation, Spell]
+  tags:
+    cost: 3 Mana
+    range: 500 feet
+    area: 20-foot burst
+  effect: |
+    Make a Magic attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes 4d6 damage
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 1d6.
+
+Invoke Cloud:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure a cloud of elemental energy that damages creatures inside
+  traits: [Invocation, Spell]
+  tags:
+    cost: 5 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: Sustained, up to 10 minutes
+  effect: |
+    You conjure a cloud of elemental energy in the spell's area. The cloud completely blocks vision inside its area. When you sustain this spell, you can move the cloud up to 30 feet in any direction.
+
+    At the end of each of your turns, make a Magic attack roll against the Agility DC of everything inside the cloud.
+
+    Success
+    : Your target takes 3d6 damage
+
+    Failure
+    : Half damage
+
+    #### Heightened
+
+    For each +2 Mana, the damage increases by 1d6.
+
+Secondary Blast:
+  tier: Veteran
+  type: Free
+  brief: Your spells explode in secondary blasts, damaging everyone caught nearby
+  tags:
+    trigger: You cast a spell that deals damage
+    target: Everything within 5 feet of any target of the triggering spell
+  effect: |
+    The triggering spell deals 1d6 damage to your target.
+
+Shieldbreaker:
+  tier: Veteran
+  type: Free
+  brief: Your spell easily breaks through your opponent's shield
+  tags:
+    range: 120 feet
+    trigger: You damage your target with a spell
+  effect: |
+    Your target takes additional damage from the triggering spell equal to half their remaining amount of Shield against the triggering spell.
+
+    *For example, imagine you deal 4 [[Fire]] damage with a spell, and your target has 6 [[Fire]] Shield remaining out of 20 [[Fire]] Shield total. Then the spell deals an extra 6/2 = 3 damage, for a total of 7 [[Fire]] damage. You break through your target's Shield and deal 1 damage to their health.*
+
+Eldritch Might:
+  tier: Master
+  type: Free
+  brief: You empower a spell, increasing its damage beyond normal limits
+  traits: [Encounter]
+  tags:
+    trigger: You cast a spell
+    requirements: Either the triggering spell is an Evoker spell or it deals damage
+  effect: |
+    The triggering spell has -2 cost.
+
+Invoke Chain:
+  tier: Master
+  type: 1-Action
+  brief: You send out a chain of energy that can hit an unlimited number of targest
+  traits: [Spell]
+  tags:
+    cost: 6 Mana
+    range: 120 feet
+  effect: |
+    Use the **Leaping Chain** effect on your target. No matter how many times you use **Leaping Chain**, you can't choose the same target twice.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Leaping Chain** increases by 1d6.
+  aside: |
+    {% smallpower %}
+    Leaping Chain: 
+      traits: [Attack, Invocation]
+      effect: |
+        Make a Magic attack roll against your target's Agility DC.
+
+        Success
+        : Your target takes 7d6 damage, and you can immediately use **Leaping Chain** again on another target within 30 feet of your target
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+
+Invoke Disintegrate:
+  tier: Master
+  type: 1-Action
+  brief: You disintegrate a material, turning it entirely to dust
+  traits: [Attack, Death, Invocation, Spell]
+  tags:
+    cost: 6 Mana
+    range: 60 feet
+  effect: |
+    Make a Magic attack roll against your target's Strength DC.
+
+    Critical Success
+    : Double damage
+
+    Success
+    : Your target takes 14d8 damage
+
+    Failure
+    : Half damage
+
+    If your target has the same trait as this spell's damage type, this spell deals double damage.
+
+    *For example, this spell deals double damage if you [[Cold]] Disintegrate a {Elemental Wall} of ice or if you [[Fire]] Disintegrate a Fire Elemental.*
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d8.
+
+Awesome Destruction:
+  tier: Ribbon
+  type: Passive
+  brief: Your destructive magic awes and scares everyone who can see it
+  effect: |
+    You have advantage on Spirit+Provoke rolls to intimidate people who have seen you deal damage with a spell in the past minute.
+
+Enchant Weapon:
+  tier: Ribbon
+  type: 1-Action
+  brief: You cover a weapon in elemental energy, changing its damage type
+  traits: [Cantrip, Invocation, Spell]
+  tags:
+    cost: 0 Mana
+    target: One weapon you can reach that isn't being wielded by a hostile creature
+    duration: 1 minute
+  effect: |
+    Your target's damage type changes to the damage type of this spell.
+
+Minor Blast:
+  tier: Ribbon
+  type: 1-Action
+  brief: You scatter a small amount of power to deal a tiny bit of damage to several targets
+  traits: [Cantrip, Invocation, Spell]
+  tags:
+    cost: 0 Mana
+    range: 120 feet
+    target: Up to ten targets you can see within range
+  effect: |
+    Your target takes 1 damage.
+
+Shatter:
+  tier: Ribbon
+  type: 1-Action
+  brief: You send out powerful but imprecise waves of energy that shatter objects
+  traits: [Cantrip, Invocation, Spell]
+  tags:
+    cost: 0 Mana
+    range: 30 feet
+  effect: |
+    If your target is an inanimate, unattended object, it takes 2d8 damage.
+
+    #### Heightened
+
+    If you add +1 Mana, this spell gains an area of a 10-foot burst. For each additional +1 Mana, the burst's radius increases by 10 feet.
+
+Ultimate Destruction:
+  tier: Ribbon
+  type: 1-Action
+  brief: You brag about the ultimate destructive power of your spellcasting
+  traits: [Daily]
+  tags:
+    duration: Until the end of your next turn
+  effect: |
+    The next spell you cast deals an extra 2d6 damage.

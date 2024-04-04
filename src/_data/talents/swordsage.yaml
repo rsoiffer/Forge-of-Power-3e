@@ -1,0 +1,258 @@
+Dragon Stance:
+  tier: Novice
+  type: Free
+  brief: You take on the stance of a dragon, crushing foes with elemental energy
+  traits: [Specialize, Stance]
+  effect: |
+    Your unarmed Strikes deal 1d8 base damage (with the chosen trait) and have the [[Finesse]] trait. You have 10 Shield (against the chosen trait).
+  aside: |
+    ### Specializations
+
+    Choose one of the [[Cold]], [[Electricity]], [[Fire]], or [[Toxic]] traits. This power's unarmed base damage has that trait, and its Shield protects against that trait.
+
+Elemental Weapon:
+  tier: Novice
+  type: Free
+  brief: You enhance your weapon with damaging elemental energy
+  traits: [Encounter, Specialize]
+  tags:
+    trigger: You succeed on a Strike
+  effect: |
+    The triggering Strike deals an extra 2d6 damage.
+  aside: |
+    ### Specializations
+
+    Choose one of the [[Cold]], [[Electricity]], [[Fire]], [[Force]], [[Sonic]] traits. This power gains that trait.
+
+Forbidden Technique:
+  tier: Novice
+  type: Free
+  brief: You unleash a dangerous forbidden technique that comes at a heavy cost
+  traits: [Encounter]
+  tags:
+    trigger: You make an attack
+  effect: |
+    You have a +10 bonus to the triggering attack. At the end of your turn, you gain 1 fatigue.
+
+Ki Blast:
+  tier: Novice
+  type: Passive
+  brief: You blast enemies with a bolt of concentated ki energy
+  effect: |
+    You can fire ki blasts as a ranged weapon with a range of 120 feet and a base damage of 1d10 [[Force]]. Your ki blast Strikes add Spirit to the attack and damage rolls instead of Agility. You can use the **Charge Blast** power.
+  aside: |
+    {% smallpower %}
+    Charge Blast:
+      type: 1-Action
+      tags:
+        duration: 1 minute
+      effect: |
+        The next ki blast Strike you make deals an extra 1d10 base damage.
+    {% endsmallpower %}
+
+Ki Pool:
+  tier: Novice
+  type: Passive
+  brief: You have a pool of ki points that fuel your Swordsage powers
+  tags:
+    prerequisites: Any [[Encounter]] Swordsage talent
+  effect: |
+    You have a Ki Pool that stores up to 3 Ki points. You can spend 1 Ki point at any time to refresh an [[Encounter]] Swordsage talent, letting you use it again without taking a 5-minute rest. Your Ki Pool replenishes when you complete an 8-hour rest.
+
+Mind over Body:
+  tier: Novice
+  type: Reaction
+  brief: You resist a physical attack through pure mental fortitude
+  traits: [Concentrate, Encounter]
+  tags:
+    trigger: An attack targets you
+  effect: |
+    Your DC against the triggering attack is your Spirit DC + 5.
+
+Shadow Blade:
+  tier: Novice
+  type: 1-Action
+  brief: You strike twice at an enemy, with your true sword and a illusory copy
+  traits: [Encounter, Illusion, Necrotic]
+  effect: |
+    Make a melee {Strike}. Make two attack rolls for this Strike and keep the higher result. If both results would have been successes, the Strike deals an extra 4d6 damage.
+
+Spirit Carve:
+  tier: Novice
+  type: 1-Action
+  brief: You strike directly at your enemy's soul, bypassing their defense
+  traits: [Concentrate, Encounter]
+  effect: |
+    Make a melee Strike with a +5 bonus. The DC of this Strike is your target's Spirit DC.
+
+Blast Strike:
+  tier: Veteran
+  type: Free
+  brief: Your strike lets out a blast of elemental energy that damages everyone nearby
+  traits: [Attack, Encounter, Specialize]
+  tags:
+    trigger: You succeed on a melee Strike
+    area: 20-foot emanation around the target of the triggering Strike
+    target: All creatures other than you in the area
+  effect: |
+    Make a Spirit attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes 4d6 damage
+
+    Failure
+    : Half damage
+  aside: |
+    ### Specializations
+
+    Choose one of the [[Cold]], [[Electricity]], [[Fire]], [[Force]], or [[Sonic]] traits. This power gains that trait.
+
+Ki Flight:
+  tier: Veteran
+  type: Free
+  brief: Your ki is so powerful that you can levitate above the ground
+  traits: [Daily]
+  tags:
+    duration: 10 minutes
+  effect: |
+    You can fly at your full Speed.
+
+Nightmare Blade:
+  tier: Veteran
+  type: 1-Action
+  brief: You perceive the deadliest place to strike your enemy
+  traits: [Attack, Concentrate, Encounter]
+  tags:
+    target: One creature you can reach
+  effect: |
+    Make a Spirit+Notice attack roll against your target's Defense.
+
+    Success
+    : Make a melee Strike against your target; this Strike is automatically a critical success
+
+Super Mode:
+  tier: Veteran
+  type: 1-Action
+  brief: You glow with power, transforming into an even stronger form
+  traits: [Encounter]
+  tags:
+    duration: 1 minute
+  effect: |
+    You have +1 Defense and +10 feet Speed. Your Strikes deal an additional 1d6 damage on a success.
+  fluff: |
+    Don't make him hungry. You wouldn't like him when he's hungry.
+
+Vengeful Jaunt:
+  tier: Veteran
+  type: Reaction
+  brief: You reappear behind a foe that attacked you
+  traits: [Encounter, Teleportation]
+  tags:
+    trigger: After you are targeted by an attack
+    target: The creature that made the triggering attack
+    requirements: Your target is within 120 feet of you
+    duration: Until the end of your next turn
+  effect: |
+    You teleport to an empty space adjacent to your target. You have advantage on the next Strike you make against your target.
+  fluff: |
+    Nothing personal, kid.
+
+Deadly Techniques:
+  tier: Master
+  type: Passive
+  brief: Your elemental weapon power does more damage
+  tags:
+    prerequisites: Elemental Weapon or Shadow Blade
+  effect: |
+    The extra damage of your {Elemental Weapon} power increases to 4d6.
+
+    The extra damage of your {Shadow Blade} power increases to 8d6.
+
+Quivering Palm:
+  tier: Master
+  type: 1-Action
+  brief: You infuse your target with ki, which you can set off like a bomb
+  traits: [Encounter, Necrotic]
+  tags:
+    duration: 1 week
+  effect: |
+    Make a melee {Strike}. On a success, choose one of the following effects:
+    * Your target takes 8d6 damage
+    * You can use the **Quivering Death** power once on your target
+  aside: |
+    {% smallpower %}
+    Quivering Death:
+      type: 1-Action
+      traits: [Necrotic]
+      tags:
+        target: The target of your **Quivering Palm**
+      effect: |
+        Make a Spirit attack roll against your target's Strength DC.
+
+        Critical Success
+        : Double damage
+
+        Success
+        : Your target takes 12d6 damage
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+
+Strike the Soul:
+  tier: Master
+  type: Free
+  brief: Your strikes hurt your opponent's spiritual perseverance
+  traits: [Encounter]
+  tags:
+    trigger: You succeed on a melee Strike
+  effect: |
+    The target of the triggering Strike takes 1 fatigue.
+
+Battle Aura:
+  tier: Ribbon
+  type: Free
+  brief: You unleash your battle aura, glowing bright with power
+  tags:
+    duration: 1 minute, or until you decide to end it
+  effect: |
+    You glow bright with power, shedding colorful light as a torch. You have advantage on Provoke rolls to impress others with martial power.
+  fluff: The color of your battle aura is specific to you as an individual.
+
+Donate Energy:
+  tier: Ribbon
+  type: 1-Action
+  brief: You give up some of your own life force to heal an ally
+  traits: [Healing]
+  tags:
+    target: One creature you can reach
+  effect: |
+    Youe current health decreases by 2d6, to a minimum of 0. Your target heals for the same amount of health you lost.
+
+Perfect Meditation:
+  tier: Ribbon
+  type: Passive
+  brief: You can enter a mediatative trance instead of eating or sleeping
+  effect: |
+    You can enter a state of perfect meditation that replaces your need for food and rest. While meditating, you don't need to eat or drink. You can also meditate instead of sleeping, gaining all the benefits of resting while remaining aware of the outside world. You can't use powers while meditating.
+
+Scouter:
+  tier: Ribbon
+  type: Free
+  brief: You can sense the power level of nearby enemies
+  tags:
+    range: 120 feet
+  effect: |
+    You learn your target's character level or CR, and you learn your target's Swordsage level.
+  fluff: |
+    Vegeta! What does your Scouter ribbon say about his Swordsage level?
+
+Ultimate Technique:
+  tier: Ribbon
+  type: Free
+  brief: You announce the name of your latest ultimate technique
+  traits: [Daily]
+  tags:
+    trigger: You make a die roll
+  effect: |
+    You shout the name of your ultimate technique. You must come up with and declare this name out of character. If the name is at least 5 words, and if your character hasn't used **Ultimate Technique** with the same name before, you have advantage on the die roll.

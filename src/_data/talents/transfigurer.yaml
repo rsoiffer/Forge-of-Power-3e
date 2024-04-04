@@ -1,0 +1,576 @@
+Adhesive Bog:
+  tier: Novice
+  type: 1-Action
+  brief: You transmute an area into sticky mud that traps enemies
+  traits: [Spell, Transfiguration]
+  tags:
+    cost: 2 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: Sustained, up to 1 minute
+  effect: |
+    All ground in the spell's area becomes difficult terrain. You can use the **Deepen Bog** power.
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst increases by 10 feet.
+  aside: |
+    {% smallpower %}
+    Deepen Bog:
+      type: Free
+      traits: [Attack]
+      tags:
+        area: The area of **Adhesive Bog**
+      effect: |
+        Make a Magic attack roll against your target's Agility DC.
+
+        Success
+        : Your target is {immobilized}
+
+        Failure
+        : Your target is {slowed}
+    {% endsmallpower %}
+  fluff: |
+    What are you doing in my swamp!?
+
+Alter Creature:
+  tier: Novice
+  type: 1-Action
+  brief: You alter a creature's form, granting them a useful bestial trait
+  traits: [Spell, Transfiguration]
+  tags:
+    cost: 2 Mana
+    target: One creature you can reach
+    duration: Sustained, up to 1 hour
+  effect: |
+    Choose one of the following effects.
+
+    ***Aquatic Adaptation.*** Your target can breathe underwater and can swim at their full Speed.
+
+    ***Barkskin.*** Your target has 14 Defense, unless their Defense was already higher.
+
+    ***Change Appearance.*** Your target's physical features change, making them appear as a different person of roughly the same body shape.
+
+    ***Longstrider.*** Your target has a +10 feet bonus to Speed.
+
+    ***Natural Weapons.*** Your target's unarmed Strikes have 1d10 base damage. You choose whether this damage is [[Bludgeoning]], [[Piercing]], or [[Slashing]].
+
+    ***Spider Climb.*** Your target can climb at their full Speed. Your target can easily climb along walls and ceilings, without any die rolls and without using their hands.
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+
+Animate Object:
+  tier: Novice
+  type: 1-Action
+  brief: You animate an object into a magical construct minion
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    target: An object you can see within range, whose shape and size roughly corresponds to a drone or a golem
+    duration: 1 hour
+  effect: |
+    Your target animates as a [[Minion]] drone or golem under your control. When the spell's duration ends, your minion deanimates and becomes a normal object.
+
+    #### Heightened
+
+    For each +1 Mana, your minion's maximum health increases by 10, and its Strength or Agility increases by 1.
+
+    If you add +2 Mana, the duration extends to 24 hours.
+  aside: |
+    {% smallpower %}
+    Drone Stats:
+      traits: [Construct, Unintelligent]
+      tags:
+        attributes: Strength -2, Agilty +2, Intellect -2, Spirit +0
+        other stats: Health 10, Defense 14, Speed 40 feet (fly), Size -2
+      effect: |
+        50 [[Mental]] Shield, 10 [[Toxic]] Shield.
+
+        The drone can slam with its body as a [[Finesse]] melee weapon that deals 1d6 [[Bludgeoning]] base damage.
+      fluffstart: |
+        Drones are small handheld objects, like books or swords, that have been enchanted to be able to fly.
+    {% endsmallpower %}
+
+    {% smallpower %}
+    Golem Stats:
+      traits: [Construct, Unintelligent]
+      tags:
+        attributes: Strength +1, Agilty +0, Intellect -2, Spirit -1
+        other stats: Health 20, Defense 12, Speed 25 feet, Size +0
+      effect: |
+        50 [[Mental]] Shield, 20 [[Toxic]] Shield.
+
+        The golem can slam with its fists as a melee weapon that deals 1d8 [[Bludgeoning]] base damage.
+
+        The golem can wield weapons, most commonly a {bludgeon}, a {shield}, or a {sword}.
+      fluffstart: |
+        Golems are human-shaped objects, like suits of armor or scarecrows, that have been enchanted to be able to walk.
+    {% endsmallpower %}
+
+Combat Form:
+  tier: Novice
+  type: Free
+  brief: You transform into a powerful animal battle form for a short time
+  traits: [Polymorph, Spell]
+  tags:
+    cost: 2 Mana
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    You polymorph into a animal of your choice. While in combat form:
+    * Your Size is +0.
+    * Your Strength is +2, unless it was already higher. This doesn't affect your health.
+    * You gain the [[Animal]] trait.
+    * You gain low-light vision and imprecise scent.
+    * You cannot speak or use any equipment.
+    * You cannot use [[Manipulate]] powers other than Transfigurer spells.
+
+    Your animal form determines your Speed and the base damage of your {unarmed} Strikes. Following is a table of stats for common animal types. Pick the option that best describes the animal form you chose. Your GM may let you modify the stats below to better fit your form.
+
+    <table>
+      <tr>
+        <th>Animal</th>
+        <th>Speed</th>
+        <th>Unarmed</th>
+        <th>Special</th>
+      </tr>
+      <tr>
+        <td>Ape</td>
+        <td>25 feet (walk, climb)</td>
+        <td>2d6 [[Bludgeoning]]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Bear</td>
+        <td>30 feet (walk)</td>
+        <td>2d8 [[Slashing]]</td>
+        <td>+1 Defense</td>
+      </tr>
+      <tr>
+        <td>Bull</td>
+        <td>40 feet (walk)</td>
+        <td>2d8 [[Bludgeoning]]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Canine</td>
+        <td>40 feet (walk)</td>
+        <td>2d8 [[Piercing]]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Cat</td>
+        <td>40 feet (walk)</td>
+        <td>2d6 [[Slashing]]</td>
+        <td>Advantage on Agility+Atheltics rolls</td>
+      </tr>
+      <tr>
+        <td>Deer</td>
+        <td>50 feet (walk)</td>
+        <td>2d6 [[Piercing]]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Frog</td>
+        <td>25 feet (walk, swim)</td>
+        <td>2d4 [[Bludgeoning]]</td>
+        <td>Reach 15 feet</td>
+      </tr>
+      <tr>
+        <td>Shark</td>
+        <td>35 feet (swim)</td>
+        <td>2d8 [[Piercing]]</td>
+        <td>Breathe underwater but not air</td>
+      </tr>
+      <tr>
+        <td>Snake</td>
+        <td>20 feet (walk, climb, swim)</td>
+        <td>2d4 [[Piercing]] + 1d6 [[Toxic]]</td>
+        <td></td>
+      </tr>
+    </table>
+
+    #### Heightened
+
+    For each +2 Mana, your animal form gives +1 Size, +5 feet reach, and +2 damage to unarmed Strikes.
+
+Conjure/Vanish:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure an object or make an object vanish into nothingness
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    area: 5-foot burst
+    duration: 1 hour
+  effect: |
+    Choose one of the following effects.
+
+    ***Conjure.*** You conjure an object. The object appears out of nothingness, and disappears when this spell ends. The object can be anything you wish that meets the following constraints:
+    * The object fits entirely within the spell's area
+    * The object is nonmagical
+    * The object is appearing in an empty space
+    * You understand the object's mechanical workings (if any)
+
+    ***Vanish.*** You vanish an object. The object disappears into nowhere, and reappears in the space it left when the spell ends. The object can be anything you wish that meets the following constraints:
+    * The object fits entirely within the spell's area
+    * The object is nonmagical
+    * The object is not being carried or worn by a creature
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst increases by 5 feet.
+
+    If you add +1 Mana, the duration of this spell is 24 hours. If you instead add +2 Mana, the duration of this spell is Forever.
+
+Enlarge/Reduce:
+  tier: Novice
+  type: 1-Action
+  brief: You change your target's size, making them larger or smaller
+  traits: [Attack, Spell, Transfiguration]
+  tags:
+    cost: 2 Mana
+    range: 30 feet
+    duration: Varies
+  effect: |
+    Choose one of the following effects.
+
+    ***Enlarge.*** Your target has +1 Size, +5 feet reach, and advantage on Strength rolls other than attack rolls. When your target succeeds on a {Strike}, they deal an extra 1d6 damage.
+
+    ***Reduce.*** Your target has -1 Size and has disadvantage on Strength rolls other than attack rolls. When your target succeeds on a {Strike}, they deal 1d6 less damage.
+
+    Make a Magic attack roll against your target's Strength DC.
+
+    Critical Success
+    : This spell lasts 10 minutes
+
+    Success
+    : This spell lasts 1 minute
+
+    Failure
+    : This spell lasts until the end of your target's next turn
+
+    Critical Failure
+    : This spell ends immediately
+
+Grease:
+  tier: Novice
+  type: 1-Action
+  brief: You cover the ground in slick grease that makes creatures fall over
+  traits: [Spell, Transfiguration]
+  tags:
+    cost: 1 Mana
+    range: 60 feet
+    area: 10-foot burst
+    duration: 1 minute
+  effect: |
+    All ground in the spell's area is covered in slick grease. This greased ground is difficult terrain. Whenever a creature tries to use a [[Move]] power over greased ground, it must make an Agility+Athletics roll against your Magic DC.
+
+    Success
+    : The creature is unaffected
+
+    Failure
+    : The creature falls {prone} and its [[Move]] power is disrupted
+
+    Critical Failure
+    : As failure, and the creature takes 1d6 [[Bludgeoning]] damage
+
+    #### Heightened
+
+    If you add +1 Mana, the duration increases to 1 hour.
+
+    For each +1 Mana, the radius of the burst doubles.
+
+Scout Form:
+  tier: Novice
+  type: 1-Action
+  brief: You tranform into a tiny animal, perfect for scouting or stealth
+  traits: [Polymorph, Spell]
+  tags:
+    cost: 1 Mana
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    You polymorph into a tiny animal of your choice. While in scout form:
+    * Your Size is -2.
+    * Your Strength is -5. This doesn't affect your health.
+    * You have 5 [[Physical]] Weakness.
+    * Your Speed is 30 feet.
+    * You have a +10 bonus to Agility+Stealth rolls.
+    * You gain the [[Animal]] trait.
+    * You gain low-light vision and imprecise scent.
+    * You cannot speak or use any equipment.
+    * You cannot use [[Manipulate]] powers other than Transfigurer spells.
+
+    #### Heightened
+
+    If you add +1 Mana, you turn into a flying creature, such as a bird. You can fly at your full Speed.
+
+Advanced Form:
+  tier: Veteran
+  type: Passive
+  brief: You can change into a more powerful or versatile animal form
+  tags:
+    prerequisites: Combat Form or Scout Form
+  effect: |
+    When you use your {Combat Form} or {Scout Form} power, you can choose one of the following effects.
+    * You can fly at your full Speed.
+    * You have 5 [[Physical]] Shield.
+    * You have +4 damage to unarmed Strikes.
+    * You have a +20 feet bonus to Speed.
+
+Greater Alteration:
+  tier: Veteran
+  type: Passive
+  brief: You can alter creatures' forms to an even greater extent
+  tags:
+    prerequisites: Alter Creature
+  effect: |
+    Your {Alter Creature} power gains the following effect.
+
+    #### Heightened
+
+    If you add +2 Mana, choose one of the following effects in addition to the normal effect.
+
+    ***Burrower.*** Your target can burrow through stone and dirt at their full Speed.
+
+    ***Camouflage.*** Your target has a +10 bonus to Stealth rolls in a particular natural environment (such as Forest, Grassland, etc.).
+
+    ***Flight.*** Your target can fly at their full Speed.
+
+    ***Keen Senses.*** Your target can sense creatures and objects as if they were 10 times closer to them.
+
+    ***Poisonous.*** Whenever a creature succeeds on a melee {Strike} against you, they take 3d6 [[Toxic]] damage.
+
+    ***Skilled.*** Your target gains an {Athletics} or {Notice} feat of your choice.
+
+Polymorph:
+  tier: Veteran
+  type: 1-Action
+  brief: You transform another creature into an animal shape, disabling it
+  traits: [Attack, Polymorph, Spell]
+  tags:
+    cost: 5 Mana
+    range: 60 feet
+    duration: Sustained, up to 1 hour
+  effect: |
+    Choose any animal, which must have CR no higher than your target's CR or level. You can't choose an animal form that would be fatal to your target, such as a fish out of water. Make a Magic attack roll against your target's Spirit DC.
+
+    Critical Success
+    : As success, and you automatically succeed on the attack roll when you sustain this spell in the future
+
+    Success
+    : Your target transforms into the chosen animal, replacing all of their stats except their Intellect, Spirit, and Health
+
+    Failure
+    : Your target partially transforms, becoming {stunned}
+
+    If you sustain this spell for the full hour, this spell lasts forever.
+
+Shapechanger:
+  tier: Veteran
+  type: Free
+  brief: You can change between many animal forms at a time
+  tags:
+    prerequisites: Alter Creature, Combat Form, Polymorph, or Scout Form
+    requirements: One of your casts of the above spells is active
+  effect: |
+    You change your choice of form for the spell you cast. For {Alter Creature}, this means you change the effect you chose for the spell. For {Combat Form}, {Polymorph}, or {Scout Form}, this means you change the animal you chose for the spell.
+
+Transmute:
+  tier: Veteran
+  type: 1-Action
+  brief: You transmute a creature or object from one material to another material
+  traits: [Attack, Death, Spell, Transfiguration]
+  tags:
+    cost: 4 Mana
+    range: 30 feet
+    duration: 1 hour
+  effect: |
+    You partially transform your target into a material of your choice. This spell gains a trait based on the material you choose. For example, if you transmute the air next to your target into poison gas, this spell is [[Toxic]], or if you turn your target's hair into fire, this spell is [[Fire]].
+
+    Make a Magic attack roll against your target's Strength DC.
+
+    Critical Success
+    : Double damage
+
+    Success
+    : Your target takes 10d6 damage
+
+    Failure
+    : Half damage
+
+    If this damage reduces your target to 0 health, your target is fully transformed into that material for the duration. If your target is a creature, they die.
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d6.
+
+    If you add +1 Mana, the duration of this spell is 24 hours. If you instead add +2 Mana, the duration of this spell is Forever.
+
+Petrify:
+  tier: Master
+  type: 1-Action
+  brief: You petrify a creature, transforming its flesh into stone
+  traits: [Attack, Spell, Transfiguration]
+  tags:
+    cost: 6 Mana
+    range: 60 feet
+    duration: Sustained, up to 1 minute
+  effect: |
+    Make a Magic attack roll against your target's Strength DC.
+
+    Critical Success
+    : Your target is {restrained}, but has 20 [[Anything]] Shield as their flesh hardens to stone
+
+    Success
+    : Your target is {flat-footed} and {immobilized}
+
+    Failure
+    : Your target is {slowed}
+
+    If you sustain this spell for the full minute, or if your target dies, this spell lasts forever.
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+
+Reshape Terrain:
+  tier: Master
+  type: Free
+  brief: You take control over the shape of nearby terrain and structures
+  traits: [Spell]
+  tags:
+    cost: 7 Mana
+    duration: Sustained, up to 10 minutes
+  effect: |
+    You can use the **Carve Surface**, **Liquify**, **Move Terrain**, and **Pillar** powers.
+  tabs:
+    Carve Surface:
+      type: 1-Action
+      tags:
+        range: 120 feet
+        area: 20-foot burst
+      effect: |
+        You manipulate the shape of all terrain surfaces within range. Choose one of the following effects:
+        * You cause shapes and colors to appear on surfaces, spelling words or drawing images
+        * You precisely carve the terrain surface into a specific shape
+        * You cause the ground to go from normal terrain to difficult terrain, or vice versa
+    Liquify:
+      type: 1-Action
+      traits: [Transfiguration]
+      tags:
+        range: 120 feet
+        area: 20-foot burst
+        duration: 1 minute
+      effect: |
+        All terrain in the area liquifies, gaining the consistency of sticky mud. The mud might fall or flow around, and any ground it covers becomes difficult terrain. A creature that ends its turn in the mud is {immobilized} as it sinks into the mud.
+
+        When this power ends, the mud solidifies back to its original consistency. Any creatures in the mud when it solidifies are {restrained}.
+
+        #### Heightened
+
+        For each +1 Mana you spent on **Reshape Terrain**, the radius of the burst increases by 10 feet.
+    Move Terrain:
+      type: 1-Action
+      tags:
+        range: 120 feet
+        area: Up to ten adjacent 5-foot cubes
+        requirements: The area is convex (it doesn't contain any holes)
+      effect: |
+        You move nearby terrain to fill the target area. If the area was already full, you instead empty the area.
+
+        *This power does not create or destroy material. You cannot use this power to empty an area if there is no extra terrain or empty space within range.*
+
+        #### Heightened
+
+        For each +1 Mana you spent on **Reshape Terrain**, you can target an additional two 5-foot cubes.
+    Pillar:
+      type: 1-Action
+      traits: [Attack, Bludgeoning]
+      tags:
+        range: 120 feet
+        area: 20-foot line
+        requirements: The line starts in a solid area
+      effect: |
+        A solid pillar suddenly extends out of the terrain, filling this spell's area. Make a Magic attack roll against your target's Agility DC.
+
+        Success
+        : Your target takes 4d6 damage and is pushed to the end of the pillar. If this pushes your target into a solid structure, they take double damage and are {immobilized}.
+
+        #### Heightened
+
+        For each +2 Mana you spent on **Reshape Terrain**, the damage increases by 1d6.
+
+Supernatural Form:
+  tier: Master
+  type: Passive
+  brief: You can change into the form of a magical beast 
+  tags:
+    prerequisites: Combat Form or Scout Form
+  effect: |
+    When you use your {Combat Form} or {Scout Form} power, you can take on the appearance of a magical beast, a monster, or a mythological animal you invent. You can choose one of the following effects.
+    * You learn a Novice or Veteran spell of your choice from any class. This spell loses the [[Manipulate]] trait.
+    * You have 10 [[Elemental]] Shield.
+    * You can speak and use equipment normally. You can use [[Manipulate]] powers normally.
+    * When another creature starts its turn within 10 feet of you, it takes 2d6 damage. This power gains one of the [[Cold]], [[Electricity]], or [[Fire]] traits.
+
+Eye of the Moon:
+  tier: Ribbon
+  type: Free
+  brief: You can detect whether targets have been transformed or not
+  tags:
+    range: 120 feet
+  effect: |
+    You learn whether your target is affected by any [[Transfiguration]] powers, but you don't learn which powers. You can see both your target's current form and your target's true form.
+
+Minor Alchemy:
+  tier: Ribbon
+  type: 1-Action
+  brief: You temporarily convert a small amount of one material into another
+  traits: [Ritual, Spell, Transfiguration]
+  tags:
+    cost: 1 Mana
+    target: An unattended object you can reach
+    requirements: Your target is made of pure wood, stone, iron, copper, or silver, and your target is no larger than 1 cubic foot
+    duration: Sustained, up to 1 hour
+  effect: |
+    You transform your target into a different material, from among wood, stone, iron, copper or silver.
+
+Minor Transfiguration:
+  tier: Ribbon
+  type: 1-Action
+  brief: You temporarily transform your target into a similarly-designed object
+  traits: [Ritual, Spell, Transfiguration]
+  tags:
+    cost: 1 Mana
+    target: An unattended object you can reach
+    requirements: Your target is no larger than 1 cubic foot
+    duration: Sustained, up to 1 hour
+  effect: |
+    You transform your target into a different object or creature that is similar to it. For example, you could turn a button into a beetle, a pincushion into a porcupine, or a book into a different book.
+
+Revert Transfiguration:
+  tier: Ribbon
+  type: 1-Action
+  brief: You undo the effect of a spell that alters a creature's form
+  traits: [Ritual, Spell]
+  tags:
+    cost: 3 Mana
+    target: One creature or object you can reach
+  effect: |
+    You dispel all [[Transfiguration]] powers affecting your target.
+
+Shillelagh:
+  tier: Ribbon
+  type: Free
+  brief: You enhance a mundane stick to be study and tough, usable as a weapon
+  traits: [Cantrip, Spell, Transfiguration]
+  tags:
+    cost: 0 Mana
+    target: One nonmagical wooden stick you can reach
+    duration: 1 hour
+  effect: |
+    Your target becomes larger and sturdier. Choose whether your target counts as a {bludgeon}, a {staff}, or a {wand}.

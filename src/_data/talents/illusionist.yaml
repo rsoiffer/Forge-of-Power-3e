@@ -1,0 +1,622 @@
+Color Spray:
+  tier: Novice
+  type: 1-Action
+  brief: You spray out a burst of colors to disorient and blind your enemies
+  traits: [Attack, Spell, Visual]
+  tags:
+    cost: 1 Mana
+    area: 15-foot cone
+    duration: Varies
+  effect: |
+    Make a Magic attack roll against your target's Intellect DC.
+
+    Critical Success
+    : Your target is {blinded} for 1 minute
+
+    Success
+    : Your target is {blinded} until the end of their next turn
+
+    Failure
+    : Your target is {dazzled} until the end of their next turn
+
+Distortion:
+  tier: Novice
+  type: 1-Action
+  brief: You interfere with all sensory information in an area
+  traits: [Spell]
+  tags:
+    cost: 1 Mana
+    range: 120 feet
+    area: 10-foot burst
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    Choose one effect from the list below. At the GM's discretion, you can make up a new effect instead of choosing one from the list.
+
+    ***Blur.*** All creatures have [terrible visibility](combat-rules#visibility) to everything in the area.
+
+    ***Silence.*** Nothing in the area can produce sound.
+
+    ***Stench.*** Creatures that start their turn in the area must succeed on a Strength roll or be {dazzled} until the start of their next turn.
+
+    #### Heightened
+
+    For each +1 Mana, you can choose another effect.
+
+    For each +1 Mana, the radius of the burst doubles.
+
+Illusory Clone:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure an illusory copy of yourself that acts as a realistic creature
+  traits: [Illusion, Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    duration: 1 hour, until the clone falls to 0 health, or until you decide to end it
+  effect: |
+    You conjure an illusion that appears as an exact clone of yourself. Your clone apepars at the target point, and is a [[Minion]] creature that you control. Your clone has all the same stats as you, except its maximum Health is 1. Since your clone is an intangible illusion, it cannot physically interact with the world, but it can still be hurt by attacks. Your clone cannot use any powers except for basic powers that don't affect the world, such as {Stride}.
+
+    You have a telepathic link with your clone that lets you communicate instantly and share each others' senses: you can see through each others' eyes and feel everything the other feels. Your clone is perfectly loyal to you and obeys all your commands.
+
+    Your clone has duplicates of all your equipment. However, duplicated magic items lose their magic, and all duplicated equipment fades a few seconds after it is no longer touching your clone.
+
+    #### Heightened
+
+    For each +1 Mana, you conjure twice as many clones.
+
+    If you add +1 Mana, your clone is a tangible creature and can interact with the world. Your clone can use all basic powers. Your clone's maximum Health is equal to five times your Illusionist level.
+
+    If you add +1 Mana, your clone can cast all spells you know. You and your clone share the same Mana pool.
+
+Illusory Disguise:
+  tier: Novice
+  type: 1-Action
+  brief: You disguise your target, making them appear as someone else entirely
+  traits: [Illusion, Spell]
+  tags:
+    cost: 1 Mana
+    range: 10 feet
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    Your target is covered in a tangible illusion that makes them seem like another creature of the same body shape, and with roughly similar height and weight as themself. The illusion can change the appearance of your target's worn and held items, but any item your target removes or drops returns to its true appearance.
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+
+Invisibility:
+  tier: Novice
+  type: 1-Action
+  brief: You turn a creature invisible, completely hiding them from view
+  traits: [Spell]
+  tags:
+    cost: 2 Mana
+    range: 10 feet
+    duration: 1 hour, until your target makes an attack or casts a spell, or until you decide to end it
+  effect: |
+    Your target turns **invisible**.
+
+    #### Heightened
+
+    If you add +2 Mana, this spell's duration changes to 1 minute, and it doesn't end if your target makes an attack or casts a spell.
+
+    For each +1 Mana, you can target another creature within range.
+  aside: |
+    ### Invisible Condition
+
+    If you are invisible, you cannot be seen at all. This is enough to completely hide you from anyone who is not actively searching for you. Other creatures can still try to determine your location through sound clues, puffs of dust, or odd breezes. Creatures have disadvantage on Intellect+Notice rolls made to find you.
+
+Phantom Pain:
+  tier: Novice
+  type: 1-Action
+  brief: You fill a creature's mind with imaginary crippling pain
+  traits: [Attack, Phantasm, Spell]
+  tags:
+    cost: 1 Mana
+    range: 30 feet
+    duration: Sustained, up to 1 minute
+  effect: |
+    Make a Magic attack roll against your target's Intellect DC.
+
+    Critical Success
+    : Your target takes 2d4 damage and is {stunned} until the end of their next turn
+
+    Success
+    : Your target takes 2d4 damage
+
+    #### Heightened
+
+    For each +1 Mana, this spell's damage increases by 1d4.
+
+Phantom Treasure:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure an image of the thing most precious to a creature
+  traits: [Attack, Emotion, Phantasm, Spell]
+  tags:
+    cost: 2 Mana
+    range: 60 feet
+    duration: Varies
+  effect: |
+    Your target sees a phantasm of the most precious thing imaginable to them, whether that's a pile of items, a deific avatar, or a cherished loved one or hero. Your target is {dazzled} as they are entirely focused on the phantom treasure. Your target doesn't use any powers unless they're in combat or there is an immediate danger.
+
+    Make a Magic attack roll against your target's Intellect DC.
+
+    Critical Success
+    : This spell lasts 10 minutes
+
+    Success
+    : This spell lasts 1 minute
+
+    Failure
+    : This spell lasts until the end of your target's next turn
+
+    Critical Failure
+    : This spell ends immediately
+
+    #### Heightened
+
+    For each +1 Mana, you can target another creature within range.
+
+Static Image:
+  tier: Novice
+  type: 1-Action
+  brief: You conjure a static illuson that changes the appearance of an area
+  traits: [Illusion, Spell]
+  tags:
+    cost: 1 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    You create an illusion that shows any number of stationary objects or creatures. The illusion must fit entirely within the spell's area. This illusion can also hide any number of stationary creatures or objects you specify, effectively making them invisible. This has no effect on any creatures or objects that move from their initial position.
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst doubles.
+
+    If you add +1 Mana, this spell's duration changes to 24 hours. If you instead add +3 Mana, this spell's duration changes to Forever.
+
+Dream:
+  tier: Veteran
+  type: 1-Action
+  brief: You send a creature a dream-like vision that passes in an instant
+  traits: [Phantasm, Spell]
+  tags:
+    cost: 4 Mana
+    range: 60 feet
+  effect: |
+    You send your target a dream-like vision. While the dream occurs in an instant, your target perceives the dream as lasting several minutes. You can observe your target's reactions in the dream and shape it accordingly, so you can use Dream to hold a conversation.
+
+    Optionally, you can choose for the dream to appear as a terrifying nightmare. If you do, use the **Nightmare** effect on your target.
+
+    #### Heightened
+
+    For each +1 Mana, the damage of **Nightmare** increases by 2d6.
+  aside: |
+    {% smallpower %}
+    Nightmare:
+      traits: [Attack, Fear, Phantasm]
+      effect: |
+        Make a Magic attack roll against your target's Spirit DC.
+
+        Critical Success
+        : Double damage and double fatigue
+
+        Success
+        : Your target takes 8d6 damage and gains 1 fatigue
+
+        Failure
+        : Half damage
+
+        If your target knows **Dream** as well, they can attempt to take control of the dream. If you fail or critically fail the attack roll, your target takes no damage and can immediately use **Nightmare** against you.
+    {% endsmallpower %}
+
+Hypnotic Pattern:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure a twisting pattern of colors that entrances everyone who sees it
+  traits: [Attack, Spell, Visual]
+  tags:
+    cost: 3 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: 10 minutes, until your target takes any damage, or until you decide to end it
+  effect: |
+    Make a Magic attack roll against your target's Intellect DC.
+
+    Success
+    : Your target is {stunned}
+
+    Failure
+    : Your target is {dazzled} until the end of their next turn
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst increases by 10 feet.
+
+Major Image:
+  tier: Veteran
+  type: 1-Action
+  brief: You conjure a giant, animated illuson of a creature or effect
+  traits: [Illusion, Spell]
+  tags:
+    cost: 3 Mana
+    range: 500 feet
+    area: 20-foot burst
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    You create an illuson of any number of creatures, objects, structures, or other effects. The illusion must fit entirely within the spell's area. You can have the illusion naturally perform simple animations, such as flowing water or a crowd of people talking excitedly.
+
+    You can use the **Animate Image** power.
+
+    #### Heightened
+
+    If you add +1 Mana, this spell's duration changes to 24 hours. If you instead add +3 Mana, this spell's duration changes to Forever.
+  aside: |
+    {% smallpower %}
+    Animate Image:
+      type: Free
+      traits: [Concentrate]
+      effect: |
+        You change the illusion created by **Major Image**, causing it to move or act in any way you choose. You can move the area of **Major Image** up to 60 feet. You can have the illusion act or move in a way that appears completely natural, or you can change the illusion to depict something completely new.
+    {% endsmallpower %}
+
+Phantom Spell:
+  tier: Veteran
+  type: Free
+  brief: You reform your spell as a phantasm within a target's mind
+  tags:
+    trigger: You cast a spell
+    range: 120 feet
+  effect: |
+    The triggering spell becomes a [[Phantasm]] effect, as you conjure an illusion of the effect inside your target's mind. The spell does not affect any creatures or objects other than your target.
+
+    *For example, if you cast {Major Image} with Phantom Spell, then only your target would be able to perceive the illusion. If you cast {Invoke Blast} with Phantom Spell, then only your target would see the effect or take damage.*
+
+Swap with Clone:
+  tier: Veteran
+  type: 1-Action
+  brief: You reveal that you were actually an illusory clone all along
+  traits: [Retroactive]
+  tags:
+    prerequisites: Illusory Clone
+  effect: |
+    You and a clone actually swapped places in the past, so you're really somewhere else! Cast {Illusory Clone} now, and declare how long ago in the past that you actually cast the spell, as well as what your true self has been doing the whole time. You cannot contradict established events, and your true self cannot have taken any actions that rely on a die roll to succeed.
+
+    If you add +2 Mana to the cast of Illusory Clone, you can use this power as a {% icon Reaction %} power that triggers when you are targeted by any power. This powers targets your clone instead.
+
+Alter Illusion:
+  tier: Master
+  type: Free
+  brief: You alter an existing illusion to show something completely different
+  traits: [Concentrate]
+  tags:
+    range: 120 feet
+    requirements: Your target is affected by an ongoing [[Illusion]] spell
+  effect: |
+    You modify the target illusion to show something different. You can modify the illusion in a smooth way so that it appears to animate naturally. If the illusion covers an area, you can move the area up to 30 feet.
+
+    Optionally, as you alter the illusion, you can have it briefly become real for a fraction of a second. This generally has no permanent effect on the world, but an illusory flame could start a fire, or an illusory giant could shake the ground as it steps. To use this effect to deal damage, use the **Painful Illusion** power.
+
+    *For example, if you are disguised by an {Illusory Disguise}, you could alter the disguise to make you look like a different creature. Alternatively, if an enemy cast {Static Image} to create a stone wall, you could alter the wall to have an opening for you to see or walk through.*
+
+    *As another example, if you cast {Static Image} or {Major Image} to create an illusory person, you could animate the person to appear to walk naturally, speak, and so on. You could even have this person run up and punch someone, using **Painful Illusion** on the target of the not-so-illusory punch.*
+  aside: |
+    {% smallpower %}
+    Painful Illusion:
+      type: 1-Action
+      traits: [Attack, Cantrip, Spell]
+      tags:
+        cost: 0 Mana
+        target: One creature within 10 feet of the target of **Alter Illusion**
+      effect: |
+        When you use this power, it gains a damage type that matches the content of the illusion. For example, an illusory spike is [[Piercing]], while an illusory lava flow is [[Fire]].
+
+        Make a Magic attack roll against your target's Defense.
+
+        Success
+        : Your target takes 2d6 damage
+
+        #### Heightened
+
+        For each +1 Mana, the damage increases by 2d6.
+    {% endsmallpower %}
+
+Deceitful Fog:
+  tier: Master
+  type: 1-Action
+  brief: You conjure a fog filled with illusions that confuse your enemies
+  traits: [Spell]
+  tags:
+    cost: 6 Mana
+    range: 120 feet
+    area: 20-foot burst
+    duration: 10 minutes, or until you decide to end it
+  effect: |
+    The spell's area is filled with light fog that blocks all vision beyond 10 feet. At the end of each of your turns, you can move the fog up to 60 feet.
+
+    You can use the **Distracting Fog** power.
+
+    #### Heightened
+
+    For each +1 Mana, the radius of the burst increases by 20 feet.
+  aside: |
+    {% smallpower %}
+    Distracting Fog:
+      type: Free
+      tags:
+        target: Any number of creatures in the area of **Deceitful Fog**
+        duration: Until the start of your next turn
+      effect: |
+        Your target is {dazzled} and {slowed}.
+    {% endsmallpower %}
+
+Phantom Prison:
+  tier: Master
+  type: 1-Action
+  brief: You trap a creature in a mental prison that only it can perceive
+  traits: [Attack, Phantasm, Spell]
+  tags:
+    cost: 6 Mana
+    range: 60 feet
+    duration: Varies
+  effect: |
+    Your target is {restrained}, as they imagine they are surrounded by terrible hazards. At any time, your target can choose to act despite these hazards. If they do, this spell immediately ends and your target takes 14d8 damage.
+
+    Make a Magic attack roll against your target's Intellect DC.
+
+    Critical Success
+    : This spell lasts 10 minutes
+
+    Success
+    : This spell lasts 1 minute
+
+    Failure
+    : This spell lasts until the end of your target's next turn
+
+    Critical Failure
+    : This spell ends immediately
+
+    #### Heightened
+
+    For each +1 Mana, the damage increases by 2d8.
+
+Chameleon:
+  tier: Ribbon
+  type: Free
+  brief: You quickly change part of yourself to look slightly different
+  traits: [Cantrip, Illusion, Spell]
+  tags:
+    cost: 0 Mana
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    You conjure an illusion that changes a minor part of your visual appearance. For example, you could change your eye color, your hairstyle, or the pattern on a tattoo. This change isn't large enough to disguise your identity.
+
+Dancing Lights:
+  tier: Ribbon
+  type: 1-Action
+  brief: You conjure a group of colorful, moving magical lights
+  traits: [Cantrip, Light, Spell]
+  tags:
+    cost: 0 Mana
+    range: 30 feet
+    duration: Sustained, up to 1 minute
+  effect: |
+    You conjure four balls of colorful magic light at points within range. You control the lights' brightness, shape, and color. When you sustain this spell, you can move the lights to new points within range and you can change the properties of the lights.
+
+Disguise Object:
+  tier: Ribbon
+  type: 1-Action
+  brief: You disguise an object as a different object of the same general shape
+  traits: [Cantrip, Illusion, Spell]
+  tags:
+    cost: 0 Mana
+    target: One object you can reach
+    requirements: Your target fits within a 5-foot cube
+    duration: 1 hour, or until you decide to end it
+  effect: |
+    Your target is covered with a visual illusion that makes it appear as another object of the same general shape.
+
+    *For example, you could make a sword look like a walking stick, or you could make a small stone look like a valuable gem.*
+
+    #### Heightened
+
+    If you add +1 Mana, this spell's duration changes to 24 hours. If you instead add +3 Mana, this spell's duration changes to Forever.
+
+Glamour:
+  tier: Ribbon
+  type: Passive
+  brief: You are constantly covered by an illusion to enhance your appearance
+  traits: [Illusion]
+  effect: |
+    You are covered by an illusion that makes you appear striking, glamorous, or beautiful. You have advantage on Spirit+Perform rolls that rely on your visual apperance.
+
+Minor Illusion:
+  tier: Ribbon
+  type: 1-Action
+  brief: You conjure a small visual illusion or conjure an illusory sound
+  traits: [Cantrip, Illusion, Spell]
+  tags:
+    cost: 0 Mana
+    range: 30 feet
+    area: 5-foot cube
+    duration: 1 minute, or until you decide to end it
+  effect: |
+    You create a silent illusory visual image of a stationary object or structure. The entire image must fit within the spell's area.
+
+    Alternatively, you conjure a sound originating from the spell's area. This power loses the [[Illusion]] trait and gains the [[Auditory]] trait.
+
+Ventriloquism:
+  tier: Ribbon
+  type: Free
+  brief: You can make your voice actually come from a different place
+  tags:
+    range: 60 feet
+    duration: Until the start of your next turn
+  effect: |
+    Whenever you speak or make any other sound vocally, the sound originates from the target point.
+
+# Illusory Scene:
+#   tier: Veteran
+#   type: Passive
+#   tags:
+#     prerequisites: Illusory Object
+#   effect:
+#     Your Illusory Object power can form a scene that includes up to 10 moving creatures or objects. You can have each part of the scene follow a repeating program up to 1 minute long. A creature that interacts with one part of your image only disbelieves that portion.
+
+# Phantasmal Killer:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Death, Emotion, Fear, Mental, Spell]
+#   tags:
+#     cost: 4 Mana
+#     range: 120 feet
+#     save: Will
+#   effect: |
+#     You create a phantasmal image of the most fearsome creature imaginable to the target. Only the spell's target can see the killer, though you can see the vague shape of the illusion as it races forth to attack. The effect of the killer is based on the outcome of the target's Will save.
+
+#     Heightened (per +1 Mana)
+#     : The damage increases by 1d6 on a success, by 2d6 on a failure, and by 3d6 on a critical failure
+#   critical-success: The target is unaffected
+#   success: The target takes 4d6 mental damage and is frightened 1
+#   failure: The target takes 8d6 mental damage and is frightened 2
+#   critical-failure: The target is so afraid it might die. It must attempt a Fortitude save (with the Incapacitation trait); if the target fails, it dies. On a successful Fortitude save, the target takes 12d6 mental damage, is fleeing until the end of its next turn, and is frightened 4.
+
+# Shadow Siphon:
+#   tier: Veteran
+#   type: Reaction
+#   traits: [Shadow, Spell]
+#   tags:
+#     cost: 5 Mana
+#     range: 60 feet
+#     trigger: A spell or magical effect within range deals damage
+#   effect:
+#     Exchanging material energy with shadows, you transform the triggering spell into a partially illusory version of itself. Any creatures that would be damaged by the spell instead take only half as much damage, but the spell otherwise works as normal.
+
+# Project Image:
+#   tier: Master
+#   type: 1-Action
+#   traits: [Mental, Spell]
+#   tags:
+#     cost: 7 Mana
+#     range: 30 feet
+#     duration: Sustained up to 1 minute
+#   effect: |
+#     You project an illusory image of yourself. You must stay within range of the image, and if at any point you can't see the image, the spell ends. Whenever you cast a spell, you can cause the spell effect to originate from either yourself or the image. Because the image is an illusion, it isn't a creature and can't benefit from spells. The image has the same AC and saves as you. If it is hit by an attack or fails a save, the spell ends.
+
+#     Heightened (total 9 Mana)
+#     : The maximum duration you can Sustan the spell increases to 10 minutes
+
+# Weird:
+#   tier: Epic
+#   type: Passive
+#   tags:
+#     prerequisites: Phantasmal Killer
+#   effect:
+#     When you spend at least 8 Mana on Phantasmal Killer, the spell targets any number of creatures within range.
+
+# # Old Psion powers
+
+# Charming Words:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Auditory, Incapacitation, Linguistic, Mental, Spell]
+#   tags:
+#     cost: 1 Mana
+#     range: 30 feet
+#     save: Will
+#     duration: Until the start of your next turn
+#   effect:
+#     You whisper enchanting words to deflect your foe's ire. The target must attempt a Will save.
+#   critical-success: The target is unaffected
+#   success: The target takes a -1 penalty to attack rolls and damage rolls against you
+#   failure: The target can't use hostile actions against you
+#   critical-failure: The target is stunned 1 and can't use hostile actions against you
+
+# Fear:
+#   tier: Novice
+#   type: 1-Action
+#   traits: [Emotion, Fear, Mental, Spell]
+#   tags:
+#     cost: 1 Mana
+#     range: 30 feet
+#     save: Will
+#     duration: 1 minute
+#   effect: |
+#     You plant fear in the target; it must attempt a Will save.
+
+#     Heightened (total 3 Mana)
+#     : You can target up to five creatures
+#   critical-success: The target is unaffected
+#   success: The target is frightened 1
+#   failure: The target is frightened 2
+#   critical-failure: The target is frightened 3 for the duration, and is fleeing for 1 round
+
+# Synaptic Pulse:
+#   tier: Veteran
+#   type: 1-Action
+#   traits: [Incapacitation, Mental, Spell]
+#   tags:
+#     cost: 5 Mana
+#     range: 30 feet
+#     area: 30-foot emanation
+#     save: Will
+#     duration: 1 round
+#   effect:
+#     You emit a pulsating mental blast that penetrates the minds of all enemies in the area. Each creature in the area must attempt a Will save.
+#   critical-success: The creature is unaffected
+#   success: The creature is stunned 1
+#   failure: The creature is stunned 2
+#   critical-failure: The creature is stunned for 1 round
+
+# Dominate:
+#   tier: Master
+#   type: 1-Action
+#   traits: [Incapacitation, Mental, Spell]
+#   tags:
+#     cost: 6 Mana
+#     range: 30 feet
+#     save: Will
+#     duration: 24 hours
+#   effect: |
+#     You take command of the target, forcing it to obey your orders. If you issue an obviously self-destructive order, the target doesn't act until you issue a new order. The effect depends on its Will save.
+
+#     Heightened (total 10 Mana)
+#     : The duration is unlimited
+#   critical-success: The target is unaffected
+#   success: The target is stunned 1 as it fights off your commands
+#   failure: The target follows your orders but can attempt a Will save at the end of each of its turns. On a success, the spell ends.
+#   critical-failure: As a failure, but the target receives a new save only when you give it a new order that is against its nature, such as killing its allies.
+
+# Warp Mind:
+#   tier: Master
+#   type: 1-Action
+#   traits: [Emotion, Incapacitation, Mental, Spell]
+#   tags:
+#     cost: 7 Mana
+#     range: 120 feet
+#     save: Will
+#   effect:
+#     You scramble a creature's mental faculties and sensory input. The target must attempt a Will saving throw. Regardless of the result of that save, the target is then temporarily immune for 10 minutes.
+#   critical-success: The target is unaffected
+#   success: The target spends the first action on its next turn with the confused condition
+#   failure: The target is confused for 1 minute
+#   critical-failure: The target is confused permanently
+
+# Fabricated Truth:
+#   tier: Epic
+#   type: 1-Action
+#   traits: [Incapacitation, Mental, Spell]
+#   tags:
+#     cost: 10 Mana
+#     range: 100 feet
+#     targets: Up to 5 creatures
+#     save: Will
+#     duration: Varies
+#   effect:
+#     Choose a single statement you want the targets to believe. The fact can be narrow, wide-reaching, or conceptual, and can be completely unreasonable or ridiculous. If the statement changes what a target perceives, they treat the change as a sudden revelation. The effect of the spell depends on the targets' Will saves.
+#   critical-success: The target doesn't believe the statement, and it knows you tried to trick it
+#   success: The target doesn't believe the statement or realize you tried to trick it
+#   failure: The target believes the statement for a duration of 1 week
+#   critical-failure: The target believes the statement with unlimited duration

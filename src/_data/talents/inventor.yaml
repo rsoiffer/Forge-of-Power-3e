@@ -1,0 +1,360 @@
+Alchemical Bomb:
+  tier: Novice
+  type: 1-Action
+  brief: You throw an explosive bomb full of unstable chemicals
+  traits: [Attack]
+  tags:
+    range: 60 feet
+    area: 5-foot burst
+  effect: |
+    When you use this power, choose one of the [[Cold]], [[Electricity]], [[Fire]], [[Necrotic]], [[Sonic]], or [[Toxic]] traits. This power gains that trait.
+
+    Make an Intellect attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes 1d12 damage
+
+Brew Elixir:
+  tier: Novice
+  type: 1-Action
+  brief: You craft a potion with a versatile beneficial effect
+  traits: [Daily]
+  effect: |
+    Choose one of the following types of elixir. You produce two doses of that elixir that you brewed previously. A creature can drink a dose of elixir with the {Interact} power to gain the effects of the elixir. Each dose loses its magic when you complete an 8-hour rest.
+
+    ***Boldness.*** The drinker gains +1 to all attacks for 1 minute.
+
+    ***Healing.*** The drinker heals 2d4 + your Intellect health.
+
+    ***Levitate.*** The drinker can fly at half Speed for 10 minutes.
+
+    ***Resilience.*** The drinker gains +1 Defense for 10 minutes.
+
+    ***Swiftness.*** The drinker gains +10 feet Speed for 1 hour.
+
+    ***Transformation.*** The drinker's physical features change for 10 minutes, making them appear as a different person of their choice of roughly the same body shape.
+
+Clockwork Turret:
+  tier: Novice
+  type: 1-Action
+  brief: You construct a turret that can fire its ballista at enemies
+  traits: [Concentrate, Manipulate]
+  tags:
+    duration: 10 minutes, or until you use this power again
+  effect: |
+    You set up a clockwork turret on a flat surface you can reach. The turret's Agility equals your Intellect, and the turret's Health equals 5 times your Inventor level.
+
+    When the duration expires, the clockwork turret deactivates and starts to fall apart into a pile of scraps.
+  aside: |
+    {% smallpower %}
+    Clockwork Turret Stats:
+      traits: [Construct, Minion, Unintelligent]
+      tags:
+        attributes: Strength +0, Agilty *varies*, Intellect --, Spirit --
+        other stats: Health *varies*, Defense 15, Speed 0 feet, Size -1
+      effect: |
+        The clockwork turret can fire its ballista as a {crossbow}.
+    {% endsmallpower %}
+
+Magitech Engine:
+  tier: Novice
+  type: 1-Action
+  brief: You craft a small engine with an elemental effect
+  traits: [Concentrate, Manipulate]
+  tags:
+    duration: 1 minute after the engine is attached to a weapon, or 1 hour otherwise
+  effect: |
+    You craft a small magic device that outputs a stream of elemental energy. Choose the engine's element to be one of [[Cold]], [[Electricity]], [[Fire]], [[Sonic]], or [[Toxic]]. The engine continually emits small jet of that element. You can set up the engine to perform a minor utility effect related to its element.
+
+    When you use this power, or with the {Interact} power afterwards, you can attach the engine to a weapon you touch. Strikes with that weapon deal an extra 1d6 damage of the chosen trait. A weapon can only have one engine attached to it at a time.
+  aside: |
+    ### Using Magitech Engines
+
+    You can configure your magitech engines to output anything related to their element. This makes the engines incredibly versatile parts, useful for any construction project. Be creative!
+
+    As always, the GM has the final say as to whether any attempt is reasonable. The GM may ask you to make an Intellect+Crafting roll to determine if a more difficult use of the engines works out.
+
+    #### Examples
+
+    You can aim a jet at an enemy you can reach to deal 1 damage to that enemy. You can set up a [[Cold]] engine inside of an airtight box to create a portable freezer. You can use an [[Electricity]] engine to power electrical devices, or to fill a metal object with static electricity. You can attach a pair of [[Fire]] engines to the back of a cart to propel it forward like a rocket. You can set up a [[Sonic]] engine to play loud noises you choose, like a powerful speaker. You can trace a [[Toxic]] engine over a rock surface to etch words into the surface.
+
+Mutagen:
+  tier: Novice
+  type: 1-Action
+  brief: You give someone a dangerous mutagen that enhances them at a cost
+  traits: [Manipulate, Toxic, Transfiguration]
+  tags:
+    target: One willing ally you can reach (including yourself)
+    duration: 10 minutes
+  effect: |
+    Drinking multiple mutagens in a short time is very dangerous to the body. Your target takes 2d6 damage for each time they've been affected by **Mutagen** in the past 8 hours.
+
+    Choose one of the following effects.
+
+    #### Bestial Mutagen
+    Your target has advantage on {Athletics} rolls, and their unarmed Strikes deal 1d8 [[Slashing]] base damage. Your target has a -1 penalty to Defense.
+
+    #### Cognitive Mutagen
+    Your target has advantage on Intellect rolls made to recall knowledge. Your target has disadvantage on Strikes and on {Athletics} rolls.
+
+    #### Juggernaut Mutagen
+    Your target has a +1 bonus to Defense and a +2 bonus to Strength DC. Your target has a -2 penalty to Spirit DC and disadvantage on {Notice} rolls.
+
+    #### Quicksilver Mutagen
+    Your target has advantage on Agility rolls and has a +10 feet bonus to Speed. Your target takes 3d6 damage and can't heal any health.
+
+    #### Serene Mutagen
+    Your target has advantage on Intellect rolls made to notice things or interact with the world. Your target has disadvantage on attack rolls.
+
+    #### Silvertongue Mutagen
+    Your target has advantage on Spirit rolls made to interact with people. Your target has disadvantage on Intellect rolls.
+
+Shock Net:
+  tier: Novice
+  type: 1-Action
+  brief: You throw an electrified net to restrain an enemy
+  traits: [Attack, Electricity, Encounter]
+  tags:
+    range: 60 feet
+    area: 5-foot burst
+    duration: 1 minute
+  effect: |
+    Make an Intellect attack roll against your target's Defense.
+
+    Critical Success
+    : Your target takes 2d6 damage and is {restrained}
+
+    Success
+    : Your target takes 1d6 damage and is {restrained}
+
+    You can use the **Send Shock** power.
+  aside: |
+    {% smallpower %}
+    Send Shock:
+      type: Free
+      traits: [Electricity]
+      effect: |
+        All targets {restrained} by your Shock Net take 1d6 damage.
+    {% endsmallpower %}
+
+Universal Gadget:
+  tier: Novice
+  type: Free
+  brief: You create a gadget that lets you replicate another talent
+  traits: [Concentrate, Daily, Manipulate]
+  tags:
+    duration: 1 minute
+  effect: |
+    You learn a Novice talent of your choice from any class. This talent cannot have the [[Daily]] trait.
+
+    If you learn a [[Spell]] talent, then you gain a [mystic origin](mystic-origins.html) for the duration if you didn't have one already. You must pay mana to cast the spell as normal.
+
+Upgrade Weapon:
+  tier: Novice
+  type: 1-Action
+  brief: You upgrade an existing weapon with an additional effect
+  traits: [Concentrate, Manipulate]
+  tags:
+    target: One weapon you can reach
+    duration: 1 hour, or until you use this power again
+  effect: |
+    Choose one of the following effects.
+
+    Deadly Critical
+    : Critical successes on Strikes with your target deal an extra 2d12 damage
+
+    Extended Reach
+    : Melee Strikes with your target have an extra 5 feet of reach
+
+    Flaming Weapon
+    : Strikes with your target deal an extra 1d6 [[Fire]] damage
+
+    Freezing Weapon
+    : Strikes with your target deal an extra 1d6 [[Cold]] damage
+
+    Heavy Impact
+    : Successes on Strikes with your target push creatures back 5 feet
+
+    Shocking Weapon
+    : Strikes with your target deal an extra 1d6 [[Electricity]] damage
+
+Destructive Bomb:
+  tier: Veteran
+  type: Passive
+  brief: Your alchemical bombs cause massive of damage and destruction
+  tags:
+    prerequisites: Alchemical Bomb
+  effect: |
+    Your {Alchemical Bomb} power deals 2d12 damage on a success instead of 1d12.
+
+    Optionally, when you use your Alchemical Bomb power, you can choose to place the bomb on a fuse instead of detonating it instantly. The power loses its range; instead, you place the bomb on a solid surface you can reach. Choose an exact time for the fuse, up to 1 hour. Make the attack roll for this power when the fuse expires.
+
+Double Upgrade:
+  tier: Veteran
+  type: Passive
+  brief: You can apply two upgrades at once, to the same or different weapons
+  tags:
+    prerequisites: Upgrade Weapon
+  effect: |
+    When you use your {Upgrade Weapon} power, choose one of the following:
+    * You target two weapons and apply the same effect to each
+    * You choose two effects from the list
+
+Healing Alchemy:
+  tier: Veteran
+  type: Free
+  brief: Your mutagens and elixirs heal the creatures they affect
+  traits: [Healing]
+  tags:
+    prerequisites: "{Brew Elixir} or {Mutagen}"
+    trigger: A creature drinks a dose of elixir from your Brew Elixir power, or you target a creature with your Mutagen power
+  effect: |
+    The triggering creature heals 2d4 health.
+
+Improved Turret:
+  tier: Veteran
+  type: Passive
+  brief: Your clockwork turret can move and project shields
+  tags:
+    prerequisites: Clockwork Turret
+  effect: |
+    Clockwork turrets you create have a Speed of 20 feet and can climb at their full Speed. Your clockwork turret can use the **Clockwork Barrier** power.
+  aside: |
+    {% smallpower %}
+    Clockwork Barrier:
+      type: 1-Action
+      tags:
+        duration: Until your clockwork turret uses a [[Move]] power
+      effect: |
+        All of your allies adjacent to your clockwork turret have [cover](combat-rules.html#cover).
+      fluffstart: |
+        Your clockwork turret extends a heavy metal shield in all directions.
+    {% endsmallpower %}
+
+Overload:
+  tier: Veteran
+  type: 1-Action
+  brief: You overload one of your creations with power, exploding it
+  traits: [Attack, Daily, Fire]
+  tags:
+    requirements: You must center the area of this power on a creature or object that is affected by one of your Inventor powers
+    range: 60 feet
+    area: 20-foot burst
+  effect: |
+    Dispel the chosen Inventor power. Make an Intellect attack roll against your target's Agility DC.
+
+    Success
+    : Your target takes (8d6 + 2 * your Inventor level) damage
+
+    Failure
+    : Your target takes half damage
+
+Grenadier:
+  tier: Master
+  type: Passive
+  brief: You have a special launcher that lets you deliver bombs and potions at range
+  tags:
+    prerequisites: Alchemical Bomb, Brew Elixir, or Mutagen
+  effect: |
+    The range of your {Alchemical Bomb} power increases to 300 feet, and its area increases to a 20-foot burst.
+
+    If you know the {Brew Elixir} power, you can use the {Interact} power to splash a dose of elixir on a willing ally within 120 feet, granting them the effect of the elixir.
+
+    Your {Mutagen} power gains a range of 120 feet. It targets one willing ally within range.
+
+Multiversal Gadget:
+  tier: Master
+  type: Passive
+  brief: You can build gadgets that do just about anything in the world
+  tags:
+    prerequisites: Universal Gadget
+  effect: |
+    When you use your {Universal Gadget} power, you can learn any talent of up to Master tier from any class. This talent cannot have the [[Daily]] trait.
+
+Siege Engineer:
+  tier: Master
+  type: 1-Action
+  brief: You activate a powerful weapon that you constructed earlier
+  traits: [Daily]
+  tags:
+    duration: 1 minute
+  effect: |
+    You can use the **Siege Weapon** power once.
+
+    When you use this power, choose one of the [[Bludgeoning]], [[Electricity]], [[Fire]], [[Piercing]], [[Sonic]], or [[Toxic]] traits. The **Siege Weapon** power gains that trait.
+  aside: |
+    {% smallpower %}
+    Siege Weapon:
+      type: 1-Action
+      traits: [Attack]
+      tags:
+        range: 1 mile
+      effect: |
+        Make an Intellect attack roll against your target's Defense. This attack is automatically a critical success if your target is a large, stationary object or structure.
+
+        Critical Success
+        : Double damage
+
+        Success
+        : Your target takes 20d6 damage
+
+        Failure
+        : Half damage
+    {% endsmallpower %}
+
+Clockwork Tinker:
+  tier: Ribbon
+  type: 1-Action
+  brief: You quickly construct a small mechanical device to perform a simple task
+  tags:
+    duration: 1 hour
+  effect: |
+    You quickly construct one of the following devices out of spare parts. The device malfunctions and falls apart when the duration ends.
+
+    Clockwork Toy
+    : This toy is a clockwork animal, monster, or person that slowly clatters along the ground and makes noise that imitates the creature it represents
+
+    Fire Starter
+    : The device produces a miniature flame, which you can use to light a small fire
+
+    Music Box
+    : When opened, this music box plays a single song at a moderate volume
+
+Magical Tinker:
+  tier: Ribbon
+  type: 1-Action
+  brief: You infuse a small spark of magic into a mundane object, for a variety of effects
+  tags:
+    target: An unattended nonmagical object you can reach
+    requirements: Your target is smaller than 2 feet in every dimension
+    duration: Until you use this power 10 more times
+  effect: |
+    Choose one of the folllowing effects:
+    * The object sheds dim light out to 10 feet
+    * Whenever tapped by a creature, the object emits a short recorded message, which you speak when you use this power
+    * The object continuously emits a faint odor or a soft nonverbal sound ( wind, waves, chirping, or the like)
+    * A static visual effect appears on the object's surface (a picture, a piece of text, a geometric shape, or so on)
+
+Multitool:
+  tier: Ribbon
+  type: Passive
+  brief: You have a special multitool that can do many things at once
+  effect: |
+    You own a multitool, which is a small handheld item that counts as 3 tools of your choice. Your multitool can replicate even tools that would normally be much too heavy to carry around, such as smith's tools (including a forge and anvil) or weaver's tools (including a full loom).
+
+    Only you can use your multitool. If you ever lose your multitool, you can obtain a replacement when you complete an 8-hour rest.
+
+Mystery Potion:
+  tier: Ribbon
+  type: 1-Action
+  brief: You produce a mysterious potion with a chaotic, unpredictable effect
+  traits: [Encounter]
+  effect: |
+    You produce a mystery potion that you brewed previously. The GM should roll on a random potion table to determine the effect, such as the table [here](https://www.reddit.com/r/DnDBehindTheScreen/comments/4btnkc/random_potions_table/). The potion only contains enough for 1 dose, and it becomes inert after 24 hours.
+
+Robot Servant:
+  tier: Ribbon
+  type: Passive
+  brief: You created a robotic servant that completes simple tasks for you
+  effect: |
+    You have constructed a robotic servant that obeys you commands. Your servant loyally follows orders you give them, even if those orders are insane or suicidal put them in extreme danger. As a robot, your servant is incapable of advanced thought or social interaction, and may interpret orders overly literally. If combat stats are necessary, your servant is a [[Construct]] [[Minion]] [[Unintelligent]] commoner.

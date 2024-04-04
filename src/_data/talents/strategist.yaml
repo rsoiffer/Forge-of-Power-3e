@@ -1,0 +1,231 @@
+Chessmaster:
+  tier: Novice
+  type: 1-Action
+  brief: You reveal you planned for this exact situation all along!
+  traits: [Daily, Retroactive]
+  effect: |
+    You announce that you planned this all along! You explain the details of your plan, which retroactively become fact. Your plan must be something that you could have conceivably prepared within the past 24 hours. Your plan cannot involve any actions that would require die rolls to succeed. The GM has final say on whether any plan is reasonable.
+
+    *For example, if you are investigating a dungeon, you could announce that you remembered to bring 100 feet of rope and a grappling hook, as you had anticipated that you might fall down a chasm.*
+
+    *As another example, if you are in a meeting with the evil mayor, you could announce that you had arranged for the captain of the guard to be wandering by at just the right time, as you had predicted that the mayor would reveal his plan at this exact time.*
+
+Expose Weakness:
+  tier: Novice
+  type: 1-Action
+  brief: You reveal that an enemy is critically weak to a certain type of damage
+  traits: [Encounter]
+  tags:
+    range: 60 feet
+    duration: 1 minute
+  effect: |
+    Your target has 5 Weakness to a damage type of your choice.
+
+Inspire Courage:
+  tier: Novice
+  type: Reaction
+  brief: You inspire your ally to fight on stronger than ever
+  traits: [Auditory, Emotion, Mental]
+  tags:
+    range: 60 feet
+    target: An ally you can see within range (other than you)
+    trigger: Your ally makes an attack or is targeted by an attack
+  effect: |
+    Roll 1d6. Your ally adds the result to their attack roll or to their DC against the attack.
+
+Joint Assault:
+  tier: Novice
+  type: 1-Action
+  brief: You coordinate your attack with an ally, striking simultaneously
+  traits: [Auditory, Encounter, Linguistic]
+  tags:
+    range: 60 feet
+    target: An ally you can see within range (other than you)
+  effect: |
+    Make a Strike. Your ally can immediately make a Strike against the same target.
+
+Motivational Speech:
+  tier: Novice
+  type: 1-Action
+  brief: You motivate your allies to fight harder for a short time
+  traits: [Auditory, Daily, Emotion, Linguistic, Mental]
+  tags:
+    area: 30-foot emanation
+    duration: 1 minute
+  effect: |
+    Your target gains +2 Defense. When your target succeeds on a {Strike}, they can choose to deal an extra 1d6 damage.
+
+Order:
+  tier: Novice
+  type: 1-Action
+  brief: You shout an order to an ally, spurring them to action
+  traits: [Auditory, Linguistic]
+  tags:
+    range: 30 feet
+    requirements: Your target hasn't been affected by **Order** in the past minute
+  effect: |
+    Your target can immediately use a {% icon 1-Action %} power.
+
+Strategem:
+  tier: Novice
+  type: Free
+  brief: You plan your next attack, predicting exactly how it will go
+  traits: [Concentrate]
+  tags:
+    duration: Until the start of your next turn
+  effect: |
+    Make an Intellect roll. The next time you make an attack roll, use this result instead of making a new roll.
+
+    *If your attack roll would have any bonuses or penalties, apply these when you would have made the attack roll. If your attack roll would have advantage or disadvantage, make another Intellect roll when you attack, then take the higher or lower result.*
+
+Warning Shout:
+  tier: Novice
+  type: Reaction
+  brief: You call out before your enemy acts, alerting allies to the danger
+  tags:
+    range: 60 feet
+    trigger: Your target uses a {% icon Reaction %} power
+  effect: |
+    You disrupt the triggering power.
+
+Critical Weakness:
+  tier: Veteran
+  type: Passive
+  brief: You can find even more damaging weaknesses in your enemies
+  tags:
+    prerequisites: Expose Weakness
+  effect: |
+    Your {Expose Weakness} power gives your target 10 Weakness to two damage types of your choice instead of its normal effect.
+
+Inspire Heroics:
+  tier: Veteran
+  type: Passive
+  brief: You inspire your ally to otherwise-impossible heroism
+  tags:
+    prerequisites: Inspire Courage
+  effect: |
+    When you use your {Inspire Courage} talent, roll 1d10 instead of 1d6.
+
+Knight's Move:
+  tier: Veteran
+  type: Free
+  brief: You quickly command your target to advance or retreat
+  traits: [Auditory, Linguistic]
+  tags:
+    range: 60 feet
+    requirements: You must target a creature other than yourself
+  effect: |
+    Your target uses the {Stride} power.
+
+Victorious Call:
+  tier: Veteran
+  type: Reaction
+  brief: You shout in victory as an enemy is defeated, bolstering your allies
+  traits: [Auditory, Encounter, Linguistic]
+  tags:
+    trigger: You see an enemy fall to 0 health
+    range: 60 feet
+    target: All allies in range (other than you)
+    duration: Until the end of your target's next turn
+  effect: |
+    Your target has advantage on attack rolls.
+
+White Raven Tactics:
+  tier: Veteran
+  type: Free
+  brief: You shout a quick series of instructions that let an ally take another turn
+  traits: [Auditory, Daily, Linguistic]
+  tags:
+    range: 30 feet
+    requirements: You must target a creature other than yourself
+  effect: |
+    Your target immediately takes an extra turn. This turn occurs outside of the normal turn order, and doesn't count as their turn for the round.
+
+Invigorating Speech:
+  tier: Master
+  type: Passive
+  brief: Your speech energizes your allies, letting them keep fighting
+  tags:
+    prerequisites: Motivational Speech
+  effect: |
+    When you use your {Motivational Speech} talent, each of your targets heals 8d6 health.
+
+Revise Strategem:
+  tier: Master
+  type: Passive
+  brief: You adapt your strategies based on the result of your latest predictions
+  tags:
+    prerequisites: Strategem
+  effect: |
+    When you use your {Strategem} talent, you can choose one of the following effects:
+    * Reroll the Intellect roll for Strategem
+    * Strategem targets a willing ally you can see within 30 feet, replacing their next attack roll instead of your next attack roll 
+
+Warlord's Charge:
+  tier: Master
+  type: 1-Action
+  brief: You lead your allies in a coordinated charge against one enemy
+  traits: [Auditory, Encounter, Linguistic]
+  tags:
+    area: 30-foot emanation
+    target: Any number of creatures in the area
+  effect: |
+    Choose an enemy. Your target can immediately {Stride} in a straight line towards that enemy and make a melee {Strike} against them.
+
+    *All of your targets charge at the same enemy. You can't choose a different enemy for each target.*
+
+Charades:
+  tier: Ribbon
+  type: Passive
+  brief: You can communicate through signs and gestures as easily as through speech
+  effect: |
+    You can easily communicate silently with other creatures through rapid hand gestures and signals, and can easily understand them in turn, even if the other creature has no proficiency in any sign language. You can replace the [[Auditory]] trait of any power you use with the [[Visual]] trait.
+
+Predict Line:
+  tier: Ribbon
+  type: Free
+  brief: You predict the exact words that a creature will say next
+  traits: [Encounter]
+  tags:
+    range: 30 feet
+  effect: |
+    You predict the the exact words your target will say next. If your target wasn't about to speak, this power has no effect.
+  fluff: |
+    Your next line is "Is this a JoJo's reference?"
+
+Scary Shiny Glasses:
+  tier: Ribbon
+  type: Free
+  brief: You adjust your glasses, and they glint in the light to hide your eyes
+  traits: [Encounter]
+  tags:
+    requirements: You are wearing glasses (or equivalent eyewear)
+    trigger: You make an Intellect roll as part of forming a plot
+  effect: |
+    You have advantage on the triggering roll.
+
+Silver Tongue:
+  tier: Ribbon
+  type: Free
+  brief: You always know exactly the right words for any situation
+  traits: [Auditory, Encounter, Linguistic]
+  tags:
+    trigger: You make a Spirit roll to influence another creature with words
+  effect: |
+    You have advantage on triggering roll.
+
+Study the Enemy:
+  tier: Ribbon
+  type: 1-Action
+  brief: You study a creature and learn its physical capabilities
+  tags:
+    target: One creature you can see
+    requirements: You haven't used **Study the Enemy** on this target in the last 24 hours
+  effect: |
+    Make an Intellect+Notice or Spirit+Notice roll against your target's Spirit+Stealth or Spirit+Perform DC.
+
+    Success
+    : You learn your target's Strength and Agility scores, their maximum and current health, and all shields or weaknesses they have
+
+    Failure
+    : You learn your target's maximum and current health

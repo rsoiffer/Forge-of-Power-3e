@@ -1,0 +1,252 @@
+Combo Move:
+  tier: Novice
+  type: Free
+  brief: You chain another attack onto a successful combo
+  tags:
+    trigger: You get a critical success on a Strike
+  effect: |
+    Make a {Strike} against the target of the triggering Strike.
+
+Crippling Strike:
+  tier: Novice
+  type: 1-Action
+  brief: Your strike inflicts a serious status condition on your target
+  traits: [Encounter]
+  tags:
+    duration: Until the end of your next turn
+  effect: |
+    Make a melee {Strike}.
+
+    If your Strike is a success (but not a critical success), choose one of the following effects:
+    * Your target is {dazzled}
+    * Your target is {flat-footed}
+    * Your target is {slowed}
+
+    If your Strike is a critical success, choose one of the following effects:
+    * Your target is {blinded}
+    * Your target is {immobilized}
+    * Your target is {incapacitated}
+
+Empowered Strike:
+  tier: Novice
+  type: 1-Action
+  brief: You empower yourself with a burst of speed and strength
+  traits: [Encounter]
+  effect: |
+    Make a {Strike}. This Strike deals an extra 1d10 damage on a success.
+
+    When you get a critical success on a Strike, this power refreshes, letting you use it again without taking a 5-minute rest.
+
+Exotic Weapon:
+  tier: Novice
+  type: Passive
+  brief: You have a special exotic weapon with unique properties
+  effect: |
+    You have a unique exotic weapon. Choose two [weapons](equipment.html#weapons) (other than [unarmed](equipment.html#unarmed)). Your exotic weapon counts as either or both weapons, whatever is most beneficial. For example, if your exotic weapon combines a [dagger](equipment.html#dagger) and a [heavy weapon](equipment.html#heavy-weapon), then you could treat your exotic weapon as a [[Finesse]] [[One-Handed]] weapon that deals 1d12 [[Piercing]] base damage.
+    
+    Only you can wield your exotic weapon. If you ever lose your exotic weapon, you can obtain a replacement when you complete an 8-hour rest.
+
+Fighting Style:
+  tier: Novice
+  type: Passive
+  brief: You specialize in a particular style of combat
+  traits: [Specialize]
+  effect: |
+    Since this power has the [[Specialize]] trait, you choose one of the specializations to the right when you learn this power.
+  aside: |
+    ### Specializations
+
+    #### Aggressor
+    Your Speed is doubled during the first round of each encounter.
+
+    #### Executioner
+    You have a +2 bonus to attacks against {bloodied} targets.
+
+    #### Mariner
+    You have a Swim Speed equal to your Speed, and you have a +1 bonus to Agility DC.
+
+    #### Opportunist
+    You have a +2 bonus to attacks against targets are that {restrained}, {slowed}, or {stunned}.
+
+    #### Weapon Master
+    Your first Strike each encounter with each weapon type deals an extra +2 damage on a success.
+
+Finishing Blow:
+  tier: Novice
+  type: 1-Action
+  brief: You strike a damaged target with a special move to finish them off
+  traits: [Death, Encounter]
+  effect: |
+    Make a melee {Strike}. If your target is {bloodied}, this Strike deals double damage. If this Strike reduces your target to 0 health, they instantly die.
+
+Versatile Style:
+  tier: Novice
+  type: Free
+  brief: You can instantly master all kinds of weapons
+  tags:
+    duration: Until you use this power again
+  effect: |
+    You learn one combat feat of your choice.
+
+Wolf Stance:
+  tier: Novice
+  type: Free
+  brief: You enter the stance of a wolf, with your hands held with fanged teeth
+  traits: [Stance]
+  effect: |
+    Your unarmed Strikes deal 1d8 [[Piercing]] base damage and have the [[Finesse]] trait.
+
+    When you make an unarmed Strike against a flanked target, you have advantage on the Strike. If this Strike critically succeeds, your target falls {prone}.
+  aside: |
+    ### Flanked Condition
+
+     A target is flanked when you can draw a line between you and an ally that passes through your target's space, and you and your ally are both adjacent to your target.
+
+Avalanche Fist:
+  tier: Veteran
+  type: 1-Action
+  brief: You knock an enemy into a wall and leap to follow up
+  traits: [Attack, Bludgeoning, Encounter]
+  tags:
+    target: One creature you can reach
+  effect: |
+    Make a Strength attack roll against your target's Strength DC.
+
+    Critical Success
+    : Your target takes 4d6 damage and is pushed 40 feet in any direction
+
+    Success
+    : Your target takes 2d6 damage and is pushed 20 feet in any direction
+
+    If you push your target, you can use the **Avalanche Charge** effect. If you push your target into a solid object, they take 1d6 damage for each 10 feet they moved.
+  aside: |
+    {% smallpower %}
+    Avalanche Leap:
+      traits: [Move]
+      effect: |
+        You jump to a space adjacent to your target.
+    {% endsmallpower %}
+
+Iron Heart Surge:
+  tier: Veteran
+  type: Free
+  brief: You break free of all negative effects afflicting you
+  traits: [Daily]
+  tags:
+    duration: 1 minute
+  effect: |
+    Choose any number of powers currently affecting you. You are immune to the effects of this use of those powers. Future uses of those powers can still affect you, and those powers can still affect other creatures.
+
+    You can use **Iron Heart Surge** even when an effect would normally stop you from using it.
+
+Lightning Recovery:
+  tier: Veteran
+  type: Reaction
+  brief: You instantly reverse your Strike's direction and attack again
+  traits: [Encounter, Fortune]
+  tags:
+    trigger: You fail a melee Strike
+  effect: |
+    Reroll the triggering Strike.
+
+Raptor Pounce:
+  tier: Veteran
+  type: Free
+  brief: You follow after an enemy you hit previously, continuing your assault
+  tags:
+    target: A creature you can see
+    requirements: You succeeded on a Strike against your target in the previous round
+    duration: Until the end of your turn
+  effect: |
+    Use the {Stride} power. You must end this Stride closer to your target than you started. If you end this Stride at least 20 feet closer to your target than you started, your next {Strike} against your target deals an extra 1d6 damage.
+
+Steel Wind Strike:
+  tier: Veteran
+  type: 1-Action
+  brief: You flash between a group of enemies, attacking all of them at once
+  traits: [Encounter, Move]
+  tags:
+    range: 30 feet
+    area: 20-foot burst
+    target: Up to 4 creatures within the area
+  effect: |
+    You move to an empty space adjacent to your target, then make a melee {Strike} against them.
+  fluff: |
+    You can choose the order in which you Strike each of your targets.
+
+Iaijutsu:
+  tier: Master
+  type: Reaction
+  brief: You slash with incredible speed as you draw your weapon
+  traits: [Encounter]
+  tags:
+    trigger: A creature you can reach attacks you
+    requirements: You aren't wielding a weapon
+  effect: |
+    First {Interact} to draw a weapon, then make a melee {Strike} with that weapon against the triggering enemy. On a success, this Strike deals an extra 4d6 damage.
+
+Infinite Blades:
+  tier: Master
+  type: 1-Action
+  brief: You keep attacking an enemy as long as you keep hitting
+  traits: [Encounter]
+  effect: |
+    Make a melee {Strike}. On a success, you can immediately use Infinite Blades again.
+
+Style Mimicry:
+  tier: Master
+  type: Reaction
+  brief: You copy powers that you see other people use
+  traits: [Daily]
+  tags:
+    trigger: You see a creature use a power
+    requirements: The power doesn't have either the [[Daily]] or [[Spell]] traits
+    duration: 10 minutes
+  effect: |
+    You learn the triggering power.
+
+Call Weapon:
+  tier: Ribbon
+  type: Free
+  brief: You call your bonded weapon to your hand from any distance
+  traits: [Encounter]
+  effect: |
+    Your bonded weapon instantly teleports into your hand. This power works no matter the distance between you and your bonded weapon.
+
+    You can bond with a weapon by conducting a 1-hour ritual involving the new weapon. You can only have one bonded weapon at a time.
+
+Damage Mastery:
+  tier: Ribbon
+  type: Passive
+  brief: You can deal any type of damage with any weapon
+  effect: |
+    When your Strike would deal [[Bludgeoning]], [[Piercing]], or [[Slashing]] damage, you can replace that trait with a different one from that list.
+
+Improvised Weapon:
+  tier: Ribbon
+  type: Passive
+  brief: You can fight with mundane objects as if they were deadly weapons
+  effect: |
+    When you hold an inanimate object, you can choose to treat it as a weapon it is similar to (as determined by the GM). For example, you could treat a chair leg as a {bludgeon}, a lamppost as a {polearm}, or a fire iron as a {sword}.
+
+Overconfidence:
+  tier: Ribbon
+  type: Passive
+  brief: You have an unfailing belief in your own combat prowess
+  effect: |
+    You have advantage on Spirit rolls made to convince other people of your combat ability through words and appearance.
+
+Style Master:
+  tier: Ribbon
+  type: Passive
+  brief: You have a reputation as the master of a martial arts style
+  traits: [Reputation]
+  effect: |
+    You have a reputation as a martial artist who has mastered a particular style. Other people know of your skill and may seek you out for training in this style.
+
+Unusual Finesse:
+  tier: Ribbon
+  type: Passive
+  brief: You wield large weapons with grace and precision instead of brute strength
+  effect: |
+    You treat all melee weapons as having the [[Finesse]] trait.
