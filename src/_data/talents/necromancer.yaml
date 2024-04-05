@@ -4,20 +4,14 @@ Animate Dead:
   brief: You animate a corpse into a mindless undead minion
   traits: [Spell]
   tags:
-    cost: 2 Mana
-    range: 30 feet
-    target: A [[Humanoid]] corpse you can see within range
+    casts: 3/rest
     duration: 1 hour
   effect: |
-    Your target animates as a [[Minion]] skeleton or zombie under your control. When the spell's duration ends, you choose whether your minion deanimates and becomes a normal corpse, or whether your minion survives as a lesser undead that you no longer control.
+    A humanoid corpse you touch animates as a **skeleton** or **zombie** controlled by you. The GM has the creature's stats, and it acts on your turn.
 
-    Lesser undead are always hostile towards all living creatures. They do not speak and cannot be reasoned with. Only the most evil or desperate necromancers will risk animating lesser undead.
-
-    #### Heightened
-
-    For each +1 Mana, your minion's maximum health increases by 10, and its Strength or Agility increases by 1.
-
-    If you add +2 Mana, the duration extends to 24 hours.
+    When this spell ends, choose one:
+    * The undead dies
+    * The undead is no longer controlled by you
   aside: |
     {% smallpower %}
     Skeleton Stats:
@@ -51,24 +45,14 @@ Command Undead:
   tier: Novice
   type: 1-Action
   brief: You take control of a group of undead, becoming their new master
-  traits: [Attack, Mental, Spell]
+  traits: [Mental, Spell]
   tags:
-    cost: 2 Mana
-    range: 120 feet
-    area: 20-foot burst
-    target: Any number of [[Undead]] creatures in the area
-    duration: Sustained, up to 1 minute
+    casts: 3/rest
+    area: 20-foot burst within 120 feet range
+    duration: Up to 24 hours
+    save: Wisdom
   effect: |
-    Make a Magic attack roll against your target's Spirit DC. If your target is a greater undead, they have +10 Spirit DC against this attack.
-
-    Critical Success
-    : Your target loyally follows all your commands for the next 24 hours, and any other effects controlling your target end
-
-    Success
-    : Your target is {stunned}
-
-    Failure
-    : Your target is {incapacitated}
+    All undead in the area are controlled by you. A target repeats the save whenever you command it to act strongly against its nature.
 
 Darkness:
   tier: Novice
@@ -76,39 +60,21 @@ Darkness:
   brief: You fill an area with magical darkness that only you can see through
   traits: [Dark, Spell]
   tags:
-    cost: 1 Mana
-    range: 120 feet
-    area: 10-foot burst
-    duration: 10 minutes, or until you decide to end it
+    casts: 3/rest
+    area: 10-foot burst within 120 feet range
+    duration: Up to 10 minutes
   effect: |
-    You fill this spell's area with magical darkness. This darkness completely blocks vision within or through the area. You can see through this darkness as if it wasn't there.
-
-    #### Heightened
-
-    For each +1 Mana, the radius of the burst doubles.
+    The area is filled with magical darkness that completely blocks vision. You can see through this darkness as if it wasn't there.
 
 Drain Touch:
   tier: Novice
   type: 1-Action
   brief: You absorb a creature's life force, transferring it to another creature
-  traits: [Attack, Cantrip, Healing, Necrotic, Spell]
-  tags:
-    cost: 0 Mana
-    target: One creature you can reach
+  traits: [Attack, Healing, Necrotic, Spell]
   effect: |
-    Make a Magic attack roll against your target's Spirit DC.
+    Attack one target you touch (Magic vs. Defense). On a success, it takes 1d8 damage.
 
-    Critical Success
-    : Double damage and double mana loss
-
-    Success
-    : Your target takes 1d8 damage and loses 1d4 mana
-
-    Choose another creature you can reach as your second target (you can choose yourself). Your second target heals health equal to the amount of health lost by your first target and recovers mana equal to the amount of mana lost by your first target.
-
-    #### Heightened
-
-    For each +2 Mana, the damage increases by 1d8 and the mana loss increases by 1d4.
+    Then, another target you touch heals health equal to the amount of health lost by your first target.
 
 Harm:
   tier: Novice
@@ -116,25 +82,9 @@ Harm:
   brief: You channel pure necrotic energy through your hand to slay a creature
   traits: [Attack, Necrotic, Spell]
   tags:
-    cost: 1 Mana
-    target: One creature you can reach
+    casts: 3/rest
   effect: |
-    Make a Magic attack roll against your target's Spirit DC.
-
-    Critical Success
-    : Double damage
-
-    Success
-    : Your target takes 3d10 damage
-
-    Failure
-    : Half damage
-
-    #### Heightened
-
-    If you add +2 Mana, this spell loses its range and gains an area of a 20-foot emanation.
-
-    For each +2 Mana, the damage increases by 3d10.
+    Attack one target you touch (Magic vs. Defense). On a success, it takes 3d10 damage.
 
 Path to the Grave:
   tier: Novice
@@ -142,15 +92,10 @@ Path to the Grave:
   brief: You mark a creature for death, increasing all damage against it
   traits: [Death, Spell]
   tags:
-    cost: 2 Mana
+    casts: 3/rest
     range: 30 feet
-    duration: Until the end of your next turn
   effect: |
-    The next time your target takes damage from any effect, they take an additional 3d10 damage from that effect. If this extra damage reduces your target to 0 health, they instantly die.
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 1d10.
+    One target within range is briefly cursed. The next time it takes damage, the damage increases by 3d10. If this extra damage reduces your target to 0 health, it instantly dies.
 
 Shadow Step:
   tier: Novice
@@ -158,38 +103,23 @@ Shadow Step:
   brief: You can teleport between areas of darkness with merely a step
   traits: [Spell, Teleportation]
   tags:
-    cost: 1 Mana
+    casts: 3/rest
     range: 60 feet
-    target: Any empty location within range (even if you can't see the location)
-    requirements: You and the target location are both in dim light or darkness
   effect: |
-    You teleport to the target location.
-
-    #### Heightened
-
-    For each +1 Mana, the range of this power doubles.
+    If you're in a shadow or area of darkness, teleport to any other shadow or area of darkness you can see within range.
 
 Vengeful Ghost:
   tier: Novice
   type: Free
   brief: You summon a vengeful spirit that attacks or tracks a target of your choice
-  traits: [Spell]
+  traits: [Bludgeoning, Spell]
   tags:
-    cost: 1 Mana
-    duration: 1 minute
+    casts: 3/rest
+    duration: 1 hour
   effect: |
-    You can use the **Ghost Punch** power.
+    {% icon 1-Action %}: Attack one target within 30 feet (Magic vs. Defense). On a success, it takes 2d6 damage.
 
-    Optionally, when you cast this spell, you can name and describe a specific enemy creature you're seeking revenge on. If there are any ghosts who want to harm specifically this chosen enemy (for example, a ghost seeking revenge against their murderer), you summon an especially powerful vengeful ghost.
-
-    If you summon a vengeful ghost, then:
-    * The damage of **Ghost Punch** increases to 3d6
-    * **Ghost Punch** can only target the chosen enemy
-    * You always know the exact direction towards your chosen enemy
-
-    #### Heightened
-
-    For each +1 Mana, the damage of **Ghost Punch** increases by 1d6.
+    Optionally, name a target creature. If any ghosts nearby want to harm that target (for example, a ghost seeking revenge against their murderer), this spell does double damage against your target, and you always know the direction towards it.
   aside: |
     {% smallpower %}
     Ghost Punch:
@@ -210,24 +140,13 @@ Circle of Death:
   brief: You unleash a wave of negative energy that desecrates an area of land
   traits: [Attack, Necrotic, Spell]
   tags:
-    cost: 4 Mana
-    range: 120 feet
-    area: 20-foot burst
+    casts: 1/rest
+    area: 20-foot burst within 120 feet range
     duration: 1 week
   effect: |
-    Make a Magic attack roll against your target's Strength DC.
+    Attack all targets in the area (Magic vs. Strength DC). On a success, each target takes 5d6 damage.
 
-    Success
-    : Your target takes 5d6 damage
-
-    Failure
-    : Half damage
-
-    All ground in the spell's area is desecrated for the duration. All Veteran Necromancers (and all minions controlled by Veteran Necromancers) have advantage on attacks against enemies standing on desecrated ground.
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 1d6 and the radius of the burst increases by 10 feet.
+    All ground in the area is desecrated for the duration. All Veteran Necromancers and their minions have advantage on attacks against enemies standing on desecrated ground.
 
 Dark Aura:
   tier: Veteran
@@ -235,29 +154,13 @@ Dark Aura:
   brief: You surround yourself with an aura of dark shadows that hides you from sight
   traits: [Dark, Spell]
   tags:
-    cost: 4 Mana
-    target: One willing creature you can reach
-    area: 10-foot emanation, which follows your target for the duration
-    duration: Sustained, up to 1 minute
+    casts: 3/rest
+    area: 10-foot emanation around a willing creature you touch
+    duration: Up to 1 minute
   effect: |
-    You fill this spell's area with magical darkness. This darkness completely blocks vision within or through the area. Your target can see through this darkness as if it wasn't there.
+    The area is filled with magical darkness that completely blocks vision. Your target can see through this darkness as if it wasn't there.
 
-    Your target can use the **Dark Vengeance** power.
-
-    #### Heightened
-
-    If you add +2 Mana, the duration of this spell is 1 hour (and the spell is no longer sustained). If you instead add +4 Mana, the duration of this spell is 24 hours. If you instead add +6 Mana, the duration of this spell is Forever.
-  aside: |
-    {% smallpower %}
-    Dark Vengeance:
-      type: Reaction
-      traits: [Necrotic]
-      tags:
-        range: 10 feet
-        trigger: Your target succeeds on a Strike against you
-      effect: |
-        Your target takes 2d8 damage.
-    {% endsmallpower %}
+    Your target can use the following power. {% icon Reaction %}: When a creature within 10 feet succeeds on a {Strike} against you, it takes 2d8 damage.
 
 Enervation:
   tier: Veteran
@@ -265,94 +168,50 @@ Enervation:
   brief: You shoot a ray of dark energy that damages and weakens a creature
   traits: [Attack, Necrotic, Spell]
   tags:
-    cost: 5 Mana
+    casts: 3/rest
     range: 60 feet
   effect: |
-    Make a Magic attack roll against your target's Strength DC.
-
-    Critical Success
-    : Your target takes 12d6 damage and gains 3 fatigue
-
-    Success
-    : Your target takes 12d6 damage and gains 1 fatigue
-
-    Failure
-    : Half damage
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 2d6.
+    Attack one target within range (Magic vs. Strength DC). On a success, it takes 12d6 damage and gains 1 fatigue.
 
 Specialized Undead:
   tier: Veteran
   type: Passive
   brief: You can animate undead that are stronger and more varied than before
-  tags:
-    prerequisites: Animate Dead
   effect: |
-    When you cast {Animate Dead}, you can choose for your minion to gain two of the following abilities.
-
-    ***Distracting Aura.*** A hostile creature that ends its turn within 5 feet of your minion is {dazzled} until the end of its next turn.
-
-    ***Giant Size.*** Your minion has +1 Size, +5 feet reach, and +2 Strength.
-
-    ***Grave Bolt.*** Your minion can shoot bolts of dark energy as a ranged weapon with 1d10 [[Necrotic]] base damage and 150 range.
-
-    ***Incorporeal Move.*** Your minion gains the {Incorporeal Move} undead feat.
-
-    ***Paralyzing Touch.*** Your minion gains the {Paralyzing Touch} undead feat.
-
-    ***Unnatural Speed.*** Your minion has +20 feet Speed and +2 Agility.
+    When you animate an undead, choose two:
+    - All hostile creatures that end their turns within 5 feet of your minion are {dazzled} until the end of their next turn.
+    - Your minion has +1 Size, +5 feet reach, and +2 Strength.
+    - Your minion can shoot bolts of dark energy as a ranged weapon with 1d10 [[Necrotic]] base damage and 150 range.
+    - Your minion gains the {Incorporeal Move} feat.
+    - Your minion gains the {Paralyzing Touch} feat.
+    - Your minion has +20 feet Speed and +2 Agility.
 
 Spirit Guardians:
   tier: Veteran
   type: 1-Action
   brief: You summon a swarm of spirits that circle around you and protect you
-  traits: [Spell]
+  traits: [Radiant, Spell]
   tags:
-    cost: 3 Mana
-    duration: Sustained, up to 10 minutes
+    casts: 3/rest
+    area: 15-foot emanation
+    duration: Up to 10 minutes
   effect: |
-    The area within 15 feet of you is difficult terrain to creatures of your choice. You can use the **Angry Guardians** power.
+    The area is difficult terrain to creatures of your choice.
 
-    #### Heightened
-
-    For each +2 Mana, the damage of **Angry Guardians** increases by 1d8.
-  aside: |
-    {% smallpower %}
-    Angry Guardians:
-      type: Free
-      traits: [Attack, Radiant]
-      tags:
-        area: 15-foot emanation
-        target: Any number of creatures in the area
-      effect: |
-        Make a Magic attack roll against your target's Spirit DC.
-
-        Success
-        : Your target takes 2d8 damage
-
-        Failure
-        : Half damage
-    {% endsmallpower %}
+    {% icon Free %}: Attack any number of creatures in the area (Magic vs. Spirit DC). On a success, each target takes 2d8 damage.
 
 Terror:
   tier: Veteran
   type: 1-Action
   brief: You frighten a group a creatures, making them flee in terror
-  traits: [Attack, Fear, Spell]
+  traits: [Fear, Spell]
   tags:
-    cost: 3 Mana
+    casts: 3/rest
     area: 30-foot emanation
-    duration: Sustained, up to 1 minute
+    duration: Up to 1 minute
+    save: Wisdom
   effect: |
-    Make a Magic attack roll against your target's Spirit DC.
-
-    Critical Success
-    : Your target is {terrified} and has a -5 penalty to their Spirit DC
-
-    Success
-    : Your target is {terrified}
+    All creatures in the area are {terrified}. A target repeats the save at the end of its turn if it's not able to safely flee.
 
 Blood Drain:
   tier: Master
@@ -360,23 +219,10 @@ Blood Drain:
   brief: You drain the blood out of nearby enemies, using it to heal yourself
   traits: [Attack, Healing, Necrotic, Spell]
   tags:
-    cost: 7 Mana
+    casts: 1/rest
     range: 30 feet
-    target: Up to 10 creatures you can see within range
   effect: |
-    Make a Magic attack roll against your target's Strength DC.
-
-    Success
-    : Your target takes 8d6 damage, and you heal 2d6 health
-
-    Failure
-    : Half damage
-
-    *You heal for each target you succeed against.*
-
-    #### Heightened
-
-    The damage increases by 1d6 and the maximum number of targets increases by 1.
+    Attack up to 10 creatures within range (Magic vs. Strength DC). On a success, each target takes 8d6 damage. You heal 2d6 health for each target you suceeded against.
 
 Create Undead:
   tier: Master
@@ -384,16 +230,9 @@ Create Undead:
   brief: You reanimate a corpse as a powerful, unique undead
   traits: [Spell]
   tags:
-    cost: 6 Mana
-    range: 30 feet
-    target: A corpse you can see within range
-    requirements: In life, the corpse was a creature of CR 6 or less
+    casts: 1/rest
   effect: |
-    Your target comes back to life as an undead. If your target was unintelligent in life, it becomes an unintelligent lesser undead. If your target was intelligent in life, the GM decides whether it becomes an unintelligent lesser undead or an intelligent greater undead. Your target has the same stats it had in life, except it gains the [[Undead]] trait. Your target may or may not be friendly towards you.
-
-    #### Heightened
-
-    For each +1 Mana, the maximum CR increases by 1.
+    A corse you touch animates as an undead. It has the same stats and personality as it had in life, except it's now undead and has a maximum of CR 6. It may or may not be friendly towards you.
 
 Shadow Assassin:
   tier: Master
@@ -401,57 +240,34 @@ Shadow Assassin:
   brief: You animate a creature's shadow, causing it to attack them
   traits: [Attack, Necrotic, Spell]
   tags:
-    cost: 6 Mana
+    casts: 1/rest
     range: 60 feet
-    duration: Sustained, up to 10 minutes
+    duration: Up to 10 minutes
+    save: Charisma
   effect: |
-    Make a Magic attack roll against your target's Spirit DC.
-
-    Critical Success
-    : As success, and your target is {terrified}
-
-    Success
-    : Your target takes 7d6 damage and is {flat-footed}
-
-    Failure
-    : Your target is {flat-footed}
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 1d6.
+    {% icon Free %}: Your target takes 7d6 damage and is briefly {terrified}. Your target repeats the save.
 
 Consume Life:
   tier: Ribbon
   type: Reaction
   brief: You consume the life force of creatures you kill, healing yourself
-  traits: [Encounter]
-  tags:
-    trigger: You kill a creature you can reach
-    requirements: The triggering creature had at least 5 maximum health
   effect: |
-    You heal 1d6 health.
+    When you kill a creature, if they had at least 5 maximum health, you can touch them to heal 1d6 health.
 
 Decompose:
   tier: Ribbon
   type: 1-Action
   brief: You cause dead organic material to decompose extremely rapidly
   traits: [Cantrip, Necrotic, Spell]
-  tags:
-    cost: 0 Mana
-    target: One object you can reach
   effect: |
-    If your target is made of organic material (such as a wooden door, a dead creature, or a plate of food), it takes 4d8 damage. This damage causes your target to decompose extremely rapidly: it might sprout moss and flowers, become covered in mold or fungus, or degrade into compost.
-
-    #### Heightened
-
-    If you add +1 Mana, this spell gains an area of a 10-foot burst. For each additional +1 Mana, the burst's radius increases by 10 feet.
+    One object you touch made of organic material (such as a wooden door, a dead creature, or a plate of food) takes 4d8 damage.
 
 Grave Sight:
   tier: Ribbon
   type: Passive
   brief: You have a supernatural ability to detect death, corpses, and remains
   effect: |
-    You see a bright red glow around areas that have seen death. This includes places where a person has died recently (within a week or so), dead bodies, and even [[Undead]] creatures. You can roll Spirit+Notice to detect objects involved in death, such as weapons that have killed creatures or places an [[Undead]] creature has been recently.
+    You see a subtle red glow around anything associated with death. This includes dead bodies, undead creatures, murder weapons, graveyards, and anything else determined by the GM.
 
 Intimidating Presence:
   tier: Ribbon
@@ -466,10 +282,7 @@ Speak with Dead:
   brief: You summon and speak with the spirit of a dead creature
   traits: [Ritual, Spell]
   tags:
-    cost: 3 Mana
-    target: A [[Humanoid]] corpse you can reach
-    requirements: Your target died within the last week
+    casts: 1/rest
+    duration: Up to 10 minutes
   effect: |
-    You conjure the spirit or ghost of the person. The spirit is only a faint echo of the person, and it can only speak when you ask it questions. You can ask this spirit up to three questions. The spirit may choose to answer or stay silent, and it may choose to tell the truth or lie.
-
-    After you ask the spirit three questions, it passes on fully, and **Speak with Dead** cannot target this person again.
+    You touch the corpse of a humanoid that died within the last week, and it regains the ability to speak. The corpse can only speak to answer your questions, and after you ask it three questions, this spell ends. The corpse can choose to remain silent or to lie.

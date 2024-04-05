@@ -19,6 +19,10 @@
           {{ power_name }}
         </h3>
 
+        {% if power_body.tier %}
+          <h3>{{ power_body.tier | slice, 0, 3 }}</h3>
+        {% endif %}
+
         {% unless power_body.type == "Passive" %}
           {% icon {{ power_body.type }} %}
         {% endunless %}
