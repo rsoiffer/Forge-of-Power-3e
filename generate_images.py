@@ -2,6 +2,7 @@ import glob
 import io
 import json
 import os
+import random
 import urllib.parse
 import urllib.request
 import uuid
@@ -77,6 +78,9 @@ def process(filepath, image_prompt, turbo=False):
         # Set negative prompt
         prompt_api["7"]["inputs"]["text"] = "nsfw, text, watermark"
 
+        # Set seed
+        prompt_api["13"]["inputs"]["noise_seed"] = random.randrange(1000000)
+
     else:
         with open("workflow_api.json", "r") as file:
             prompt_text = file.read()
@@ -84,14 +88,16 @@ def process(filepath, image_prompt, turbo=False):
         prompt_api = json.loads(prompt_text)
 
         # Set positive prompt
-        prompt_api["6"]["inputs"]["text"] = prompt_api["15"]["inputs"]["text"] = (
-            image_prompt
-        )
+        prompt_api["6"]["inputs"]["text"] = image_prompt
+        prompt_api["15"]["inputs"]["text"] = image_prompt
 
         # Set negative prompt
-        prompt_api["7"]["inputs"]["text"] = prompt_api["16"]["inputs"]["text"] = (
-            "nsfw, text, watermark"
-        )
+        prompt_api["7"]["inputs"]["text"] = "nsfw, text, watermark"
+        prompt_api["16"]["inputs"]["text"] = "nsfw, text, watermark"
+
+        # Set seed
+        prompt_api["10"]["inputs"]["noise_seed"] = random.randrange(1000000)
+        prompt_api["11"]["inputs"]["noise_seed"] = random.randrange(1000000)
 
     ws = websocket.WebSocket()
     ws.connect("ws://{}/ws?clientId={}".format(server_address, client_id))
@@ -106,7 +112,7 @@ def process(filepath, image_prompt, turbo=False):
 
 def run_ollama(prompt):
     ollama.pull("llama2")
-    response = ollama.generate(model="llama2", prompt=prompt)["response"]
+    response = ollama.generate(model="llama2", prompt=prompt, keep_alive=0)["response"]
     return response.strip()
 
 
