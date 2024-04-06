@@ -22,7 +22,7 @@ Command Undead:
     casts: 3/rest
     area: 20-foot burst within 120 feet range
     duration: Up to 24 hours
-    save: Will
+    save: Presence
   effect: |
     All undead in the area are controlled by you. A target repeats the save whenever you command it to act strongly against its nature.
 
@@ -43,8 +43,10 @@ Drain Touch:
   type: 1-Action
   brief: You absorb a creature's life force, transferring it to another creature
   traits: [Attack, Healing, Necrotic, Spell]
+  tags:
+    attack: Magic vs. Spirit
   effect: |
-    Attack one target you touch (Magic vs. Defense). On a success, it takes 1d8 damage.
+    Attack one target you touch. On a success, it takes 1d8 damage.
 
     Then, another target you touch heals health equal to the amount of health lost by your first target.
 
@@ -55,8 +57,9 @@ Harm:
   traits: [Attack, Necrotic, Spell]
   tags:
     casts: 3/rest
+    attack: Magic vs. Spirit
   effect: |
-    Attack one target you touch (Magic vs. Defense). On a success, it takes 3d10 damage.
+    Attack one target you touch. On a success, it takes 3d10 damage.
 
 Path to the Grave:
   tier: Novice
@@ -88,8 +91,9 @@ Vengeful Ghost:
   tags:
     casts: 3/rest
     duration: 1 hour
+    attack: Magic vs. Armor
   effect: |
-    {% icon 1-Action %}: Attack one target within 30 feet (Magic vs. Defense). On a success, it takes 2d6 damage.
+    {% icon 1-Action %}: Attack one target within 30 feet. On a success, it takes 2d6 damage.
 
     Optionally, name a target creature. If any ghosts nearby want to harm that target (for example, a ghost seeking revenge against their murderer), this spell does double damage against your target, and you always know the direction towards it.
   aside: |
@@ -115,8 +119,9 @@ Circle of Death:
     casts: 1/rest
     area: 20-foot burst within 120 feet range
     duration: 1 week
+    attack: Magic vs. Spirit
   effect: |
-    Attack all targets in the area (Magic vs. Strength DC). On a success, each target takes 5d6 damage.
+    Attack all targets in the area. On a success, each target takes 5d6 damage.
 
     All ground in the area is desecrated for the duration. All Veteran Necromancers and their minions have advantage on attacks against enemies standing on desecrated ground.
 
@@ -142,8 +147,9 @@ Enervation:
   tags:
     casts: 3/rest
     range: 60 feet
+    attack: Magic vs. Spirit
   effect: |
-    Attack one target within range (Magic vs. Strength DC). On a success, it takes 12d6 damage and gains 1 fatigue.
+    Attack one target within range. On a success, it takes 12d6 damage and gains 1 fatigue.
 
 Specialized Undead:
   tier: Veteran
@@ -151,7 +157,7 @@ Specialized Undead:
   brief: You can animate undead that are stronger and more varied than before
   effect: |
     When you animate an undead, choose two:
-    - All hostile creatures that end their turns within 5 feet of your minion are {dazzled} until the end of their next turn.
+    - All enemies that end their turns next to your minion are briefly {dazzled}.
     - Your minion has +1 Size, +5 feet reach, and +2 Strength.
     - Your minion can shoot bolts of dark energy as a ranged weapon with 1d10 [[Necrotic]] base damage and 150 range.
     - Your minion gains the {Incorporeal Move} feat.
@@ -167,10 +173,11 @@ Spirit Guardians:
     casts: 3/rest
     area: 15-foot emanation
     duration: Up to 10 minutes
+    attack: Magic vs. Spirit
   effect: |
     The area is difficult terrain to creatures of your choice.
 
-    {% icon Free %}: Attack any number of creatures in the area (Magic vs. Spirit DC). On a success, each target takes 2d8 damage.
+    {% icon Free %}: Attack any number of creatures in the area. On a success, each target takes 2d8 damage.
 
 Terror:
   tier: Veteran
@@ -181,7 +188,7 @@ Terror:
     casts: 3/rest
     area: 30-foot emanation
     duration: Up to 1 minute
-    save: Wisdom
+    save: Instinct
   effect: |
     All creatures in the area are {terrified}. A target repeats the save at the end of its turn if it's not able to safely flee.
 
@@ -193,8 +200,9 @@ Blood Drain:
   tags:
     casts: 1/rest
     range: 30 feet
+    attack: Magic vs. Spirit
   effect: |
-    Attack up to 10 creatures within range (Magic vs. Strength DC). On a success, each target takes 8d6 damage. You heal 2d6 health for each target you suceeded against.
+    Attack up to 10 creatures within range. On a success, each target takes 8d6 damage. You heal 2d6 health for each target you suceeded against.
 
 Create Undead:
   tier: Master
@@ -210,12 +218,12 @@ Shadow Assassin:
   tier: Master
   type: 1-Action
   brief: You animate a creature's shadow, causing it to attack them
-  traits: [Attack, Necrotic, Spell]
+  traits: [Necrotic, Spell]
   tags:
     casts: 1/rest
     range: 60 feet
     duration: Up to 10 minutes
-    save: Charisma
+    save: Presence
   effect: |
     {% icon Free %}: Your target takes 7d6 damage and is briefly {terrified}. Your target repeats the save.
 

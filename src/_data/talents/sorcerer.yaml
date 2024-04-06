@@ -2,21 +2,14 @@ Catapult:
   tier: Novice
   type: 1-Action
   brief: You launch a creature or object a long distance through the air
-  traits: [Cantrip, Spell]
+  traits: [Attack, Bludgeoning, Spell, Telekinesis]
   tags:
-    cost: 0 Mana
-    range: 50 feet
+    range: 60 feet
+    attack: Magic vs. Armor
   effect: |
-    Choose a willing creature or unattended object you can see within 10 feet that is Size +0 or smaller. You throw this creature or object as a projectile. Your projectile lands in a square adjacent to your target.
+    A small object or willing creature you touch flies in a straight line to a space within range.
 
-    Optionally, make a Magic attack roll against your target's Agility DC. This spell gains the [[Attack]] and [[Bludgeoning]] traits.
-
-    Success
-    : Your target and your projectile each take 1d10 damage
-
-    #### Heightened
-
-    For each +1 Mana, the range increases by 50 feet and the damage increases by 1d10.
+    Optionally, attack a target at the location. On a success, it takes 1d10 damage.
 
 Expedite:
   tier: Novice
@@ -24,41 +17,25 @@ Expedite:
   brief: You increase a creature's speed, letting it run much faster
   traits: [Spell]
   tags:
-    cost: 1 Mana
+    casts: 3/rest
     range: 30 feet
     duration: 10 minutes
   effect: |
     Your target's Speed is doubled.
 
-    #### Heightened
-
-    If you add +1 Mana, this power's duration is 1 hour.
-
 Force Shove:
   tier: Novice
   type: 1-Action
   brief: You telekinetically shove a creature backwards through the air
-  traits: [Attack, Bludgeoning, Spell]
+  traits: [Bludgeoning, Spell]
   tags:
-    cost: 1 Mana
+    casts: 3/rest
     range: 30 feet
+    save: Strength
   effect: |
-    Make a Magic attack roll against your target's Strength DC.
+    Your target takes 3d6 damage, is pushed 30 feet backwards, and falls {prone}.
 
-    Critical Success
-    : Your target takes 6d6 damage, is pushed 60 feet backwards, and falls {prone}
-
-    Success
-    : Your target takes 3d6 damage, is pushed 30 feet backwards, and falls {prone}
-
-    Failure
-    : Your target falls {prone}
-
-    If you push your target into another creature, the other creature falls {prone} and your target stops in an adjacent square.
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 2d6, and you can push your target an extra 10 feet.
+    If you push your target into another creature, they take the same damage and fall {prone}.
 
 Future Sight:
   tier: Novice
@@ -66,31 +43,21 @@ Future Sight:
   brief: You see into the future, so you know exactly how an action will play out
   traits: [Fortune, Spell]
   tags:
-    cost: 1 Mana
-    duration: 1 minute
+    casts: 3/rest
+    duration: 1 hour
   effect: |
-    Roll a d20 and record the number rolled. You can replace one die roll made by you or a creature you can see with this fortelling roll, after which the spell ends.
-
-    #### Heightened
-
-    If you add +2 Mana, this power is {% icon Free %} instead of {% icon 1-Action %}.
+    Roll a d20 and record the number rolled. You can replace one die roll made by you or a creature you can see with this foretelling roll.
 
 Misty Step:
   tier: Novice
-  type: 1-Action
+  type: Free
   brief: You teleport a small distance to a space you can see
   traits: [Spell, Teleportation]
   tags:
-    cost: 1 Mana
+    casts: 3/rest
     range: 30 feet
   effect: |
-    You teleport to an unoccupied space within range you can see.
-
-    #### Heightened
-
-    If you add +1 Mana, this power is {% icon Free %} instead of {% icon 1-Action %}.
-  fluffstart: |
-    You disappear in a swirl of mist, reappearing in a different location.
+    You teleport to an empty space within range.
   fluff: |
     Mist not included.
 
@@ -98,57 +65,28 @@ Telekinetic Grip:
   tier: Novice
   type: 1-Action
   brief: You telekinetically take hold of a creature or object and move it around
-  traits: [Attack, Force, Spell]
+  traits: [Force, Spell, Telekinesis]
   tags:
-    cost: 1 Mana
+    casts: 3/rest
     range: 120 feet
-    requirements: Your target is Size +0 or smaller
-    duration: Sustained, up to 1 minute, or until your target is more than 120 feet away from you
+    duration: Up to 1 minute
+    save: Strength
   effect: |
-    Make a Magic attack roll against your target's Strength DC.
+    Your target takes 2d6 damage, is {immobilized}, and is held mid-air. Your target can repeat the save at the end of each of its turns.
 
-    Critical Success
-    : Your target takes 2d6 damage and is {restrained}
-
-    Success
-    : Your target is {immobilized}
-
-    Failure
-    : Your target falls {prone}
-
-    You can use the **Telekinetic Carry** power.
-
-    #### Heightened
-
-    For each +1 Mana, increase the maximize Size target by +1.
-  aside: |
-    {% smallpower %}
-    Telekinetic Carry:
-      type: 1-Action
-      effect: |
-        You move the target of your **Telekinetic Grip** up to 20 feet in any direction.
-    {% endsmallpower %}
+    {% icon Free %}: Move your target up to 20 feet.
 
 Transposition:
   tier: Novice
   type: 1-Action
   brief: You instantly swap the locations of two creatures or objects
-  traits: [Attack, Spell, Teleportation]
+  traits: [Spell, Teleportation]
   tags:
-    cost: 2 Mana
+    casts: 3/rest
     range: 30 feet
-    target: Two creatures or objects you can see within range (including yourself)
+    save: Agility
   effect: |
-    Make a Magic attack roll against the Agility DC of each target. The effect of this spell is determined by the worse result.
-
-    Success
-    : Your targets instantly swap positions
-
-    #### Heightened
-
-    For each +1 Mana, the range increases by 30 feet.
-
-    *Note that you could throw a pebble with the {Interact} power, then cast **Transposition** targeting the pebble and another creature or object, even while the pebble is in midair.*
+    Choose two creatures or objects within range. Your targets instantly swap positions.
 
 Warped Space:
   tier: Novice
@@ -156,43 +94,28 @@ Warped Space:
   brief: You warp space in a region to speed or slow everyone in the area
   traits: [Spell]
   tags:
-    cost: 1 Mana
-    range: 500 feet
-    area: 20-foot burst
-    duration: Sustained, up to 1 minute
+    casts: 3/rest
+    area: 20-foot burst with 500 feet
+    duration: Up to 1 minute
   effect: |
-    This spell's area becomes **warped space**. Choose one of the following effects.
+    Choose one:
+    * All distances through the area are doubled.
+    * All distances through the area are halved.
 
-    ***Spherical Warp.*** All distances through this warped space are doubled.
-
-    ***Hyperbolic Warp.*** All distances through this warped space are halved.
-
-    When you {Sustain} this spell, you can change your choice above.
-
-    #### Heightened
-
-    For each +1 Mana, this spell's radius doubles.
-
-    *This spell affects movement, the range and reach of attacks, the size of areas, and everything else that depends on distance. For simplicity, it doesn't affect the squares on a grid map, or what it means for two creatures to be adjacent.*
+    *This spell affects movement, the range of powers, the size of areas, and so on.*
 
 Banishment:
   tier: Veteran
   type: 1-Action
   brief: You banish a target to a pocket dimension for a brief time
-  traits: [Attack, Spell, Teleportation]
+  traits: [Spell, Teleportation]
   tags:
-    cost: 4 Mana
+    casts: 3/rest
     range: 60 feet
     duration: 1 minute
+    save: Presence
   effect: |
-    Make a Magic attack roll against your target's Spirit DC.
-
-    Success
-    : Your target teleports to a harmless demiplane and is {stunned}; when the duration ends, your target reappears exactly where it left (or in the nearest empty space if that space is occupied)
-
-    #### Heightened
-
-    For each +1 Mana, you can target another creature within range.
+    Your target teleports to a harmless demiplane and is {stunned}. When the duration ends, it reappears back at its original position.
 
 Dimension Door:
   tier: Veteran
@@ -200,14 +123,12 @@ Dimension Door:
   brief: You open a magical door in space, teleporting a long distance
   traits: [Spell, Teleportation]
   tags:
-    cost: 4 Mana
+    casts: 3/rest
     range: 500 feet
   effect: |
-    You teleport to the target location. Optionally, you can teleport a willing creature you can reach along with you.
+    You teleport to the target location.
 
-    #### Heightened
-
-    If you add +1 Mana, the range increases to 1 mile, and you don't need to be able to see your destination, as long as you have been there in the past and know its relative location and distance from you.
+    Optionally, you can teleport a willing creature you touch along with you.
 
 Haste:
   tier: Veteran
@@ -215,104 +136,61 @@ Haste:
   brief: You speed up a creature's local time, letting it act faster
   traits: [Spell]
   tags:
-    cost: 3 Mana
+    casts: 3/rest
     range: 30 feet
     duration: 1 minute
   effect: |
-    Your target can use the **Hasted Action** power.
-
-    #### Heightened
-
-    For each +1 Mana, you can target another creature within range.
-  aside: |
-    {% smallpower %}
-    Hasted Action:
-      type: Free
-      effect: |
-        Use any {% icon 1-Action %} basic power.
-    {% endsmallpower %}
+    Your target can use the following power. {% icon Free %}: Use any {% icon 1-Action %} basic power.
 
 Magnify Gravity:
   tier: Veteran
   type: 1-Action
   brief: You greatly increase the force of gravity, crushing creatures in an area
-  traits: [Attack, Bludgeoning, Spell]
+  traits: [Bludgeoning, Spell]
   tags:
-    cost: 4 Mana
-    range: 120 feet
-    area: 20-foot burst
-    duration: Until the end of your target's next turn
+    casts: 3/rest
+    area: 20-foot burst within 120 feet
+    save: Strength
   effect: |
-    Make a Magic attack roll against your target's Strength DC. If your target is midair, you have advantage on the attack roll, and you deal double damage on a success or critical success.
-
-    Critical Success
-    : Your target takes 4d6 damage, falls {prone}, and is {immobilized}
-
-    Success
-    : Your target takes 4d6 damage and is {slowed}
-
-    Failure
-    : Half damage
-
-    #### Heightened
-
-    For each +1 Mana, the damage increases by 1d6.
+    Each target takes 4d6 damage and is briefly {slowed}. If a target is midair, it takes double damage.
 
 Slow:
   tier: Veteran
   type: 1-Action
   brief: You slow down time for all creature in an area, stopping them from acting
-  traits: [Attack, Spell]
+  traits: [Spell]
   tags:
-    cost: 3 Mana
-    range: 120 feet
-    area: 20-foot burst
-    duration: Sustained, up to 1 minute
+    casts: 3/rest
+    area: 20-foot burst within 120 feet
+    duration: Up to 1 minute
+    save: Agility
   effect: |
-    Make a Magic attack roll against your target's Agility DC.
-
-    Critical Success
-    : Your target is {slowed}, {flat-footed}, and {incapacitated}
-
-    Success
-    : Your target is {slowed} and can't use {% icon Reaction %} powers
-
-    Failure
-    : Your target is {slowed}
+    Each target is {slowed} and can't use {% icon Reaction %} powers.
 
 Control Gravity:
   tier: Master
   type: 1-Action
   brief: You change the direction of gravity in an area
-  traits: [Attack, Spell]
+  traits: [Spell]
   tags:
-    cost: 7 Mana
-    range: 10 feet
-    duration: Sustained, up to 10 minutes
+    casts: 1/rest
+    duration: Up to 10 minutes
+    save: Agility
   effect: |
-    Make a Magic attack roll against your target's Agility DC.
+    An object or creature you touch is no longer affected by normal gravity. Your target repeats the save at the end of each of their turns.
 
-    Success
-    : Your target is no longer affected by normal gravity. Your target immediately falls up to 80 feet in a direction of your choice, taking fall damage as normal if they hit a solid object (1d6 damage per 10 feet they fall).
-
-    #### Heightened
-
-    For each +1 Mana, you can target another creature within range.
-
-    For each +1 Mana, the maximum fall distance increases by 10 feet.
+    {% icon Free %}: Your target falls 80 feet in a direction of your choice, taking fall damage if they hit an obstacle.
 
 Mass Teleport:
   tier: Master
-  type: Passive
+  type: 1-Action
   brief: You teleport multiple creatures extremely long distances
+  traits: [Spell, Teleportation]
   tags:
-    prerequisites: Dimension Door
+    casts: 3/rest
+    range: 500 miles
   effect: |
-    When you use your {Dimension Door} power, you can teleport up to 5 willing creatures you can reach along with you. In addition, your Dimension Door power gains the following effect.
-
-    #### Heightened
-
-    For each +1 Mana, the range is multiplied by 20.
+    You and up to 5 willing creatures you touch all teleport to the target location.
 
 Rewind:
   tier: Master
@@ -320,33 +198,23 @@ Rewind:
   brief: You travel back from the future, returning to a state when you were less hurt
   traits: [Healing, Spell]
   tags:
-    cost: 8 Mana
+    casts: 1/rest
   effect: |
     You heal half your missing health and gain the effect of {Future Sight}. At the GM's discretion, you might also gain knowledge of a major event that will happen in the next few days.
-  fluffstart: |
-    Your future selfs send aid back to the current time, causing your present injuries to fade and giving you knowledge of the future.
+  fluff: |
+    Your future self sends aid back to the present, healing your wounds and giving you knowledge of the future.
 
 Augury:
   tier: Ribbon
   type: 1-Action
   brief: You foresee the near future, learning about any imminent dangers
-  traits: [Divination, Ritual, Spell]
+  traits: [Divination, Spell]
   tags:
-    cost: 2 Mana
+    casts: 1/rest
   effect: |
-    You search for the results of a particular course of action, which can last up to 30 minutes in the future. The GM secretly rolls a d4. On a 1, the GM gives a random answer. Otherwise, the GM tells you their best guess among the following outcomes:
-
-    Weal
-    : The results will be good
-
-    Woe
-    : The results will be bad
-
-    Weal and Woe
-    : The results will be a mix of good and bad
-
-    Nothing
-    : There won't be particularly good or bad results
+    You divine the outcome of an action you plan to take within 1 hour. The GM secretly rolls a d4:
+    * 2-4: the GM tells you if the outcome will be good, bad, mixed, or neutral.
+    * 1: the GM gives a random answer.
 
     If anyone casts **Augury** again to ask about the same topic, the GM gives the same response.
 
@@ -354,117 +222,42 @@ Guidance:
   tier: Ribbon
   type: 1-Action
   brief: You see briefly into the future, gaining a helpful tidbit of knowledge
-  traits: [Auditory, Cantrip, Linguistic, Spell]
+  traits: [Auditory, Linguistic, Spell]
   tags:
-    cost: 0 Mana
     range: 30 feet
-    requirements: You haven't used **Guidance** on this target in the last hour
-    duration: Until the start of your next turn
   effect: |
-    Your target has a +1 bonus to the first die roll they make.
+    A creature within range is briefly blessed. It has a +1 bonus to the next die roll it makes.
+
+    You can't cast **Guidance** on this creature again for 1 hour.
 
 Levitate:
   tier: Ribbon
   type: Free
   brief: You use telekinetic force to lift yourself slightly off the ground
-  traits: [Cantrip, Spell]
-  tags:
-    cost: 0 Mana
-    duration: Until the end of your turn
+  traits: [Spell, Telekinetic]
   effect: |
-    You can fly at half Speed.
+    You can fly at half Speed until the end of your turn.
 
 Mage Hand:
   tier: Ribbon
   type: 1-Action
   brief: You manipulate a distant object with minor telekinetic force
-  traits: [Cantrip, Spell]
+  traits: [Spell, Telekinetic]
   tags:
-    cost: 0 Mana
     range: 60 feet
   effect: |
-    Use the {Interact} power on your target, even if you cannot reach your target. If you attempt a task requiring physical power or dexterity, you substitute your Magic stat for your Strength or Agility for any related rolls.
+    You manipulate an object within range.
 
 Spatiotemporal Precision:
   tier: Ribbon
   type: Passive
   brief: You always know exactly when and where you are to extreme precision
   effect: |
-    You always know your current position relative to all locations you've been to before, to a precision of 1 foot. You always know the current time of day, and the amount of time that has elapsed since any past event, to a precision of 1 second.
+    You always know exactly where you are, and you always know the precise current time.
 
 Time Lord:
   tier: Ribbon
   type: Passive
   brief: You can tell when creatures modify the past with retroactive powers
   effect: |
-    You know when a creature you can see uses a [[Retroactive]] power, and you know when the circumstances around you change as the result of a [[Retroactive]] power. You remember the original timeline before the [[Retroactive]] power was used. You don't learn which creature used the power, or what exact effect the power had.
-
-    If you know a [[Retroactive]] power, you activate it as an in-character decision instead of an out-of-character decision, as you are aware that you are manipulating the timeline.
-
-# Greater Metamagic:
-#   tier: Veteran
-#   type: Passive
-#   tags:
-#     prerequisites: Metamagic
-#   effect: |
-#     You can modify your spells in a broad variety of ways. Your Metamagic power gains the following options.
-
-#     Conservation
-#     : If you spend at least 1 Mana on the spell, one spell you cast next turn costs 1 Mana less
-
-#     Overwhelming
-#     : The spell ignores any resistances to acid, cold, electricity, fire, or sonic damage
-
-#     Quickened
-#     : The spell takes 2 fewer actions to cast, but the strain involved means you can't use Metamagic again until you take a long rest
-
-# Resilient Sphere:
-#   tier: Veteran
-#   type: 1-Action
-#   traits: [Force, Spell]
-#   tags:
-#     cost: 4 Mana
-#     range: 30 feet
-#     duration: 1 minute
-#   effect:
-#     You create an immobile sphere of force to either trap or protect the target, blocking anything that would pass through the sphere. The sphere has AC 5, Hardness 10, and 40 HP. It's immune to critical hits and precision damage. If the target is unwilling, it can make a Reflex save, with the following effect.
-#   critical-success: The target disrupts the sphere's integrity, causing it to collapse entirely
-#   success: The sphere functions normally but has only 10 HP instead of 40
-#   failure: The sphere has its normal effect
-
-# Redirect Gravity:
-#   tier: Master
-#   type: 1-Action
-#   traits: [Spell]
-#   tags:
-#     cost: 7 Mana
-#     range: 120 feet
-#     area: 30-foot burst
-#     duration: 1 minute
-#   effect:
-#     You change the direction of gravity in the area. Creatures and objects that aren't secured to the ground immediately fall towards the new direction you designate as down. Rules for falling and fall damage apply as normal. A creature partially inside the area is caught between normal and redirected gravity, and is pulled in both directions at once.
-
-# Reflect Spell:
-#   tier: Master
-#   type: Passive
-#   tags:
-#     prerequisites: Counterspell
-#   effect:
-#     When you use Counterspell to counteract a spell that affects targeted creatures or an area, you can turn that spell's effect back on its caster. When reflected, the spell affects only the original caster, even if it's area spell or it would normally affect more than one creature. The original caster can attempt a save and use other defenses against the reflected spell as normal.
-
-# Metamagic Mastery:
-#   tier: Epic
-#   type: Passive
-#   tags:
-#     prerequisites: Metamagic
-#   effect:
-#     Altering your spells doesn't take any longer than casting them normally. You can use Metamagic as a Free power.
-
-# Time Stop:
-#   tier: Epic
-#   type: 1-Action
-#   traits: [Spell]
-#   tags:
-#     cost: 10 Mana
-#   effect:
-#     You temporarily stop time for everything but yourself, allowing you to use several actions in what appears to others to be no time at all. Immediately after using this power, you take 3 turns. Rounds only pass for you, effects specifically targeting or affecting you, and effects you create during the stoppage. All other creatures and objects are invulnerable and can't be targeted or affected by anything. Once you have finished your turns, time begins to flow again for the rest of the world.
+    Your character is aware of [[Retroactive]] powers and their effects on the timeline. You know when a [[Retroactive]] power changes the world around you, and you remember the original timeline before the power was used.

@@ -21,7 +21,8 @@ Stats:
   * Instinct
   * Presence
   * Knowledge
-* Toughness
-* Evasion
-* Will
+* Defenses:
+  * Armor
+  * Spirit
 * Health
+* Speed
