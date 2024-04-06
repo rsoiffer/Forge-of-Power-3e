@@ -12,34 +12,6 @@ Animate Dead:
     When this spell ends, choose one:
     * The undead dies
     * The undead is no longer controlled by you
-  aside: |
-    {% smallpower %}
-    Skeleton Stats:
-      traits: [Spirit, Undead, Unintelligent]
-      tags:
-        attributes: Strength +0, Agilty +2, Intellect -2, Spirit -3
-        other stats: Health 10, Defense 12, Speed 30 feet, Size +0
-      effect: |
-        5 [[Bludgeoning]] Weakness, 5 [[Radiant]] Weakness, 10 [[Toxic]] Shield.
-
-        Revives after a day if it hadn't taken [[Radiant]] damage within 1 minute of dying.
-
-        The skeleton can wield weapons, most commonly a {bow} or a {sword}.
-    {% endsmallpower %}
-
-    {% smallpower %}
-    Zombie Stats:
-      traits: [Spirit, Undead, Unintelligent]
-      tags:
-        attributes: Strength +1, Agilty -2, Intellect -2, Spirit -3
-        other stats: Health 20, Defense 10, Speed 25 feet, Size +0
-      effect: |
-        5 [[Radiant]] Weakness, 10 [[Toxic]] Shield.
-
-        Revives after a day if it hadn't taken [[Radiant]] damage within 1 minute of dying.
-
-        The zombie can slam with its fists as a melee weapon that deals 1d6 [[Bludgeoning]] base damage.
-    {% endsmallpower %}
 
 Command Undead:
   tier: Novice
@@ -50,7 +22,7 @@ Command Undead:
     casts: 3/rest
     area: 20-foot burst within 120 feet range
     duration: Up to 24 hours
-    save: Wisdom
+    save: Will
   effect: |
     All undead in the area are controlled by you. A target repeats the save whenever you command it to act strongly against its nature.
 
@@ -251,6 +223,7 @@ Consume Life:
   tier: Ribbon
   type: Reaction
   brief: You consume the life force of creatures you kill, healing yourself
+  traits: [Healing]
   effect: |
     When you kill a creature, if they had at least 5 maximum health, you can touch them to heal 1d6 health.
 
