@@ -9,8 +9,11 @@ This page will explain the game rules.
 Summary:
 * Attributes: Agility, Strength, Finesse, Instinct, Presence, Knowledge
 * Rolls are d20 + attribute vs. DC, either success or failure
-* Advantage / disadvantage as 5e
-* Intiative and turns as 5e
+* Advantage / disadvantage as D&D 5e
+* Intiative and turns as D&D 5e
+* Talents and ribbons as Forge of Power 2e
+* No skills
+* No feats
 
 Notes:
 * Some powers have a number of casts/rest - this replaces mana and encounter/daily powers

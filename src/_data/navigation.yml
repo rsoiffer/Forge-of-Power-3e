@@ -6,6 +6,23 @@ main:
   - title: Classes
     url: /classes
 
+rules:
+  - title: 
+
+character:
+  - title: Character Creation
+    url: /character
+  - title: Ancestries
+    url: /ancestries
+  - title: Experiences
+    url: /experiences
+  - title: Equipment
+    url: /equipment
+  - title: Mystic Origins
+    url: /mystic-origins
+  - title: General Ribbons
+    url: /general-ribbons
+
 classes:
   - title: Warrior
     children:
