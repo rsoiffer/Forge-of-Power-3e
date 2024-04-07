@@ -1,0 +1,13 @@
+Heavy Armor:
+  traits: [Armor]
+  tags:
+    defense: 12 + Strength
+    speed: -1
+  fluff: |
+    Choose one from each line, or make your own.
+
+    Armor
+    : plate, chain mail, brigandine
+
+    Clothes that are
+    : reinforced, weathered, patched, sleek, royal

@@ -23,9 +23,11 @@
           <h3>{{ power_body.tier | slice, 0, 3 }}</h3>
         {% endif %}
 
-        {% unless power_body.type == "Passive" %}
-          {% icon {{ power_body.type }} %}
-        {% endunless %}
+        {% if power_body.type %}
+          {% unless power_body.type == "Passive" %}
+            {% icon {{ power_body.type }} %}
+          {% endunless %}
+        {% endif %}
       </div>
     </div>
 
@@ -53,7 +55,13 @@
           </dl>
         {% endif %}
 
-        {{ power_body.effect | process }}
+        {% if power_body.fluff_start %}
+          <div class="fluff">{{ power_body.fluff_start | process }}</div>
+        {% endif %}
+
+        {% if power_body.effect %}
+          {{ power_body.effect | process }}
+        {% endif %}
 
         {% if power_body.fluff %}
           <div class="fluff">{{ power_body.fluff | process }}</div>

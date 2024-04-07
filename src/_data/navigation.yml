@@ -7,7 +7,8 @@ main:
     url: /classes
 
 rules:
-  - title: 
+  - title: Rules
+    url: /rules
 
 character:
   - title: Character Creation

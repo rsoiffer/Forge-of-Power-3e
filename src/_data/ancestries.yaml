@@ -1,0 +1,27 @@
+Dwarf:
+  traits: [Ancestry]
+  fluff_start: |
+    Dwarves are most easily recognized as short humanoids with square features, dense musculature, and thick hair.
+  effect: |
+    ***Poison Resistance.*** You have advantage on saves against poison effects.
+
+Elf:
+  traits: [Ancestry]
+  fluff_start: |
+    Elves are typically tall humanoids with pointed ears and acutely attuned senses.
+  effect: |
+    ***Trance.*** You enter a meditative trance instead of sleeping, during which you are fully aware of your surroundings.
+
+Human:
+  traits: [Ancestry]
+  fluff_start: |
+    Those of human ancestry are most easily recognized by their dextrous hands, rounded ears, and bodies built for endurance.
+  effect: |
+    ***Versatile.*** You learn a general ribbon of your choice.
+
+Orc:
+  traits: [Ancestry]
+  fluff_start: |
+    Orcs are most easily recognized as humanoids with square features and boar-like tusks.
+  effect: |
+    ***Powerful Build.*** You can lift twice as much weight.

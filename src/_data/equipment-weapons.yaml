@@ -1,0 +1,70 @@
+Heavy Weapon:
+  traits: [Weapon]
+  tags:
+    attribute: Strength
+    melee: d12
+    defense: 12 + Strength
+    speed: -1
+  fluff: |
+    Choose one from each line, or make your own.
+
+    Melee weapon
+    : greatsword, greataxe, maul, scythe
+
+Legionnaire:
+  traits: [Weapon]
+  tags:
+    attribute: Strength
+    melee: d8
+    ranged: d6, range 60 feet
+    special: +2 Armor
+  fluff: |
+    Choose one from each line, or make your own.
+
+    Melee weapon
+    : sword, axe, mace, short spear
+
+    Shield
+    : square shield, tower shield, round shield
+
+    Throwing weapon
+    : javelins, hand axes
+
+Sharpshooter:
+  traits: [Weapon]
+  tags:
+    attribute: Finesse
+    melee: d6
+    ranged: d8, range 120 feet
+  fluff: |
+    Choose one from each line, or make your own.
+
+    **Melee weapon:** sword, dagger, 
+
+    **Ranged weapon:** long bow, crossbow, composite bow
+
+Shielded:
+  traits: [Weapon]
+  tags:
+    attribute: Strength
+    melee: d10
+    special: +2 Armor
+  fluff: |
+    Choose one from each line, or make your own.
+
+    **Melee weapon:** sword, axe, mace, short spear
+
+    **Shield:** kite shield, tower shield, round shield
+
+Skirmisher:
+  traits: [Weapon]
+  tags:
+    attribute: Agility
+    melee: d6
+    ranged: d8, range 120 feet
+  fluff: |
+    Choose one from each line, or make your own.
+
+    **Melee weapon:** sword, long knife, scimitar
+
+    **Ranged weapon:** short bow, javelins, sling
